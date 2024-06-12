@@ -4,25 +4,40 @@
         "userDataRange": "User!A3:F",
         "weighingDataRange": "Weight!A3:S",
         "TabletListRange": "TabletID!A2:E",
-        "settingDataRange": "Setting!B2:B17"
+        "settingDataRange": "Setting!B2:B19"
     },
-    "TabletID": "T01",
     "TabletList": [
         {
             "tabletID": "T01",
-            "spreadsheetID": "1XySGAC8aaywquHFKwr_zBBDpOgj99CF15UHe3P3kYF8"
+            "spreadsheetID": "1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo"
         },
         {
             "tabletID": "T02",
-            "spreadsheetID": "1AJg1K8aQgpbaInzQKd1cy-9hysr02JiIuGic2pLt9Bc"
+            "spreadsheetID": "1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo"
         },
         {
             "tabletID": "T04",
-            "spreadsheetID": "1VecUHiEccSf7Z9TqO-ECSk_q0rDmXC2FT5TjSQL8GcY"
+            "spreadsheetID": "1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo"
         },
         {
             "tabletID": "T03",
-            "spreadsheetID": "1BSigGruoj-TJYlSMcUOXti-cZWuJJDiMRyVWi5DxpYA"
+            "spreadsheetID": "1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo"
+        },
+        {
+            "tabletID": "T05",
+            "spreadsheetID": "1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo"
+        },
+        {
+            "tabletID": "T06",
+            "spreadsheetID": "1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo"
+        },
+        {
+            "tabletID": "T07",
+            "spreadsheetID": "1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo"
+        },
+        {
+            "tabletID": "T08",
+            "spreadsheetID": "1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo"
         }
     ]
 }

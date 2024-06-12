@@ -73,6 +73,8 @@ def main():
     # test_sounds = PlaySound(sounds_folder)
     # test_sounds.play_all()
 
+    window.run()
+
     sys.exit(app.exec())
 
 

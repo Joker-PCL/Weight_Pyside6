@@ -26,13 +26,14 @@ from src.Img import ShowImage
 from src.VideoPlayer import VideoPlayer
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PARENT_DIR = os.path.dirname(BASE_DIR)
 GIF_FILE = os.path.join(BASE_DIR, "assets", "gif", "connecting.gif")
-MANUAL_VIDEO_FILE = os.path.join(BASE_DIR, "SARAN.mp4")
+MANUAL_VIDEO_FILE = "MANUAL.mp4"
 WEIGHING_DATA_FILE = os.path.join(BASE_DIR, "database", "weighingData.json")
 USER_DATA_FILE = os.path.join(BASE_DIR, "database", "usersData.json")
 SETTING_DATA_FILE = os.path.join(BASE_DIR, "database", "settings10s.json")
 LOGGING_FILE = os.path.join(BASE_DIR, "files", "polipharm.log")
-PRODUCT_IMG_FOLDER = os.path.join(BASE_DIR, "product")
+PRODUCT_IMG_FOLDER = os.path.join(PARENT_DIR, "product")
 
 _LOGGER = logging.getLogger()
 _LOGGER.setLevel(logging.DEBUG)
@@ -132,7 +133,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         # ไฟล์ข้อมูลการตั้งค่า
         self.settingsFile = File(self.settings)
 
-        # ไฟล์ข้อมูลการชั่งน้ำหนัก(ออฟไลน์)
+        # ไฟล์ข้อมูลการชั่งน้ำหนัก
         self.WEIGHING_DATA_FILE = File(WEIGHING_DATA_FILE)
 
         # ไฟล์ข้อมูลรายชื่อ
@@ -166,7 +167,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
     def manual_video_player(self):
         if not hasattr(self, "videoPlayer"):
             self.button_video_play.clicked.disconnect(self.manual_video_player)
-            self.videoPlayer = VideoPlayer(self.manual_video, "SARAN.mp4")
+            self.videoPlayer = VideoPlayer(self.manual_video, MANUAL_VIDEO_FILE)
             self.button_video_play.clicked.connect(self.videoPlayer.media.play)
             self.button_video_pause.clicked.connect(self.videoPlayer.media.pause)
             self.button_video_stop.clicked.connect(self.videoPlayer.media.stop)
@@ -207,11 +208,10 @@ class Weight10s(QMainWindow, Ui_MainWindow):
     def switchToPage(self, page):
         self.stackedWidget.setCurrentWidget(page)
 
-    ##########################  อัพเดทข้อมูลรายชื่อเครื่องตอก   ##########################
-    updateTabletListResult = Signal()
 
-    def updateTabletList(self):
-        print("*** Update tablet list...")
+    ##########################  อ่านไฟล์ข้อมูลการตั้งค่า   ##########################
+    readSettingsFileResult = Signal()
+    def readSettingsFile(self):
         settings = self.settingsFile.read()
         if settings:
             self.mainSpreadsheetId = settings["Main"]["spreadsheetID"]
@@ -221,7 +221,13 @@ class Weight10s(QMainWindow, Ui_MainWindow):
             self.tabletID = settings["TabletID"]
             self.current_tabletID_1.setText(f"({self.tabletID})")
             self.current_tabletID_2.setText(self.tabletID)
+            QTimer.singleShot(500, lambda: self.readSettingsFileResult.emit())
+        
+    ##########################  อัพเดทข้อมูลรายชื่อเครื่องตอก   ##########################
+    updateTabletListResult = Signal()
 
+    def updateTabletList(self):
+        print("*** Update tablet list...")
         if not hasattr(self, "getTabletList"):
             self.getTabletList = Server(self.token, self.credentials)
             self.getTabletList.get.connect(self._updateTabletList)
@@ -570,13 +576,13 @@ class Weight10s(QMainWindow, Ui_MainWindow):
 
     @Slot(dict)
     def getThicknessData(self, thicknessData):
-        print(f"ThicknessData: {thicknessData}\n")
+        print(f"*** ThicknessData: {thicknessData}\n")
         self.PACKING_DATA["Thickness"] = thicknessData
 
         QTimer.singleShot(1000, lambda: self.getThicknessDataResult.emit(thicknessData))
 
     def thicknessStart(self):
-        print("Get thickness data...")
+        print("*** Get thickness data...")
         self.current_page = self.thickness_page
         self.switchToPage(self.current_page)
         if not hasattr(self, "GetThickness_called"):
@@ -591,12 +597,12 @@ class Weight10s(QMainWindow, Ui_MainWindow):
 
     # เลือกลักษณะเม็ดยา
     def characteristics(self, selected):
-        print(f"Characteristics: {selected}\n")
+        print(f"** Characteristics: {selected}\n")
         self.PACKING_DATA["Characteristics"] = selected
         QTimer.singleShot(1000, lambda: self.characteristicsResult.emit())
 
     def characteristicsStart(self):
-        print("Get characteristics data...")
+        print("** Get characteristics data...")
         self.current_page = self.characteristics_page
         self.switchToPage(self.current_page)
 
@@ -770,17 +776,17 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         self.signout_2.setHidden(True)
         self.clear_settings.setHidden(True)
         self.reset_weighing.setHidden(True)
-        self.reset_weighing.setHidden(True)
         self.restart_program_1.setHidden(False)
         self.restart_program_2.setHidden(False)
 
         # อัพเดทข้อมูล
-        self.updateTabletList()
+        self.readSettingsFile()
         if not hasattr(self, "FirstConnect"):
             self.FirstConnect = True
 
         if self.FirstConnect:
             self.FirstConnect = False
+            self.readSettingsFileResult.connect(self.updateTabletList)
             self.updateTabletListResult.connect(self.updateUsersData)
             self.updateUsersDataResult.connect(self.loginStart)
             self.rfidGetKey.connect(self.login)

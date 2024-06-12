@@ -26,7 +26,7 @@ class TabletList(QThread):
         self.qbox.setStyleSheet(
             """
             	border: solid;
-            	border-width: 1px;
+            	border-width: 2px;
             	border-color: rgb(255, 170, 0);
             	border-radius: 8px;
             	color: #262626;

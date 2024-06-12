@@ -43,7 +43,7 @@ def main():
 
     # เลือกจอที่สอง
     screens = app.screens()
-    second_screen = screens[0]
+    second_screen = screens[1]
 
     # สร้างหน้าต่างหลัก
     window = Weight10s(TOKEN, CREDENTIALS, SETTINGS, BALANCE_PORT)

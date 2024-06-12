@@ -273,3 +273,253 @@
 10-06-2024 12:26:54 DEBUG: CoUninitialize() done.
 11-06-2024 06:25:37 DEBUG: Calling CoUninitialize()
 11-06-2024 06:25:37 DEBUG: CoUninitialize() done.
+11-06-2024 09:34:35 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+11-06-2024 09:34:35 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+11-06-2024 09:34:35 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+11-06-2024 09:34:35 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 09:34:35 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 09:35:18 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 09:35:18 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 09:36:15 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 09:36:16 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 09:37:18 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 09:37:18 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 09:43:11 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 09:43:11 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 09:52:52 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 09:52:52 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 09:54:09 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 09:54:10 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 10:08:57 DEBUG: Calling CoUninitialize()
+11-06-2024 10:08:57 DEBUG: CoUninitialize() done.
+11-06-2024 10:09:55 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 10:09:55 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 10:12:20 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 10:12:20 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 10:33:49 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+11-06-2024 10:33:49 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+11-06-2024 10:33:50 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+11-06-2024 10:33:50 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 10:33:50 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 10:34:19 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 10:34:19 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 10:34:24 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 10:46:49 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 10:46:49 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 10:46:57 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 10:46:57 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+11-06-2024 11:02:12 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 11:02:13 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 11:02:19 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 11:02:20 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+11-06-2024 11:16:22 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 11:16:23 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 11:16:30 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 11:16:30 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+11-06-2024 11:16:52 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 11:16:53 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 11:16:57 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 11:16:57 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+11-06-2024 11:40:56 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+11-06-2024 11:40:56 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+11-06-2024 11:40:57 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+11-06-2024 11:40:57 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 11:40:57 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 11:41:03 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 11:41:03 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+11-06-2024 11:41:41 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 11:41:42 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 11:41:50 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 11:41:51 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+11-06-2024 11:56:26 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 11:56:26 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 11:56:36 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 11:56:37 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+11-06-2024 12:26:40 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 12:26:40 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+11-06-2024 12:27:20 INFO: file_cache is only supported with oauth2client<4.0.0
+11-06-2024 12:27:20 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 07:54:45 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+12-06-2024 07:54:45 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+12-06-2024 07:54:45 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+12-06-2024 07:54:45 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 07:54:46 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 07:55:44 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 07:55:44 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 07:56:59 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 07:56:59 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 07:57:05 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 07:57:06 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 09:25:17 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+12-06-2024 09:25:17 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+12-06-2024 09:25:17 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+12-06-2024 09:25:17 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 09:25:17 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 09:48:26 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 09:48:26 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 09:48:37 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 09:48:38 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 09:56:45 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 09:56:46 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 09:56:53 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 09:56:54 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 09:57:56 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 09:57:57 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 09:58:01 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 09:58:01 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 09:58:45 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 09:58:45 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 10:29:24 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+12-06-2024 10:29:24 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+12-06-2024 10:29:24 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+12-06-2024 10:29:24 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 10:29:24 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 10:29:38 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 10:29:38 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 10:32:17 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 10:32:17 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 10:32:23 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 10:32:24 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 10:34:14 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 10:34:14 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 10:34:43 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 10:34:44 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 10:47:41 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 10:47:41 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 10:47:45 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 10:47:45 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 11:08:41 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 11:08:41 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 11:09:02 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 11:09:02 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 11:22:35 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 11:22:35 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 11:23:08 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 11:23:08 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 11:25:02 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 11:25:03 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 11:26:48 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+12-06-2024 11:26:48 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+12-06-2024 11:26:49 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+12-06-2024 11:26:49 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 11:26:49 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 11:27:30 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 11:27:30 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 11:28:02 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 11:28:02 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 11:33:28 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 11:33:28 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 11:33:52 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 11:33:53 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 11:34:10 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 11:34:10 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 12:12:40 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 12:12:40 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 12:14:20 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 12:14:21 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 12:14:58 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 12:14:59 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 12:15:43 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 12:15:44 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 12:16:11 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 12:16:12 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 12:16:16 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 12:16:16 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 12:34:56 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+12-06-2024 12:34:56 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+12-06-2024 12:34:57 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+12-06-2024 12:34:57 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 12:34:57 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 12:36:41 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 12:36:42 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 12:37:05 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 12:37:06 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 14:00:47 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+12-06-2024 14:00:47 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+12-06-2024 14:00:48 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+12-06-2024 14:00:48 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:00:48 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 14:04:19 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:04:19 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 14:04:27 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:04:27 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 14:09:04 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:09:04 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 14:41:12 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:41:12 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 14:41:14 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:41:14 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+12-06-2024 14:43:41 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:43:42 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 14:43:43 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:43:43 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+12-06-2024 14:45:36 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:45:37 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 14:45:38 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:45:38 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+12-06-2024 14:49:56 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:49:56 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 14:49:57 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:49:58 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+12-06-2024 14:52:35 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:52:35 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 14:52:36 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:52:37 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+12-06-2024 14:56:34 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:56:35 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 14:56:36 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 14:56:36 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+12-06-2024 15:25:38 DEBUG: Calling CoUninitialize()
+12-06-2024 15:25:38 DEBUG: CoUninitialize() done.
+12-06-2024 15:26:13 DEBUG: Calling CoUninitialize()
+12-06-2024 15:26:13 DEBUG: CoUninitialize() done.
+12-06-2024 15:37:34 DEBUG: Calling CoUninitialize()
+12-06-2024 15:37:34 DEBUG: CoUninitialize() done.
+12-06-2024 16:12:55 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+12-06-2024 16:12:55 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+12-06-2024 16:12:55 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+12-06-2024 16:12:55 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:12:55 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+12-06-2024 16:13:03 INFO: login: RFID 1514075799 DETAIL {'usernameTH': 'ณัฐพล', 'role': 'Admin'}
+12-06-2024 16:13:04 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:13:04 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 16:13:09 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:13:09 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 16:16:28 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:16:28 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+12-06-2024 16:27:51 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:27:51 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+12-06-2024 16:27:58 INFO: login: RFID 1514075799 DETAIL {'usernameTH': 'ณัฐพล', 'role': 'Admin'}
+12-06-2024 16:27:59 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:28:00 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 16:28:12 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:28:13 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 16:28:18 WARNING: Clear settings data by ณัฐพล
+12-06-2024 16:28:22 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:28:22 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 16:28:29 WARNING: Clear settings data by ณัฐพล
+12-06-2024 16:28:34 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:28:34 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 16:32:14 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:32:14 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 16:38:27 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:38:28 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+12-06-2024 16:38:50 INFO: login: RFID 1514075799 DETAIL {'usernameTH': 'ณัฐพล', 'role': 'Admin'}
+12-06-2024 16:38:51 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:38:51 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 16:38:55 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:38:56 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 16:39:40 WARNING: Clear settings data by ณัฐพล
+12-06-2024 16:46:21 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:46:21 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+12-06-2024 16:46:29 INFO: login: RFID 1514075799 DETAIL {'usernameTH': 'ณัฐพล', 'role': 'Admin'}
+12-06-2024 16:46:30 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:46:30 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+12-06-2024 16:46:33 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:46:33 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 16:47:21 WARNING: Clear settings data by ณัฐพล
+12-06-2024 16:47:26 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:47:26 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 16:47:29 INFO: file_cache is only supported with oauth2client<4.0.0
+12-06-2024 16:47:29 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+12-06-2024 16:47:33 WARNING: Clear settings data by ณัฐพล
