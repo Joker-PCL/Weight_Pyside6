@@ -52,5 +52,23 @@
         "meanWeightRegMax": "XXXXX",
         "prepared": "XXXXX",
         "approved": "XXXXX"
+    },
+    "T06": {
+        "productName": "ANTAFIT",
+        "lot": "XXXXX",
+        "balanceID": "XXXXX",
+        "tabletID": "XXXXX",
+        "numberPunches": "XXXXX",
+        "numberTablets": "XXXXX",
+        "meanWeight": "XXXXX",
+        "percentWeightVariation": "XXXXX",
+        "meanWeightAvgMin": "XXXXX",
+        "meanWeightAvgMax": "XXXXX",
+        "meanWeightInhouseMin": "XXXXX",
+        "meanWeightInhouseMax": "XXXXX",
+        "meanWeightRegMin": "XXXXX",
+        "meanWeightRegMax": "XXXXX",
+        "prepared": "XXXXX",
+        "approved": "XXXXX"
     }
 }

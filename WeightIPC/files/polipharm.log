@@ -523,3 +523,12 @@
 12-06-2024 16:47:29 INFO: file_cache is only supported with oauth2client<4.0.0
 12-06-2024 16:47:29 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
 12-06-2024 16:47:33 WARNING: Clear settings data by ณัฐพล
+13-06-2024 06:43:53 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+13-06-2024 06:43:53 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+13-06-2024 06:43:54 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+13-06-2024 06:43:54 INFO: file_cache is only supported with oauth2client<4.0.0
+13-06-2024 06:43:54 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+13-06-2024 06:55:37 INFO: file_cache is only supported with oauth2client<4.0.0
+13-06-2024 06:55:37 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+13-06-2024 07:05:04 DEBUG: Calling CoUninitialize()
+13-06-2024 07:05:04 DEBUG: CoUninitialize() done.

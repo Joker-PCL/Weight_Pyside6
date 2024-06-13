@@ -15,12 +15,15 @@
     ** convert ui_weight.py flie to UTF-8 before
 
     - cd my_project
+
+    ** run powershell with admin
+        - Set-ExecutionPolicy RemoteSigned
     ** windows
-        - python -m venv env
-        - env\Scripts\activate
+        - python -m venv .env
+        - .env\Scripts\activate
     ** linux
-        - python3 -m venv env
-        - source env/bin/activate
+        - python3 -m venv .env
+        - source .env/bin/activate
 
 <!-- ########### Libraries ########### -->
     ** pyside6
