@@ -8,6 +8,7 @@ import time
 
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import QThread, Signal
+from ui_weight_10inch import Ui_MainWindow
 
 
 class GetWiFi(QThread):
@@ -98,7 +99,7 @@ class GetWiFi(QThread):
 class WiFi(QThread):
     """การเชื่อมต่อไวไฟ"""
 
-    def __init__(self, window, os_name="Windows"):
+    def __init__(self, window: Ui_MainWindow, os_name="Windows"):
         super().__init__()
         self.signalWidget1 = window.wifi_signal
         self.signalWidget2 = window.wifi_signal_2

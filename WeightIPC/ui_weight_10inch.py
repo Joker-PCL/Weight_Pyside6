@@ -21,12 +21,14 @@ from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QGroupBox,
     QVBoxLayout, QWidget)
 import resource_rc
 import resource_rc
+import resource_rc
+import resource_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1280, 800)
+        MainWindow.resize(1276, 792)
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         MainWindow.setStyleSheet(u"background-color: rgb(38, 38, 38);")
         self.centralwidget = QWidget(MainWindow)
@@ -55,8 +57,8 @@ class Ui_MainWindow(object):
         self.frame_28.setObjectName(u"frame_28")
         self.frame_28.setEnabled(True)
         self.frame_28.setMinimumSize(QSize(0, 0))
-        self.frame_28.setFrameShape(QFrame.StyledPanel)
-        self.frame_28.setFrameShadow(QFrame.Raised)
+        self.frame_28.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_28.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_6 = QHBoxLayout(self.frame_28)
         self.horizontalLayout_6.setSpacing(0)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
@@ -93,7 +95,7 @@ class Ui_MainWindow(object):
         font1.setBold(True)
         self.title.setFont(font1)
         self.title.setStyleSheet(u"")
-        self.title.setAlignment(Qt.AlignCenter)
+        self.title.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout.addWidget(self.title)
 
@@ -109,7 +111,7 @@ class Ui_MainWindow(object):
         font2.setPointSize(26)
         font2.setBold(True)
         self.current_tabletID.setFont(font2)
-        self.current_tabletID.setAlignment(Qt.AlignCenter)
+        self.current_tabletID.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout.addWidget(self.current_tabletID)
 
@@ -130,7 +132,7 @@ class Ui_MainWindow(object):
         font3 = QFont()
         font3.setPointSize(11)
         self.datetime_group_2.setFont(font3)
-        self.datetime_group_2.setAlignment(Qt.AlignCenter)
+        self.datetime_group_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.datetime_group = QVBoxLayout(self.datetime_group_2)
         self.datetime_group.setSpacing(0)
         self.datetime_group.setObjectName(u"datetime_group")
@@ -143,7 +145,7 @@ class Ui_MainWindow(object):
         font4.setPointSize(16)
         font4.setBold(False)
         self.time_bar.setFont(font4)
-        self.time_bar.setAlignment(Qt.AlignCenter)
+        self.time_bar.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.datetime_group.addWidget(self.time_bar)
 
@@ -151,7 +153,7 @@ class Ui_MainWindow(object):
         self.date_bar.setObjectName(u"date_bar")
         self.date_bar.setMaximumSize(QSize(140, 16))
         self.date_bar.setFont(font4)
-        self.date_bar.setAlignment(Qt.AlignCenter)
+        self.date_bar.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.datetime_group.addWidget(self.date_bar)
 
@@ -163,7 +165,7 @@ class Ui_MainWindow(object):
 
         self.stackedWidget = QStackedWidget(self.screen_page)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.stackedWidget.setLayoutDirection(Qt.LeftToRight)
+        self.stackedWidget.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.stackedWidget.setStyleSheet(u"QWidget {\n"
 "	background-color: rgb(255, 255, 255);\n"
 "	color: rgb(255, 255, 255);\n"
@@ -186,22 +188,22 @@ class Ui_MainWindow(object):
         self.horizontalLayout_61.setContentsMargins(0, 0, 0, 0)
         self.process_main_frame = QFrame(self.process_page)
         self.process_main_frame.setObjectName(u"process_main_frame")
-        self.process_main_frame.setFrameShape(QFrame.StyledPanel)
-        self.process_main_frame.setFrameShadow(QFrame.Raised)
+        self.process_main_frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.process_main_frame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_33 = QVBoxLayout(self.process_main_frame)
         self.verticalLayout_33.setObjectName(u"verticalLayout_33")
         self.verticalLayout_33.setContentsMargins(0, 0, 0, 0)
         self.process_frame = QFrame(self.process_main_frame)
         self.process_frame.setObjectName(u"process_frame")
-        self.process_frame.setFrameShape(QFrame.StyledPanel)
-        self.process_frame.setFrameShadow(QFrame.Raised)
+        self.process_frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.process_frame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_32 = QVBoxLayout(self.process_frame)
         self.verticalLayout_32.setObjectName(u"verticalLayout_32")
         self.process_img_frame = QFrame(self.process_frame)
         self.process_img_frame.setObjectName(u"process_img_frame")
         self.process_img_frame.setMaximumSize(QSize(16777215, 450))
-        self.process_img_frame.setFrameShape(QFrame.StyledPanel)
-        self.process_img_frame.setFrameShadow(QFrame.Raised)
+        self.process_img_frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.process_img_frame.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_62 = QHBoxLayout(self.process_img_frame)
         self.horizontalLayout_62.setSpacing(0)
         self.horizontalLayout_62.setObjectName(u"horizontalLayout_62")
@@ -216,7 +218,7 @@ class Ui_MainWindow(object):
         self.process_img.setMaximumSize(QSize(400, 400))
         self.process_img.setPixmap(QPixmap(u":/assets/gif/connecting.gif"))
         self.process_img.setScaledContents(True)
-        self.process_img.setAlignment(Qt.AlignCenter)
+        self.process_img.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_62.addWidget(self.process_img)
 
@@ -236,10 +238,10 @@ class Ui_MainWindow(object):
         font5.setPointSize(35)
         self.process_label_line_1.setFont(font5)
         self.process_label_line_1.setStyleSheet(u"color: rgb(128, 128, 128);")
-        self.process_label_line_1.setFrameShape(QFrame.NoFrame)
-        self.process_label_line_1.setFrameShadow(QFrame.Plain)
+        self.process_label_line_1.setFrameShape(QFrame.Shape.NoFrame)
+        self.process_label_line_1.setFrameShadow(QFrame.Shadow.Plain)
         self.process_label_line_1.setLineWidth(1)
-        self.process_label_line_1.setAlignment(Qt.AlignCenter)
+        self.process_label_line_1.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_32.addWidget(self.process_label_line_1)
 
@@ -252,10 +254,10 @@ class Ui_MainWindow(object):
         font6.setPointSize(25)
         self.process_label_line_2.setFont(font6)
         self.process_label_line_2.setStyleSheet(u"color: rgb(128, 128, 128);")
-        self.process_label_line_2.setFrameShape(QFrame.NoFrame)
-        self.process_label_line_2.setFrameShadow(QFrame.Plain)
+        self.process_label_line_2.setFrameShape(QFrame.Shape.NoFrame)
+        self.process_label_line_2.setFrameShadow(QFrame.Shadow.Plain)
         self.process_label_line_2.setLineWidth(1)
-        self.process_label_line_2.setAlignment(Qt.AlignCenter)
+        self.process_label_line_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_32.addWidget(self.process_label_line_2)
 
@@ -265,10 +267,10 @@ class Ui_MainWindow(object):
         self.process_label_line_3.setMaximumSize(QSize(16777215, 35))
         self.process_label_line_3.setFont(font6)
         self.process_label_line_3.setStyleSheet(u"color: rgb(128, 128, 128);")
-        self.process_label_line_3.setFrameShape(QFrame.NoFrame)
-        self.process_label_line_3.setFrameShadow(QFrame.Plain)
+        self.process_label_line_3.setFrameShape(QFrame.Shape.NoFrame)
+        self.process_label_line_3.setFrameShadow(QFrame.Shadow.Plain)
         self.process_label_line_3.setLineWidth(1)
-        self.process_label_line_3.setAlignment(Qt.AlignCenter)
+        self.process_label_line_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_32.addWidget(self.process_label_line_3)
 
@@ -281,10 +283,10 @@ class Ui_MainWindow(object):
         font7.setPointSize(20)
         self.process_label_line_4.setFont(font7)
         self.process_label_line_4.setStyleSheet(u"color: rgb(128, 128, 128);")
-        self.process_label_line_4.setFrameShape(QFrame.NoFrame)
-        self.process_label_line_4.setFrameShadow(QFrame.Plain)
+        self.process_label_line_4.setFrameShape(QFrame.Shape.NoFrame)
+        self.process_label_line_4.setFrameShadow(QFrame.Shadow.Plain)
         self.process_label_line_4.setLineWidth(1)
-        self.process_label_line_4.setAlignment(Qt.AlignCenter)
+        self.process_label_line_4.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_32.addWidget(self.process_label_line_4)
 
@@ -311,8 +313,8 @@ class Ui_MainWindow(object):
         self.login_title = QFrame(self.login_frame)
         self.login_title.setObjectName(u"login_title")
         self.login_title.setMaximumSize(QSize(16777215, 80))
-        self.login_title.setFrameShape(QFrame.StyledPanel)
-        self.login_title.setFrameShadow(QFrame.Raised)
+        self.login_title.setFrameShape(QFrame.Shape.StyledPanel)
+        self.login_title.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_8 = QHBoxLayout(self.login_title)
         self.horizontalLayout_8.setSpacing(0)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
@@ -326,7 +328,7 @@ class Ui_MainWindow(object):
         self.rfid_alert.setFont(font8)
         self.rfid_alert.setStyleSheet(u"background-color: rgb(52, 157, 77);\n"
 "border-radius: 15px;")
-        self.rfid_alert.setAlignment(Qt.AlignCenter)
+        self.rfid_alert.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_8.addWidget(self.rfid_alert)
 
@@ -343,7 +345,7 @@ class Ui_MainWindow(object):
         self.scale_img.setMaximumSize(QSize(450, 450))
         self.scale_img.setPixmap(QPixmap(u":/assets/images/scale.png"))
         self.scale_img.setScaledContents(True)
-        self.scale_img.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.scale_img.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_5.addWidget(self.scale_img)
 
@@ -371,7 +373,7 @@ class Ui_MainWindow(object):
 "	border-width: 3px;\n"
 "	border-radius: 8px;\n"
 "}")
-        self.rfid.setAlignment(Qt.AlignCenter)
+        self.rfid.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_4.addWidget(self.rfid)
 
@@ -411,7 +413,7 @@ class Ui_MainWindow(object):
 "border-radius: 15px;\n"
 "padding-top: 8px;\n"
 "padding-bottom: 8px;")
-        self.machine_title.setAlignment(Qt.AlignCenter)
+        self.machine_title.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_11.addWidget(self.machine_title)
 
@@ -428,12 +430,12 @@ class Ui_MainWindow(object):
 "	padding-left: 10px;\n"
 "	padding-right: 10px;\n"
 "}")
-        self.scrollArea_2.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.scrollArea_2.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.scrollArea_2.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.scrollArea_2.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.scrollArea_2.setWidgetResizable(True)
         self.machineScrollAreaWidget = QWidget()
         self.machineScrollAreaWidget.setObjectName(u"machineScrollAreaWidget")
-        self.machineScrollAreaWidget.setGeometry(QRect(0, 0, 799, 484))
+        self.machineScrollAreaWidget.setGeometry(QRect(0, 0, 60, 16))
         self.scrollArea_2.setWidget(self.machineScrollAreaWidget)
 
         self.verticalLayout_13.addWidget(self.scrollArea_2)
@@ -470,263 +472,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.addWidget(self.machine_main_group)
 
         self.stackedWidget.addWidget(self.machine_page)
-        self.numberTablets_page = QWidget()
-        self.numberTablets_page.setObjectName(u"numberTablets_page")
-        self.verticalLayout_34 = QVBoxLayout(self.numberTablets_page)
-        self.verticalLayout_34.setSpacing(0)
-        self.verticalLayout_34.setObjectName(u"verticalLayout_34")
-        self.verticalLayout_34.setContentsMargins(0, 0, 0, 0)
-        self.widget_2 = QWidget(self.numberTablets_page)
-        self.widget_2.setObjectName(u"widget_2")
-        self.verticalLayout_35 = QVBoxLayout(self.widget_2)
-        self.verticalLayout_35.setObjectName(u"verticalLayout_35")
-        self.verticalLayout_35.setContentsMargins(0, 0, 0, 0)
-        self.frame_4 = QFrame(self.widget_2)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setMinimumSize(QSize(0, 300))
-        self.frame_4.setFrameShape(QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.frame_4)
-        self.verticalLayout_3.setSpacing(0)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.numberTablets_title_groupBox_2 = QGroupBox(self.frame_4)
-        self.numberTablets_title_groupBox_2.setObjectName(u"numberTablets_title_groupBox_2")
-        self.numberTablets_title_groupBox_2.setMaximumSize(QSize(16777215, 80))
-        self.horizontalLayout_60 = QHBoxLayout(self.numberTablets_title_groupBox_2)
-        self.horizontalLayout_60.setObjectName(u"horizontalLayout_60")
-        self.horizontalLayout_60.setContentsMargins(30, 10, 30, 0)
-        self.numberTablets_input_title = QLabel(self.numberTablets_title_groupBox_2)
-        self.numberTablets_input_title.setObjectName(u"numberTablets_input_title")
-        self.numberTablets_input_title.setMaximumSize(QSize(16777215, 65))
-        self.numberTablets_input_title.setFont(font8)
-        self.numberTablets_input_title.setStyleSheet(u"background-color: rgb(52, 157, 77);\n"
-"border-radius: 15px;")
-        self.numberTablets_input_title.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_60.addWidget(self.numberTablets_input_title)
-
-
-        self.verticalLayout_3.addWidget(self.numberTablets_title_groupBox_2)
-
-        self.frame_9 = QFrame(self.frame_4)
-        self.frame_9.setObjectName(u"frame_9")
-        self.frame_9.setFrameShape(QFrame.StyledPanel)
-        self.frame_9.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_38 = QVBoxLayout(self.frame_9)
-        self.verticalLayout_38.setSpacing(0)
-        self.verticalLayout_38.setObjectName(u"verticalLayout_38")
-        self.verticalLayout_38.setContentsMargins(-1, -1, -1, 20)
-        self.numberTablets_val_input = QLabel(self.frame_9)
-        self.numberTablets_val_input.setObjectName(u"numberTablets_val_input")
-        font10 = QFont()
-        font10.setFamilies([u"Kanit"])
-        font10.setPointSize(80)
-        font10.setBold(True)
-        self.numberTablets_val_input.setFont(font10)
-        self.numberTablets_val_input.setStyleSheet(u"color: rgb(100, 100, 100);\n"
-"border: none;")
-        self.numberTablets_val_input.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_38.addWidget(self.numberTablets_val_input)
-
-
-        self.verticalLayout_3.addWidget(self.frame_9)
-
-        self.frame_5 = QFrame(self.frame_4)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setMinimumSize(QSize(0, 250))
-        self.frame_5.setMaximumSize(QSize(16777215, 270))
-        self.frame_5.setStyleSheet(u"")
-        self.frame_5.setFrameShape(QFrame.StyledPanel)
-        self.frame_5.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_63 = QHBoxLayout(self.frame_5)
-        self.horizontalLayout_63.setSpacing(0)
-        self.horizontalLayout_63.setObjectName(u"horizontalLayout_63")
-        self.horizontalLayout_63.setContentsMargins(0, 0, 0, 0)
-        self.frame_6 = QFrame(self.frame_5)
-        self.frame_6.setObjectName(u"frame_6")
-        palette = QPalette()
-        brush = QBrush(QColor(255, 255, 255, 255))
-        brush.setStyle(Qt.SolidPattern)
-        palette.setBrush(QPalette.Active, QPalette.WindowText, brush)
-        palette.setBrush(QPalette.Active, QPalette.Button, brush)
-        palette.setBrush(QPalette.Active, QPalette.Text, brush)
-        palette.setBrush(QPalette.Active, QPalette.ButtonText, brush)
-        palette.setBrush(QPalette.Active, QPalette.Base, brush)
-        palette.setBrush(QPalette.Active, QPalette.Window, brush)
-        brush1 = QBrush(QColor(255, 255, 255, 128))
-        brush1.setStyle(Qt.SolidPattern)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette.Active, QPalette.PlaceholderText, brush1)
-#endif
-        palette.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
-        palette.setBrush(QPalette.Inactive, QPalette.Button, brush)
-        palette.setBrush(QPalette.Inactive, QPalette.Text, brush)
-        palette.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
-        palette.setBrush(QPalette.Inactive, QPalette.Base, brush)
-        palette.setBrush(QPalette.Inactive, QPalette.Window, brush)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush1)
-#endif
-        palette.setBrush(QPalette.Disabled, QPalette.WindowText, brush)
-        palette.setBrush(QPalette.Disabled, QPalette.Button, brush)
-        palette.setBrush(QPalette.Disabled, QPalette.Text, brush)
-        palette.setBrush(QPalette.Disabled, QPalette.ButtonText, brush)
-        palette.setBrush(QPalette.Disabled, QPalette.Base, brush)
-        palette.setBrush(QPalette.Disabled, QPalette.Window, brush)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush1)
-#endif
-        self.frame_6.setPalette(palette)
-        self.frame_6.setStyleSheet(u"QPushButton {\n"
-" 	font-size: 35px;\n"
-"	width: 90px;\n"
-"	height: 70px;\n"
-"	background-color: rgb(50, 50, 50);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    font-size: 45px;\n"
-"	background-color: rgb(100, 100, 100);\n"
-"}")
-        self.frame_6.setFrameShadow(QFrame.Plain)
-        self.frame_6.setLineWidth(3)
-        self.gridLayout_2 = QGridLayout(self.frame_6)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.key_1 = QPushButton(self.frame_6)
-        self.key_1.setObjectName(u"key_1")
-        font11 = QFont()
-        font11.setFamilies([u"Kanit"])
-        font11.setWeight(QFont.Medium)
-        self.key_1.setFont(font11)
-
-        self.gridLayout_2.addWidget(self.key_1, 0, 0, 1, 1)
-
-        self.key_2 = QPushButton(self.frame_6)
-        self.key_2.setObjectName(u"key_2")
-        self.key_2.setFont(font11)
-
-        self.gridLayout_2.addWidget(self.key_2, 0, 1, 1, 1)
-
-        self.key_3 = QPushButton(self.frame_6)
-        self.key_3.setObjectName(u"key_3")
-        self.key_3.setFont(font11)
-
-        self.gridLayout_2.addWidget(self.key_3, 0, 2, 1, 1)
-
-        self.key_4 = QPushButton(self.frame_6)
-        self.key_4.setObjectName(u"key_4")
-        self.key_4.setFont(font11)
-
-        self.gridLayout_2.addWidget(self.key_4, 1, 0, 1, 1)
-
-        self.key_5 = QPushButton(self.frame_6)
-        self.key_5.setObjectName(u"key_5")
-        self.key_5.setFont(font11)
-
-        self.gridLayout_2.addWidget(self.key_5, 1, 1, 1, 1)
-
-        self.key_6 = QPushButton(self.frame_6)
-        self.key_6.setObjectName(u"key_6")
-        self.key_6.setFont(font11)
-
-        self.gridLayout_2.addWidget(self.key_6, 1, 2, 1, 1)
-
-        self.key_7 = QPushButton(self.frame_6)
-        self.key_7.setObjectName(u"key_7")
-        self.key_7.setFont(font11)
-
-        self.gridLayout_2.addWidget(self.key_7, 2, 0, 1, 1)
-
-        self.key_8 = QPushButton(self.frame_6)
-        self.key_8.setObjectName(u"key_8")
-        self.key_8.setFont(font11)
-
-        self.gridLayout_2.addWidget(self.key_8, 2, 1, 1, 1)
-
-        self.key_9 = QPushButton(self.frame_6)
-        self.key_9.setObjectName(u"key_9")
-        self.key_9.setFont(font11)
-
-        self.gridLayout_2.addWidget(self.key_9, 2, 2, 1, 1)
-
-        self.key_backspace = QPushButton(self.frame_6)
-        self.key_backspace.setObjectName(u"key_backspace")
-        self.key_backspace.setMinimumSize(QSize(0, 0))
-        self.key_backspace.setMaximumSize(QSize(16777215, 150))
-        font12 = QFont()
-        self.key_backspace.setFont(font12)
-        icon2 = QIcon()
-        icon2.addFile(u":/assets/keyboard/backspace.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.key_backspace.setIcon(icon2)
-        self.key_backspace.setIconSize(QSize(30, 30))
-
-        self.gridLayout_2.addWidget(self.key_backspace, 3, 2, 1, 1)
-
-        self.key_0 = QPushButton(self.frame_6)
-        self.key_0.setObjectName(u"key_0")
-        self.key_0.setMinimumSize(QSize(0, 0))
-        self.key_0.setMaximumSize(QSize(16777215, 150))
-        self.key_0.setFont(font11)
-
-        self.gridLayout_2.addWidget(self.key_0, 3, 0, 1, 2)
-
-
-        self.horizontalLayout_63.addWidget(self.frame_6)
-
-        self.frame_8 = QFrame(self.frame_5)
-        self.frame_8.setObjectName(u"frame_8")
-        self.frame_8.setStyleSheet(u"QPushButton {\n"
-"	font-size: 40px;\n"
-"	background-color: rgb(50, 50, 50);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QPushButton:pressed {\n"
-"	background-color: rgb(100, 100, 100);\n"
-"}")
-        self.frame_8.setFrameShape(QFrame.StyledPanel)
-        self.frame_8.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_36 = QVBoxLayout(self.frame_8)
-        self.verticalLayout_36.setSpacing(6)
-        self.verticalLayout_36.setObjectName(u"verticalLayout_36")
-        self.numberTablets_img = QLabel(self.frame_8)
-        self.numberTablets_img.setObjectName(u"numberTablets_img")
-        self.numberTablets_img.setPixmap(QPixmap(u":/assets/icon/thickness.png"))
-        self.numberTablets_img.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_36.addWidget(self.numberTablets_img)
-
-        self.key_enter = QPushButton(self.frame_8)
-        self.key_enter.setObjectName(u"key_enter")
-        self.key_enter.setMinimumSize(QSize(0, 52))
-        font13 = QFont()
-        font13.setFamilies([u"Kanit"])
-        font13.setWeight(QFont.Medium)
-        font13.setItalic(False)
-        self.key_enter.setFont(font13)
-        self.key_enter.setStyleSheet(u"")
-        icon3 = QIcon()
-        icon3.addFile(u":/assets/keyboard/enter.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.key_enter.setIcon(icon3)
-        self.key_enter.setIconSize(QSize(30, 30))
-
-        self.verticalLayout_36.addWidget(self.key_enter)
-
-
-        self.horizontalLayout_63.addWidget(self.frame_8)
-
-
-        self.verticalLayout_3.addWidget(self.frame_5)
-
-
-        self.verticalLayout_35.addWidget(self.frame_4)
-
-
-        self.verticalLayout_34.addWidget(self.widget_2)
-
-        self.stackedWidget.addWidget(self.numberTablets_page)
         self.weighing_settings_page = QWidget()
         self.weighing_settings_page.setObjectName(u"weighing_settings_page")
         self.verticalLayout_11 = QVBoxLayout(self.weighing_settings_page)
@@ -735,8 +480,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.frame = QFrame(self.weighing_settings_page)
         self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
+        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_37 = QVBoxLayout(self.frame)
         self.verticalLayout_37.setSpacing(0)
         self.verticalLayout_37.setObjectName(u"verticalLayout_37")
@@ -748,8 +493,8 @@ class Ui_MainWindow(object):
         self.frame_11.setStyleSheet(u"QPushButton {\n"
 "	border-radius: 10px;\n"
 "}")
-        self.frame_11.setFrameShape(QFrame.StyledPanel)
-        self.frame_11.setFrameShadow(QFrame.Raised)
+        self.frame_11.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_11.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_13 = QHBoxLayout(self.frame_11)
         self.horizontalLayout_13.setSpacing(10)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
@@ -758,11 +503,11 @@ class Ui_MainWindow(object):
         self.update_settings.setObjectName(u"update_settings")
         self.update_settings.setMinimumSize(QSize(0, 60))
         self.update_settings.setMaximumSize(QSize(350, 16777215))
-        font14 = QFont()
-        font14.setFamilies([u"Kanit"])
-        font14.setPointSize(24)
-        font14.setBold(True)
-        self.update_settings.setFont(font14)
+        font10 = QFont()
+        font10.setFamilies([u"Kanit"])
+        font10.setPointSize(24)
+        font10.setBold(True)
+        self.update_settings.setFont(font10)
         self.update_settings.setStyleSheet(u"background-color: rgb(0, 170, 127);\n"
 "")
 
@@ -772,7 +517,7 @@ class Ui_MainWindow(object):
         self.clear_settings.setObjectName(u"clear_settings")
         self.clear_settings.setMinimumSize(QSize(0, 60))
         self.clear_settings.setMaximumSize(QSize(350, 16777215))
-        self.clear_settings.setFont(font14)
+        self.clear_settings.setFont(font10)
         self.clear_settings.setStyleSheet(u"background-color: rgb(255, 0, 0);\n"
 "")
 
@@ -782,7 +527,7 @@ class Ui_MainWindow(object):
         self.start_weighing.setObjectName(u"start_weighing")
         self.start_weighing.setMinimumSize(QSize(0, 60))
         self.start_weighing.setMaximumSize(QSize(350, 16777215))
-        self.start_weighing.setFont(font14)
+        self.start_weighing.setFont(font10)
         self.start_weighing.setStyleSheet(u"background-color: rgb(170, 170, 255);\n"
 "")
 
@@ -806,8 +551,8 @@ class Ui_MainWindow(object):
 "	border: none;\n"
 "	margin: 0;\n"
 "}")
-        self.weighingSettings_Frame.setFrameShape(QFrame.StyledPanel)
-        self.weighingSettings_Frame.setFrameShadow(QFrame.Raised)
+        self.weighingSettings_Frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.weighingSettings_Frame.setFrameShadow(QFrame.Shadow.Raised)
         self.Productname_Label = QLabel(self.weighingSettings_Frame)
         self.Productname_Label.setObjectName(u"Productname_Label")
         self.Productname_Label.setGeometry(QRect(50, 50, 61, 41))
@@ -912,6 +657,263 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.addWidget(self.frame)
 
         self.stackedWidget.addWidget(self.weighing_settings_page)
+        self.numberTablets_page = QWidget()
+        self.numberTablets_page.setObjectName(u"numberTablets_page")
+        self.verticalLayout_34 = QVBoxLayout(self.numberTablets_page)
+        self.verticalLayout_34.setSpacing(0)
+        self.verticalLayout_34.setObjectName(u"verticalLayout_34")
+        self.verticalLayout_34.setContentsMargins(0, 0, 0, 0)
+        self.widget_2 = QWidget(self.numberTablets_page)
+        self.widget_2.setObjectName(u"widget_2")
+        self.verticalLayout_35 = QVBoxLayout(self.widget_2)
+        self.verticalLayout_35.setObjectName(u"verticalLayout_35")
+        self.verticalLayout_35.setContentsMargins(0, 0, 0, 0)
+        self.frame_4 = QFrame(self.widget_2)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setMinimumSize(QSize(0, 300))
+        self.frame_4.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.numberTablets_title_groupBox_2 = QGroupBox(self.frame_4)
+        self.numberTablets_title_groupBox_2.setObjectName(u"numberTablets_title_groupBox_2")
+        self.numberTablets_title_groupBox_2.setMaximumSize(QSize(16777215, 80))
+        self.horizontalLayout_60 = QHBoxLayout(self.numberTablets_title_groupBox_2)
+        self.horizontalLayout_60.setObjectName(u"horizontalLayout_60")
+        self.horizontalLayout_60.setContentsMargins(30, 10, 30, 0)
+        self.numberTablets_input_title = QLabel(self.numberTablets_title_groupBox_2)
+        self.numberTablets_input_title.setObjectName(u"numberTablets_input_title")
+        self.numberTablets_input_title.setMaximumSize(QSize(16777215, 65))
+        self.numberTablets_input_title.setFont(font8)
+        self.numberTablets_input_title.setStyleSheet(u"background-color: rgb(52, 157, 77);\n"
+"border-radius: 15px;")
+        self.numberTablets_input_title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_60.addWidget(self.numberTablets_input_title)
+
+
+        self.verticalLayout_3.addWidget(self.numberTablets_title_groupBox_2)
+
+        self.frame_9 = QFrame(self.frame_4)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_38 = QVBoxLayout(self.frame_9)
+        self.verticalLayout_38.setSpacing(0)
+        self.verticalLayout_38.setObjectName(u"verticalLayout_38")
+        self.verticalLayout_38.setContentsMargins(-1, -1, -1, 20)
+        self.numberTablets_val_input = QLabel(self.frame_9)
+        self.numberTablets_val_input.setObjectName(u"numberTablets_val_input")
+        font11 = QFont()
+        font11.setFamilies([u"Kanit"])
+        font11.setPointSize(80)
+        font11.setBold(True)
+        self.numberTablets_val_input.setFont(font11)
+        self.numberTablets_val_input.setStyleSheet(u"color: rgb(100, 100, 100);\n"
+"border: none;")
+        self.numberTablets_val_input.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_38.addWidget(self.numberTablets_val_input)
+
+
+        self.verticalLayout_3.addWidget(self.frame_9)
+
+        self.frame_5 = QFrame(self.frame_4)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setMinimumSize(QSize(0, 250))
+        self.frame_5.setMaximumSize(QSize(16777215, 270))
+        self.frame_5.setStyleSheet(u"")
+        self.frame_5.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_63 = QHBoxLayout(self.frame_5)
+        self.horizontalLayout_63.setSpacing(0)
+        self.horizontalLayout_63.setObjectName(u"horizontalLayout_63")
+        self.horizontalLayout_63.setContentsMargins(0, 0, 0, 0)
+        self.frame_6 = QFrame(self.frame_5)
+        self.frame_6.setObjectName(u"frame_6")
+        palette = QPalette()
+        brush = QBrush(QColor(255, 255, 255, 255))
+        brush.setStyle(Qt.SolidPattern)
+        palette.setBrush(QPalette.Active, QPalette.WindowText, brush)
+        palette.setBrush(QPalette.Active, QPalette.Button, brush)
+        palette.setBrush(QPalette.Active, QPalette.Text, brush)
+        palette.setBrush(QPalette.Active, QPalette.ButtonText, brush)
+        palette.setBrush(QPalette.Active, QPalette.Base, brush)
+        palette.setBrush(QPalette.Active, QPalette.Window, brush)
+        brush1 = QBrush(QColor(255, 255, 255, 128))
+        brush1.setStyle(Qt.SolidPattern)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette.Active, QPalette.PlaceholderText, brush1)
+#endif
+        palette.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
+        palette.setBrush(QPalette.Inactive, QPalette.Button, brush)
+        palette.setBrush(QPalette.Inactive, QPalette.Text, brush)
+        palette.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
+        palette.setBrush(QPalette.Inactive, QPalette.Base, brush)
+        palette.setBrush(QPalette.Inactive, QPalette.Window, brush)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush1)
+#endif
+        palette.setBrush(QPalette.Disabled, QPalette.WindowText, brush)
+        palette.setBrush(QPalette.Disabled, QPalette.Button, brush)
+        palette.setBrush(QPalette.Disabled, QPalette.Text, brush)
+        palette.setBrush(QPalette.Disabled, QPalette.ButtonText, brush)
+        palette.setBrush(QPalette.Disabled, QPalette.Base, brush)
+        palette.setBrush(QPalette.Disabled, QPalette.Window, brush)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush1)
+#endif
+        self.frame_6.setPalette(palette)
+        self.frame_6.setStyleSheet(u"QPushButton {\n"
+" 	font-size: 35px;\n"
+"	width: 90px;\n"
+"	height: 70px;\n"
+"	background-color: rgb(50, 50, 50);\n"
+"	border-radius: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    font-size: 45px;\n"
+"	background-color: rgb(100, 100, 100);\n"
+"}")
+        self.frame_6.setFrameShadow(QFrame.Shadow.Plain)
+        self.frame_6.setLineWidth(3)
+        self.gridLayout_2 = QGridLayout(self.frame_6)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.key_1 = QPushButton(self.frame_6)
+        self.key_1.setObjectName(u"key_1")
+        font12 = QFont()
+        font12.setFamilies([u"Kanit"])
+        font12.setWeight(QFont.Medium)
+        self.key_1.setFont(font12)
+
+        self.gridLayout_2.addWidget(self.key_1, 0, 0, 1, 1)
+
+        self.key_2 = QPushButton(self.frame_6)
+        self.key_2.setObjectName(u"key_2")
+        self.key_2.setFont(font12)
+
+        self.gridLayout_2.addWidget(self.key_2, 0, 1, 1, 1)
+
+        self.key_3 = QPushButton(self.frame_6)
+        self.key_3.setObjectName(u"key_3")
+        self.key_3.setFont(font12)
+
+        self.gridLayout_2.addWidget(self.key_3, 0, 2, 1, 1)
+
+        self.key_4 = QPushButton(self.frame_6)
+        self.key_4.setObjectName(u"key_4")
+        self.key_4.setFont(font12)
+
+        self.gridLayout_2.addWidget(self.key_4, 1, 0, 1, 1)
+
+        self.key_5 = QPushButton(self.frame_6)
+        self.key_5.setObjectName(u"key_5")
+        self.key_5.setFont(font12)
+
+        self.gridLayout_2.addWidget(self.key_5, 1, 1, 1, 1)
+
+        self.key_6 = QPushButton(self.frame_6)
+        self.key_6.setObjectName(u"key_6")
+        self.key_6.setFont(font12)
+
+        self.gridLayout_2.addWidget(self.key_6, 1, 2, 1, 1)
+
+        self.key_7 = QPushButton(self.frame_6)
+        self.key_7.setObjectName(u"key_7")
+        self.key_7.setFont(font12)
+
+        self.gridLayout_2.addWidget(self.key_7, 2, 0, 1, 1)
+
+        self.key_8 = QPushButton(self.frame_6)
+        self.key_8.setObjectName(u"key_8")
+        self.key_8.setFont(font12)
+
+        self.gridLayout_2.addWidget(self.key_8, 2, 1, 1, 1)
+
+        self.key_9 = QPushButton(self.frame_6)
+        self.key_9.setObjectName(u"key_9")
+        self.key_9.setFont(font12)
+
+        self.gridLayout_2.addWidget(self.key_9, 2, 2, 1, 1)
+
+        self.key_backspace = QPushButton(self.frame_6)
+        self.key_backspace.setObjectName(u"key_backspace")
+        self.key_backspace.setMinimumSize(QSize(0, 0))
+        self.key_backspace.setMaximumSize(QSize(16777215, 150))
+        font13 = QFont()
+        self.key_backspace.setFont(font13)
+        icon2 = QIcon()
+        icon2.addFile(u":/assets/keyboard/backspace.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.key_backspace.setIcon(icon2)
+        self.key_backspace.setIconSize(QSize(30, 30))
+
+        self.gridLayout_2.addWidget(self.key_backspace, 3, 2, 1, 1)
+
+        self.key_0 = QPushButton(self.frame_6)
+        self.key_0.setObjectName(u"key_0")
+        self.key_0.setMinimumSize(QSize(0, 0))
+        self.key_0.setMaximumSize(QSize(16777215, 150))
+        self.key_0.setFont(font12)
+
+        self.gridLayout_2.addWidget(self.key_0, 3, 0, 1, 2)
+
+
+        self.horizontalLayout_63.addWidget(self.frame_6)
+
+        self.frame_8 = QFrame(self.frame_5)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setStyleSheet(u"QPushButton {\n"
+"	font-size: 40px;\n"
+"	background-color: rgb(50, 50, 50);\n"
+"	border-radius: 5px;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(100, 100, 100);\n"
+"}")
+        self.frame_8.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_36 = QVBoxLayout(self.frame_8)
+        self.verticalLayout_36.setSpacing(6)
+        self.verticalLayout_36.setObjectName(u"verticalLayout_36")
+        self.numberTablets_img = QLabel(self.frame_8)
+        self.numberTablets_img.setObjectName(u"numberTablets_img")
+        self.numberTablets_img.setPixmap(QPixmap(u":/assets/icon/thickness.png"))
+        self.numberTablets_img.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_36.addWidget(self.numberTablets_img)
+
+        self.key_enter = QPushButton(self.frame_8)
+        self.key_enter.setObjectName(u"key_enter")
+        self.key_enter.setMinimumSize(QSize(0, 52))
+        font14 = QFont()
+        font14.setFamilies([u"Kanit"])
+        font14.setWeight(QFont.Medium)
+        font14.setItalic(False)
+        self.key_enter.setFont(font14)
+        self.key_enter.setStyleSheet(u"")
+        icon3 = QIcon()
+        icon3.addFile(u":/assets/keyboard/enter.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.key_enter.setIcon(icon3)
+        self.key_enter.setIconSize(QSize(30, 30))
+
+        self.verticalLayout_36.addWidget(self.key_enter)
+
+
+        self.horizontalLayout_63.addWidget(self.frame_8)
+
+
+        self.verticalLayout_3.addWidget(self.frame_5)
+
+
+        self.verticalLayout_35.addWidget(self.frame_4)
+
+
+        self.verticalLayout_34.addWidget(self.widget_2)
+
+        self.stackedWidget.addWidget(self.numberTablets_page)
         self.characteristics_page = QWidget()
         self.characteristics_page.setObjectName(u"characteristics_page")
         self.verticalLayout_14 = QVBoxLayout(self.characteristics_page)
@@ -921,8 +923,8 @@ class Ui_MainWindow(object):
         self.thickness_frame_2 = QFrame(self.characteristics_page)
         self.thickness_frame_2.setObjectName(u"thickness_frame_2")
         self.thickness_frame_2.setMaximumSize(QSize(16777215, 80))
-        self.thickness_frame_2.setFrameShape(QFrame.StyledPanel)
-        self.thickness_frame_2.setFrameShadow(QFrame.Raised)
+        self.thickness_frame_2.setFrameShape(QFrame.Shape.StyledPanel)
+        self.thickness_frame_2.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_33 = QHBoxLayout(self.thickness_frame_2)
         self.horizontalLayout_33.setObjectName(u"horizontalLayout_33")
         self.horizontalLayout_33.setContentsMargins(30, -1, 30, -1)
@@ -932,7 +934,7 @@ class Ui_MainWindow(object):
         self.thickness_title_2.setFont(font8)
         self.thickness_title_2.setStyleSheet(u"background-color: rgb(52, 157, 77);\n"
 "border-radius: 15px;")
-        self.thickness_title_2.setAlignment(Qt.AlignCenter)
+        self.thickness_title_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_33.addWidget(self.thickness_title_2)
 
@@ -953,8 +955,8 @@ class Ui_MainWindow(object):
 "	margin-top: 25px;\n"
 "	border-radius: 15px;\n"
 "}")
-        self.characteristics_frame.setFrameShape(QFrame.StyledPanel)
-        self.characteristics_frame.setFrameShadow(QFrame.Raised)
+        self.characteristics_frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.characteristics_frame.setFrameShadow(QFrame.Shadow.Raised)
         self.gridLayout_4 = QGridLayout(self.characteristics_frame)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setHorizontalSpacing(20)
@@ -1013,7 +1015,7 @@ class Ui_MainWindow(object):
         self.tablet_front_label.setFont(font15)
         self.tablet_front_label.setStyleSheet(u"border: none;\n"
 "color: rgb(80, 80, 80);")
-        self.tablet_front_label.setAlignment(Qt.AlignCenter)
+        self.tablet_front_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.gridLayout_4.addWidget(self.tablet_front_label, 0, 0, 1, 1)
 
@@ -1023,7 +1025,7 @@ class Ui_MainWindow(object):
         self.tablet_behind_label.setFont(font15)
         self.tablet_behind_label.setStyleSheet(u"border: none;\n"
 "color: rgb(80, 80, 80);")
-        self.tablet_behind_label.setAlignment(Qt.AlignCenter)
+        self.tablet_behind_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.gridLayout_4.addWidget(self.tablet_behind_label, 0, 1, 1, 1)
 
@@ -1040,165 +1042,165 @@ class Ui_MainWindow(object):
         self.verticalLayout_27.setSpacing(0)
         self.verticalLayout_27.setObjectName(u"verticalLayout_27")
         self.verticalLayout_27.setContentsMargins(0, 0, 0, 0)
-        self.weight_summary_main_group = QGroupBox(self.weighing_page)
-        self.weight_summary_main_group.setObjectName(u"weight_summary_main_group")
-        self.weight_summary_main_group.setMinimumSize(QSize(0, 320))
-        self.weight_summary_main_group.setMaximumSize(QSize(16777215, 320))
-        self.verticalLayout_9 = QVBoxLayout(self.weight_summary_main_group)
+        self.weighing_main_group_1 = QGroupBox(self.weighing_page)
+        self.weighing_main_group_1.setObjectName(u"weighing_main_group_1")
+        self.weighing_main_group_1.setMinimumSize(QSize(0, 320))
+        self.weighing_main_group_1.setMaximumSize(QSize(16777215, 320))
+        self.verticalLayout_9 = QVBoxLayout(self.weighing_main_group_1)
         self.verticalLayout_9.setSpacing(15)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.verticalLayout_9.setContentsMargins(20, -1, 20, -1)
-        self.weight_summary_title_frame = QFrame(self.weight_summary_main_group)
-        self.weight_summary_title_frame.setObjectName(u"weight_summary_title_frame")
-        self.weight_summary_title_frame.setMaximumSize(QSize(16777215, 65))
-        self.weight_summary_title_frame.setFrameShape(QFrame.StyledPanel)
-        self.weight_summary_title_frame.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_34 = QHBoxLayout(self.weight_summary_title_frame)
+        self.weighing_title_frame = QFrame(self.weighing_main_group_1)
+        self.weighing_title_frame.setObjectName(u"weighing_title_frame")
+        self.weighing_title_frame.setMaximumSize(QSize(16777215, 65))
+        self.weighing_title_frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.weighing_title_frame.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_34 = QHBoxLayout(self.weighing_title_frame)
         self.horizontalLayout_34.setSpacing(0)
         self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
         self.horizontalLayout_34.setContentsMargins(0, 0, 0, 0)
-        self.weight_summary_title = QLabel(self.weight_summary_title_frame)
-        self.weight_summary_title.setObjectName(u"weight_summary_title")
-        self.weight_summary_title.setMaximumSize(QSize(16777215, 65))
-        self.weight_summary_title.setFont(font8)
-        self.weight_summary_title.setStyleSheet(u"background-color: rgb(52, 157, 77);\n"
+        self.weighing_title = QLabel(self.weighing_title_frame)
+        self.weighing_title.setObjectName(u"weighing_title")
+        self.weighing_title.setMaximumSize(QSize(16777215, 65))
+        self.weighing_title.setFont(font8)
+        self.weighing_title.setStyleSheet(u"background-color: rgb(52, 157, 77);\n"
 "border-radius: 15px;")
-        self.weight_summary_title.setAlignment(Qt.AlignCenter)
+        self.weighing_title.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.horizontalLayout_34.addWidget(self.weight_summary_title)
+        self.horizontalLayout_34.addWidget(self.weighing_title)
 
 
-        self.verticalLayout_9.addWidget(self.weight_summary_title_frame)
+        self.verticalLayout_9.addWidget(self.weighing_title_frame)
 
-        self.weight_summary_group = QGroupBox(self.weight_summary_main_group)
-        self.weight_summary_group.setObjectName(u"weight_summary_group")
-        self.weight_summary_group.setMinimumSize(QSize(0, 0))
-        self.weight_summary_group.setMaximumSize(QSize(16777215, 110))
+        self.weighing_group = QGroupBox(self.weighing_main_group_1)
+        self.weighing_group.setObjectName(u"weighing_group")
+        self.weighing_group.setMinimumSize(QSize(0, 0))
+        self.weighing_group.setMaximumSize(QSize(16777215, 110))
         font16 = QFont()
         font16.setPointSize(5)
-        self.weight_summary_group.setFont(font16)
-        self.weight_summary_group.setStyleSheet(u"#summary_weight_min_1, #summary_weight_min_2, #summary_average\n"
+        self.weighing_group.setFont(font16)
+        self.weighing_group.setStyleSheet(u"#weighing_min, #weighing_max, #weighing_average\n"
 " {\n"
 "	background-color: rgb(255, 170, 0);\n"
 "	border-bottom-left-radius: 15px;\n"
 "	border-bottom-right-radius: 15px;\n"
 "}\n"
 "\n"
-"#summary_weight_min_label_1, #summary_weight_min_label_2, #summary_average_label {\n"
+"#weighing_min_label, #weighing_max_label, #weighing_average_label {\n"
 "	background-color: rgb(80, 80, 80);\n"
 "	border-top-left-radius: 15px;\n"
 "	border-top-right-radius: 15px;\n"
 "}")
-        self.weight_summary_group.setAlignment(Qt.AlignBottom|Qt.AlignHCenter)
-        self.horizontalLayout_35 = QHBoxLayout(self.weight_summary_group)
+        self.weighing_group.setAlignment(Qt.AlignmentFlag.AlignBottom|Qt.AlignmentFlag.AlignHCenter)
+        self.horizontalLayout_35 = QHBoxLayout(self.weighing_group)
         self.horizontalLayout_35.setSpacing(20)
         self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
         self.horizontalLayout_35.setContentsMargins(0, 0, 0, 0)
-        self.summary_weight_min_group_1 = QGroupBox(self.weight_summary_group)
-        self.summary_weight_min_group_1.setObjectName(u"summary_weight_min_group_1")
-        self.summary_weight_min_group_1.setLayoutDirection(Qt.LeftToRight)
-        self.summary_weight_min_group_1.setStyleSheet(u"")
-        self.verticalLayout_18 = QVBoxLayout(self.summary_weight_min_group_1)
+        self.weighing_min_group = QGroupBox(self.weighing_group)
+        self.weighing_min_group.setObjectName(u"weighing_min_group")
+        self.weighing_min_group.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.weighing_min_group.setStyleSheet(u"")
+        self.verticalLayout_18 = QVBoxLayout(self.weighing_min_group)
         self.verticalLayout_18.setSpacing(0)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.verticalLayout_18.setContentsMargins(0, 0, 0, 0)
-        self.summary_weight_min_label_1 = QLabel(self.summary_weight_min_group_1)
-        self.summary_weight_min_label_1.setObjectName(u"summary_weight_min_label_1")
+        self.weighing_min_label = QLabel(self.weighing_min_group)
+        self.weighing_min_label.setObjectName(u"weighing_min_label")
         font17 = QFont()
         font17.setFamilies([u"Kanit"])
         font17.setPointSize(18)
         font17.setBold(True)
-        self.summary_weight_min_label_1.setFont(font17)
-        self.summary_weight_min_label_1.setLayoutDirection(Qt.LeftToRight)
-        self.summary_weight_min_label_1.setAutoFillBackground(False)
-        self.summary_weight_min_label_1.setStyleSheet(u"")
-        self.summary_weight_min_label_1.setAlignment(Qt.AlignCenter)
+        self.weighing_min_label.setFont(font17)
+        self.weighing_min_label.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.weighing_min_label.setAutoFillBackground(False)
+        self.weighing_min_label.setStyleSheet(u"")
+        self.weighing_min_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_18.addWidget(self.summary_weight_min_label_1)
+        self.verticalLayout_18.addWidget(self.weighing_min_label)
 
-        self.summary_weight_min_1 = QLabel(self.summary_weight_min_group_1)
-        self.summary_weight_min_1.setObjectName(u"summary_weight_min_1")
-        self.summary_weight_min_1.setMinimumSize(QSize(0, 40))
-        self.summary_weight_min_1.setMaximumSize(QSize(16777215, 80))
-        self.summary_weight_min_1.setFont(font1)
-        self.summary_weight_min_1.setStyleSheet(u"")
-        self.summary_weight_min_1.setAlignment(Qt.AlignCenter)
+        self.weighing_min = QLabel(self.weighing_min_group)
+        self.weighing_min.setObjectName(u"weighing_min")
+        self.weighing_min.setMinimumSize(QSize(0, 40))
+        self.weighing_min.setMaximumSize(QSize(16777215, 80))
+        self.weighing_min.setFont(font1)
+        self.weighing_min.setStyleSheet(u"")
+        self.weighing_min.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_18.addWidget(self.summary_weight_min_1)
+        self.verticalLayout_18.addWidget(self.weighing_min)
 
 
-        self.horizontalLayout_35.addWidget(self.summary_weight_min_group_1)
+        self.horizontalLayout_35.addWidget(self.weighing_min_group)
 
-        self.summary_weight_min_group_2 = QGroupBox(self.weight_summary_group)
-        self.summary_weight_min_group_2.setObjectName(u"summary_weight_min_group_2")
-        self.summary_weight_min_group_2.setLayoutDirection(Qt.LeftToRight)
-        self.summary_weight_min_group_2.setStyleSheet(u"")
-        self.verticalLayout_19 = QVBoxLayout(self.summary_weight_min_group_2)
+        self.weighing_max_group = QGroupBox(self.weighing_group)
+        self.weighing_max_group.setObjectName(u"weighing_max_group")
+        self.weighing_max_group.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.weighing_max_group.setStyleSheet(u"")
+        self.verticalLayout_19 = QVBoxLayout(self.weighing_max_group)
         self.verticalLayout_19.setSpacing(0)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.verticalLayout_19.setContentsMargins(0, 0, 0, 0)
-        self.summary_weight_min_label_2 = QLabel(self.summary_weight_min_group_2)
-        self.summary_weight_min_label_2.setObjectName(u"summary_weight_min_label_2")
-        self.summary_weight_min_label_2.setFont(font17)
-        self.summary_weight_min_label_2.setLayoutDirection(Qt.LeftToRight)
-        self.summary_weight_min_label_2.setAutoFillBackground(False)
-        self.summary_weight_min_label_2.setStyleSheet(u"")
-        self.summary_weight_min_label_2.setAlignment(Qt.AlignCenter)
+        self.weighing_max_label = QLabel(self.weighing_max_group)
+        self.weighing_max_label.setObjectName(u"weighing_max_label")
+        self.weighing_max_label.setFont(font17)
+        self.weighing_max_label.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.weighing_max_label.setAutoFillBackground(False)
+        self.weighing_max_label.setStyleSheet(u"")
+        self.weighing_max_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_19.addWidget(self.summary_weight_min_label_2)
+        self.verticalLayout_19.addWidget(self.weighing_max_label)
 
-        self.summary_weight_min_2 = QLabel(self.summary_weight_min_group_2)
-        self.summary_weight_min_2.setObjectName(u"summary_weight_min_2")
-        self.summary_weight_min_2.setMinimumSize(QSize(0, 40))
-        self.summary_weight_min_2.setMaximumSize(QSize(16777215, 80))
-        self.summary_weight_min_2.setFont(font1)
-        self.summary_weight_min_2.setStyleSheet(u"")
-        self.summary_weight_min_2.setAlignment(Qt.AlignCenter)
+        self.weighing_max = QLabel(self.weighing_max_group)
+        self.weighing_max.setObjectName(u"weighing_max")
+        self.weighing_max.setMinimumSize(QSize(0, 40))
+        self.weighing_max.setMaximumSize(QSize(16777215, 80))
+        self.weighing_max.setFont(font1)
+        self.weighing_max.setStyleSheet(u"")
+        self.weighing_max.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_19.addWidget(self.summary_weight_min_2)
+        self.verticalLayout_19.addWidget(self.weighing_max)
 
 
-        self.horizontalLayout_35.addWidget(self.summary_weight_min_group_2)
+        self.horizontalLayout_35.addWidget(self.weighing_max_group)
 
-        self.average_summary_group = QGroupBox(self.weight_summary_group)
-        self.average_summary_group.setObjectName(u"average_summary_group")
-        self.average_summary_group.setLayoutDirection(Qt.LeftToRight)
-        self.average_summary_group.setStyleSheet(u"")
-        self.verticalLayout_20 = QVBoxLayout(self.average_summary_group)
+        self.average_group = QGroupBox(self.weighing_group)
+        self.average_group.setObjectName(u"average_group")
+        self.average_group.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.average_group.setStyleSheet(u"")
+        self.verticalLayout_20 = QVBoxLayout(self.average_group)
         self.verticalLayout_20.setSpacing(0)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.verticalLayout_20.setContentsMargins(0, 0, 0, 0)
-        self.summary_average_label = QLabel(self.average_summary_group)
-        self.summary_average_label.setObjectName(u"summary_average_label")
-        self.summary_average_label.setFont(font17)
-        self.summary_average_label.setLayoutDirection(Qt.LeftToRight)
-        self.summary_average_label.setAutoFillBackground(False)
-        self.summary_average_label.setStyleSheet(u"")
-        self.summary_average_label.setAlignment(Qt.AlignCenter)
+        self.weighing_average_label = QLabel(self.average_group)
+        self.weighing_average_label.setObjectName(u"weighing_average_label")
+        self.weighing_average_label.setFont(font17)
+        self.weighing_average_label.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.weighing_average_label.setAutoFillBackground(False)
+        self.weighing_average_label.setStyleSheet(u"")
+        self.weighing_average_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_20.addWidget(self.summary_average_label)
+        self.verticalLayout_20.addWidget(self.weighing_average_label)
 
-        self.summary_average = QLabel(self.average_summary_group)
-        self.summary_average.setObjectName(u"summary_average")
-        self.summary_average.setMinimumSize(QSize(0, 40))
-        self.summary_average.setMaximumSize(QSize(16777215, 80))
-        self.summary_average.setFont(font1)
-        self.summary_average.setStyleSheet(u"")
-        self.summary_average.setAlignment(Qt.AlignCenter)
+        self.weighing_average = QLabel(self.average_group)
+        self.weighing_average.setObjectName(u"weighing_average")
+        self.weighing_average.setMinimumSize(QSize(0, 40))
+        self.weighing_average.setMaximumSize(QSize(16777215, 80))
+        self.weighing_average.setFont(font1)
+        self.weighing_average.setStyleSheet(u"")
+        self.weighing_average.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_20.addWidget(self.summary_average)
+        self.verticalLayout_20.addWidget(self.weighing_average)
 
 
-        self.horizontalLayout_35.addWidget(self.average_summary_group)
+        self.horizontalLayout_35.addWidget(self.average_group)
 
-        self.timeout_group = QGroupBox(self.weight_summary_group)
+        self.timeout_group = QGroupBox(self.weighing_group)
         self.timeout_group.setObjectName(u"timeout_group")
         self.timeout_group.setMinimumSize(QSize(0, 0))
         self.timeout_group.setMaximumSize(QSize(16777215, 100))
         font18 = QFont()
         font18.setPointSize(1)
         self.timeout_group.setFont(font18)
-        self.timeout_group.setAlignment(Qt.AlignCenter)
+        self.timeout_group.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.timeout_group.setCheckable(False)
         self.timeout_group.setChecked(False)
         self.verticalLayout_26 = QVBoxLayout(self.timeout_group)
@@ -1212,7 +1214,7 @@ class Ui_MainWindow(object):
         font19.setPointSize(18)
         self.timeout_title.setFont(font19)
         self.timeout_title.setStyleSheet(u"color: rgb(80, 80, 80);")
-        self.timeout_title.setAlignment(Qt.AlignCenter)
+        self.timeout_title.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_26.addWidget(self.timeout_title)
 
@@ -1224,14 +1226,14 @@ class Ui_MainWindow(object):
         font20.setBold(True)
         self.timeout.setFont(font20)
         self.timeout.setStyleSheet(u"color: rgb(255, 0, 0);")
-        self.timeout.setAlignment(Qt.AlignCenter)
+        self.timeout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_26.addWidget(self.timeout)
 
 
         self.horizontalLayout_35.addWidget(self.timeout_group)
 
-        self.button_exit = QPushButton(self.weight_summary_group)
+        self.button_exit = QPushButton(self.weighing_group)
         self.button_exit.setObjectName(u"button_exit")
         self.button_exit.setMinimumSize(QSize(100, 100))
         self.button_exit.setMaximumSize(QSize(100, 100))
@@ -1245,9 +1247,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_35.addWidget(self.button_exit)
 
 
-        self.verticalLayout_9.addWidget(self.weight_summary_group)
+        self.verticalLayout_9.addWidget(self.weighing_group)
 
-        self.current_weight_widget = QWidget(self.weight_summary_main_group)
+        self.current_weight_widget = QWidget(self.weighing_main_group_1)
         self.current_weight_widget.setObjectName(u"current_weight_widget")
         self.current_weight_widget.setMinimumSize(QSize(0, 55))
         self.current_weight_widget.setStyleSheet(u"background-color: rgb(50, 50, 50);\n"
@@ -1266,14 +1268,14 @@ class Ui_MainWindow(object):
         self.current_weight_label.setMaximumSize(QSize(80, 80))
         self.current_weight_label.setPixmap(QPixmap(u":/assets/icon/weighing.png"))
         self.current_weight_label.setScaledContents(True)
-        self.current_weight_label.setAlignment(Qt.AlignCenter)
+        self.current_weight_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_12.addWidget(self.current_weight_label)
 
         self.current_weight = QLabel(self.current_weight_widget)
         self.current_weight.setObjectName(u"current_weight")
-        self.current_weight.setMinimumSize(QSize(320, 0))
-        self.current_weight.setMaximumSize(QSize(320, 55))
+        self.current_weight.setMinimumSize(QSize(350, 0))
+        self.current_weight.setMaximumSize(QSize(350, 55))
         font21 = QFont()
         font21.setFamilies([u"Kanit"])
         font21.setPointSize(50)
@@ -1282,7 +1284,7 @@ class Ui_MainWindow(object):
         font21.setUnderline(False)
         font21.setStrikeOut(False)
         self.current_weight.setFont(font21)
-        self.current_weight.setAlignment(Qt.AlignCenter)
+        self.current_weight.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_12.addWidget(self.current_weight)
 
@@ -1294,29 +1296,29 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.addWidget(self.current_weight_widget)
 
 
-        self.verticalLayout_27.addWidget(self.weight_summary_main_group)
+        self.verticalLayout_27.addWidget(self.weighing_main_group_1)
 
-        self.weight_summary_main_group_2 = QGroupBox(self.weighing_page)
-        self.weight_summary_main_group_2.setObjectName(u"weight_summary_main_group_2")
-        self.weight_summary_main_group_2.setMinimumSize(QSize(0, 300))
-        self.weight_summary_main_group_2.setAlignment(Qt.AlignCenter)
-        self.verticalLayout_8 = QVBoxLayout(self.weight_summary_main_group_2)
+        self.weighing_main_group_2 = QGroupBox(self.weighing_page)
+        self.weighing_main_group_2.setObjectName(u"weighing_main_group_2")
+        self.weighing_main_group_2.setMinimumSize(QSize(0, 300))
+        self.weighing_main_group_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.verticalLayout_8 = QVBoxLayout(self.weighing_main_group_2)
         self.verticalLayout_8.setSpacing(10)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.verticalLayout_8.setContentsMargins(5, -1, 5, -1)
-        self.scrollArea = QScrollArea(self.weight_summary_main_group_2)
+        self.scrollArea = QScrollArea(self.weighing_main_group_2)
         self.scrollArea.setObjectName(u"scrollArea")
         self.scrollArea.setStyleSheet(u"border: none;")
         self.scrollArea.setWidgetResizable(True)
-        self.summary_weighing_widget = QWidget()
-        self.summary_weighing_widget.setObjectName(u"summary_weighing_widget")
-        self.summary_weighing_widget.setGeometry(QRect(0, 0, 869, 368))
-        self.scrollArea.setWidget(self.summary_weighing_widget)
+        self.weighing_widget_group = QWidget()
+        self.weighing_widget_group.setObjectName(u"weighing_widget_group")
+        self.weighing_widget_group.setGeometry(QRect(0, 0, 768, 368))
+        self.scrollArea.setWidget(self.weighing_widget_group)
 
         self.verticalLayout_8.addWidget(self.scrollArea)
 
 
-        self.verticalLayout_27.addWidget(self.weight_summary_main_group_2)
+        self.verticalLayout_27.addWidget(self.weighing_main_group_2)
 
         self.stackedWidget.addWidget(self.weighing_page)
         self.manual_page = QWidget()
@@ -1329,8 +1331,8 @@ class Ui_MainWindow(object):
         self.manual_title_group.setObjectName(u"manual_title_group")
         self.manual_title_group.setMinimumSize(QSize(0, 80))
         self.manual_title_group.setMaximumSize(QSize(16777215, 80))
-        self.manual_title_group.setFrameShape(QFrame.StyledPanel)
-        self.manual_title_group.setFrameShadow(QFrame.Raised)
+        self.manual_title_group.setFrameShape(QFrame.Shape.StyledPanel)
+        self.manual_title_group.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_10 = QHBoxLayout(self.manual_title_group)
         self.horizontalLayout_10.setSpacing(0)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
@@ -1342,7 +1344,7 @@ class Ui_MainWindow(object):
         self.manual_title.setFont(font8)
         self.manual_title.setStyleSheet(u"background-color: rgb(52, 157, 77);\n"
 "border-radius: 15px;")
-        self.manual_title.setAlignment(Qt.AlignCenter)
+        self.manual_title.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_10.addWidget(self.manual_title)
 
@@ -1351,16 +1353,16 @@ class Ui_MainWindow(object):
 
         self.frame_3 = QFrame(self.manual_page)
         self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setFrameShape(QFrame.StyledPanel)
-        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.frame_3.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_28 = QVBoxLayout(self.frame_3)
         self.verticalLayout_28.setSpacing(0)
         self.verticalLayout_28.setObjectName(u"verticalLayout_28")
         self.verticalLayout_28.setContentsMargins(-1, 0, -1, 5)
         self.frame_12 = QFrame(self.frame_3)
         self.frame_12.setObjectName(u"frame_12")
-        self.frame_12.setFrameShape(QFrame.StyledPanel)
-        self.frame_12.setFrameShadow(QFrame.Raised)
+        self.frame_12.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_12.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_67 = QHBoxLayout(self.frame_12)
         self.horizontalLayout_67.setObjectName(u"horizontalLayout_67")
         self.horizontalLayout_67.setContentsMargins(-1, 10, -1, -1)
@@ -1387,8 +1389,8 @@ class Ui_MainWindow(object):
         self.frame_13.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "}")
-        self.frame_13.setFrameShape(QFrame.StyledPanel)
-        self.frame_13.setFrameShadow(QFrame.Raised)
+        self.frame_13.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_13.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_66 = QHBoxLayout(self.frame_13)
         self.horizontalLayout_66.setSpacing(10)
         self.horizontalLayout_66.setObjectName(u"horizontalLayout_66")
@@ -1453,8 +1455,8 @@ class Ui_MainWindow(object):
 "	color: rgb(100, 100, 100);\n"
 "}\n"
 "")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_39 = QVBoxLayout(self.frame_2)
         self.verticalLayout_39.setSpacing(20)
         self.verticalLayout_39.setObjectName(u"verticalLayout_39")
@@ -1477,7 +1479,7 @@ class Ui_MainWindow(object):
 "	border-radius: 8px;\n"
 "	color: #262626;\n"
 "}")
-        self.groupBox_6.setAlignment(Qt.AlignCenter)
+        self.groupBox_6.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.wifi_signal_2 = QLabel(self.groupBox_6)
         self.wifi_signal_2.setObjectName(u"wifi_signal_2")
         self.wifi_signal_2.setGeometry(QRect(20, 20, 80, 80))
@@ -1526,7 +1528,7 @@ class Ui_MainWindow(object):
 "	border: none;\n"
 "}\n"
 "")
-        self.view_pages_group_2.setAlignment(Qt.AlignCenter)
+        self.view_pages_group_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.view_pages_group_2.setFlat(False)
         self.horizontalLayout_56 = QHBoxLayout(self.view_pages_group_2)
         self.horizontalLayout_56.setSpacing(15)
@@ -1541,11 +1543,11 @@ class Ui_MainWindow(object):
 "	max-width: 120px;\n"
 "	min-height: 100px;\n"
 "}")
-        self.tabletList.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.tabletList.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.tabletList.setWidgetResizable(True)
         self.tabletListContents = QWidget()
         self.tabletListContents.setObjectName(u"tabletListContents")
-        self.tabletListContents.setGeometry(QRect(0, 0, 807, 243))
+        self.tabletListContents.setGeometry(QRect(0, 0, 100, 130))
         self.horizontalLayout_64 = QHBoxLayout(self.tabletListContents)
         self.horizontalLayout_64.setObjectName(u"horizontalLayout_64")
         self.tabletList.setWidget(self.tabletListContents)
@@ -1572,7 +1574,7 @@ class Ui_MainWindow(object):
 "	border: none;\n"
 "}\n"
 "")
-        self.view_pages_group.setAlignment(Qt.AlignCenter)
+        self.view_pages_group.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.view_pages_group.setFlat(False)
         self.horizontalLayout_7 = QHBoxLayout(self.view_pages_group)
         self.horizontalLayout_7.setSpacing(15)
@@ -1584,7 +1586,7 @@ class Ui_MainWindow(object):
         font22.setFamilies([u"Kanit"])
         font22.setPointSize(16)
         self.groupBox_2.setFont(font22)
-        self.groupBox_2.setAlignment(Qt.AlignCenter)
+        self.groupBox_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.verticalLayout_17 = QVBoxLayout(self.groupBox_2)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.verticalLayout_17.setContentsMargins(-1, -1, -1, 0)
@@ -1595,7 +1597,7 @@ class Ui_MainWindow(object):
         font23.setPointSize(11)
         self.machine_page_view.setFont(font23)
         self.machine_page_view.setCursor(QCursor(Qt.PointingHandCursor))
-        self.machine_page_view.setLayoutDirection(Qt.LeftToRight)
+        self.machine_page_view.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.machine_page_view.setStyleSheet(u"")
         icon9 = QIcon()
         icon9.addFile(u":/assets/icon/machine.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -1611,7 +1613,7 @@ class Ui_MainWindow(object):
         self.groupBox = QGroupBox(self.view_pages_group)
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setFont(font22)
-        self.groupBox.setAlignment(Qt.AlignCenter)
+        self.groupBox.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.verticalLayout_16 = QVBoxLayout(self.groupBox)
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
         self.verticalLayout_16.setContentsMargins(-1, -1, -1, 0)
@@ -1619,7 +1621,7 @@ class Ui_MainWindow(object):
         self.weighing_settings_page_view.setObjectName(u"weighing_settings_page_view")
         self.weighing_settings_page_view.setFont(font23)
         self.weighing_settings_page_view.setCursor(QCursor(Qt.PointingHandCursor))
-        self.weighing_settings_page_view.setLayoutDirection(Qt.LeftToRight)
+        self.weighing_settings_page_view.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.weighing_settings_page_view.setStyleSheet(u"")
         icon10 = QIcon()
         icon10.addFile(u":/assets/icon/settings.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -1635,7 +1637,7 @@ class Ui_MainWindow(object):
         self.groupBox_3 = QGroupBox(self.view_pages_group)
         self.groupBox_3.setObjectName(u"groupBox_3")
         self.groupBox_3.setFont(font22)
-        self.groupBox_3.setAlignment(Qt.AlignCenter)
+        self.groupBox_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.verticalLayout_29 = QVBoxLayout(self.groupBox_3)
         self.verticalLayout_29.setObjectName(u"verticalLayout_29")
         self.verticalLayout_29.setContentsMargins(-1, -1, -1, 0)
@@ -1643,7 +1645,7 @@ class Ui_MainWindow(object):
         self.characteristics_page_view.setObjectName(u"characteristics_page_view")
         self.characteristics_page_view.setFont(font23)
         self.characteristics_page_view.setCursor(QCursor(Qt.PointingHandCursor))
-        self.characteristics_page_view.setLayoutDirection(Qt.LeftToRight)
+        self.characteristics_page_view.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.characteristics_page_view.setStyleSheet(u"")
         icon11 = QIcon()
         icon11.addFile(u":/assets/icon/characteristics.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -1659,7 +1661,7 @@ class Ui_MainWindow(object):
         self.groupBox_4 = QGroupBox(self.view_pages_group)
         self.groupBox_4.setObjectName(u"groupBox_4")
         self.groupBox_4.setFont(font22)
-        self.groupBox_4.setAlignment(Qt.AlignCenter)
+        self.groupBox_4.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.verticalLayout_30 = QVBoxLayout(self.groupBox_4)
         self.verticalLayout_30.setObjectName(u"verticalLayout_30")
         self.verticalLayout_30.setContentsMargins(-1, -1, -1, 0)
@@ -1667,7 +1669,7 @@ class Ui_MainWindow(object):
         self.weighing_page_view.setObjectName(u"weighing_page_view")
         self.weighing_page_view.setFont(font23)
         self.weighing_page_view.setCursor(QCursor(Qt.PointingHandCursor))
-        self.weighing_page_view.setLayoutDirection(Qt.LeftToRight)
+        self.weighing_page_view.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.weighing_page_view.setStyleSheet(u"")
         icon12 = QIcon()
         icon12.addFile(u":/assets/icon/weighing.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -1966,7 +1968,7 @@ class Ui_MainWindow(object):
         self.home_2.toggled.connect(self.home_1.setChecked)
         self.home_1.toggled.connect(self.home_2.setChecked)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1990,21 +1992,6 @@ class Ui_MainWindow(object):
         self.rfid.setText(QCoreApplication.translate("MainWindow", u"XXXXXXXXXX", None))
         self.machine_title.setText(QCoreApplication.translate("MainWindow", u"\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e15\u0e2d\u0e01\u0e17\u0e35\u0e48\u0e15\u0e49\u0e2d\u0e07\u0e01\u0e32\u0e23\u0e0a\u0e31\u0e48\u0e07\u0e19\u0e49\u0e33\u0e2b\u0e19\u0e31\u0e01", None))
         self.button_machine_confirm.setText(QCoreApplication.translate("MainWindow", u"\u0e22\u0e37\u0e19\u0e22\u0e31\u0e19", None))
-        self.numberTablets_input_title.setText(QCoreApplication.translate("MainWindow", u"\u0e08\u0e33\u0e19\u0e27\u0e19\u0e40\u0e21\u0e47\u0e14\u0e17\u0e35\u0e48\u0e15\u0e49\u0e2d\u0e07\u0e0a\u0e31\u0e48\u0e07", None))
-        self.numberTablets_val_input.setText(QCoreApplication.translate("MainWindow", u"XXXX", None))
-        self.key_1.setText(QCoreApplication.translate("MainWindow", u"1", None))
-        self.key_2.setText(QCoreApplication.translate("MainWindow", u"2", None))
-        self.key_3.setText(QCoreApplication.translate("MainWindow", u"3", None))
-        self.key_4.setText(QCoreApplication.translate("MainWindow", u"4", None))
-        self.key_5.setText(QCoreApplication.translate("MainWindow", u"5", None))
-        self.key_6.setText(QCoreApplication.translate("MainWindow", u"6", None))
-        self.key_7.setText(QCoreApplication.translate("MainWindow", u"7", None))
-        self.key_8.setText(QCoreApplication.translate("MainWindow", u"8", None))
-        self.key_9.setText(QCoreApplication.translate("MainWindow", u"9", None))
-        self.key_backspace.setText("")
-        self.key_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
-        self.numberTablets_img.setText("")
-        self.key_enter.setText(QCoreApplication.translate("MainWindow", u"  \u0e22\u0e37\u0e19\u0e22\u0e31\u0e19", None))
         self.update_settings.setText(QCoreApplication.translate("MainWindow", u"\u0e2d\u0e31\u0e1e\u0e40\u0e14\u0e17\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e01\u0e32\u0e23\u0e15\u0e31\u0e49\u0e07\u0e04\u0e48\u0e32", None))
         self.clear_settings.setText(QCoreApplication.translate("MainWindow", u"\u0e25\u0e49\u0e32\u0e07\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e01\u0e32\u0e23\u0e15\u0e31\u0e49\u0e07\u0e04\u0e48\u0e32", None))
         self.start_weighing.setText(QCoreApplication.translate("MainWindow", u"\u0e0a\u0e31\u0e48\u0e07\u0e19\u0e49\u0e33\u0e2b\u0e19\u0e31\u0e01", None))
@@ -2032,6 +2019,21 @@ class Ui_MainWindow(object):
         self.meanWeight.setText(QCoreApplication.translate("MainWindow", u"XX.XXX \u0e01\u0e23\u0e31\u0e21", None))
         self.MeanWeightInhouse_Label.setText(QCoreApplication.translate("MainWindow", u"\u0e0a\u0e48\u0e27\u0e07\u0e19\u0e49\u0e33\u0e2b\u0e19\u0e31\u0e01\u0e40\u0e1a\u0e35\u0e48\u0e22\u0e07\u0e40\u0e1a\u0e19\u0e17\u0e35\u0e48\u0e22\u0e2d\u0e21\u0e23\u0e31\u0e1a", None))
         self.MeanWeightInhouse.setText(QCoreApplication.translate("MainWindow", u"XX.XXX - XX.XXX \u0e01\u0e23\u0e31\u0e21", None))
+        self.numberTablets_input_title.setText(QCoreApplication.translate("MainWindow", u"\u0e08\u0e33\u0e19\u0e27\u0e19\u0e40\u0e21\u0e47\u0e14\u0e17\u0e35\u0e48\u0e15\u0e49\u0e2d\u0e07\u0e0a\u0e31\u0e48\u0e07", None))
+        self.numberTablets_val_input.setText(QCoreApplication.translate("MainWindow", u"XXXX", None))
+        self.key_1.setText(QCoreApplication.translate("MainWindow", u"1", None))
+        self.key_2.setText(QCoreApplication.translate("MainWindow", u"2", None))
+        self.key_3.setText(QCoreApplication.translate("MainWindow", u"3", None))
+        self.key_4.setText(QCoreApplication.translate("MainWindow", u"4", None))
+        self.key_5.setText(QCoreApplication.translate("MainWindow", u"5", None))
+        self.key_6.setText(QCoreApplication.translate("MainWindow", u"6", None))
+        self.key_7.setText(QCoreApplication.translate("MainWindow", u"7", None))
+        self.key_8.setText(QCoreApplication.translate("MainWindow", u"8", None))
+        self.key_9.setText(QCoreApplication.translate("MainWindow", u"9", None))
+        self.key_backspace.setText("")
+        self.key_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.numberTablets_img.setText("")
+        self.key_enter.setText(QCoreApplication.translate("MainWindow", u"  \u0e22\u0e37\u0e19\u0e22\u0e31\u0e19", None))
         self.thickness_title_2.setText(QCoreApplication.translate("MainWindow", u"\u0e25\u0e31\u0e01\u0e29\u0e13\u0e30\u0e40\u0e21\u0e47\u0e14\u0e22\u0e32", None))
         self.tablet_front_img.setText("")
         self.characteristics_abnomal.setText(QCoreApplication.translate("MainWindow", u"\u0e1c\u0e34\u0e14\u0e1b\u0e01\u0e15\u0e34", None))
@@ -2039,14 +2041,14 @@ class Ui_MainWindow(object):
         self.tablet_behind_img.setText("")
         self.tablet_front_label.setText(QCoreApplication.translate("MainWindow", u"\u0e14\u0e49\u0e32\u0e19\u0e1a\u0e19", None))
         self.tablet_behind_label.setText(QCoreApplication.translate("MainWindow", u"\u0e14\u0e49\u0e32\u0e19\u0e25\u0e48\u0e32\u0e07", None))
-        self.weight_summary_main_group.setTitle(QCoreApplication.translate("MainWindow", u"GroupBox", None))
-        self.weight_summary_title.setText(QCoreApplication.translate("MainWindow", u"\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e01\u0e32\u0e23\u0e0a\u0e31\u0e48\u0e07\u0e19\u0e49\u0e33\u0e2b\u0e19\u0e31\u0e01", None))
-        self.summary_weight_min_label_1.setText(QCoreApplication.translate("MainWindow", u"\u0e19\u0e49\u0e33\u0e2b\u0e19\u0e31\u0e01\u0e15\u0e48\u0e33\u0e2a\u0e38\u0e14", None))
-        self.summary_weight_min_1.setText(QCoreApplication.translate("MainWindow", u"XX.XXX", None))
-        self.summary_weight_min_label_2.setText(QCoreApplication.translate("MainWindow", u"\u0e19\u0e49\u0e33\u0e2b\u0e19\u0e31\u0e01\u0e2a\u0e39\u0e07\u0e2a\u0e38\u0e14", None))
-        self.summary_weight_min_2.setText(QCoreApplication.translate("MainWindow", u"XX.XXX", None))
-        self.summary_average_label.setText(QCoreApplication.translate("MainWindow", u"\u0e19\u0e49\u0e33\u0e2b\u0e19\u0e31\u0e01\u0e40\u0e09\u0e25\u0e35\u0e48\u0e22", None))
-        self.summary_average.setText(QCoreApplication.translate("MainWindow", u"XX.XXX", None))
+        self.weighing_main_group_1.setTitle(QCoreApplication.translate("MainWindow", u"GroupBox", None))
+        self.weighing_title.setText(QCoreApplication.translate("MainWindow", u"\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e01\u0e32\u0e23\u0e0a\u0e31\u0e48\u0e07\u0e19\u0e49\u0e33\u0e2b\u0e19\u0e31\u0e01", None))
+        self.weighing_min_label.setText(QCoreApplication.translate("MainWindow", u"\u0e19\u0e49\u0e33\u0e2b\u0e19\u0e31\u0e01\u0e15\u0e48\u0e33\u0e2a\u0e38\u0e14", None))
+        self.weighing_min.setText(QCoreApplication.translate("MainWindow", u"XX.XXX", None))
+        self.weighing_max_label.setText(QCoreApplication.translate("MainWindow", u"\u0e19\u0e49\u0e33\u0e2b\u0e19\u0e31\u0e01\u0e2a\u0e39\u0e07\u0e2a\u0e38\u0e14", None))
+        self.weighing_max.setText(QCoreApplication.translate("MainWindow", u"XX.XXX", None))
+        self.weighing_average_label.setText(QCoreApplication.translate("MainWindow", u"\u0e19\u0e49\u0e33\u0e2b\u0e19\u0e31\u0e01\u0e40\u0e09\u0e25\u0e35\u0e48\u0e22", None))
+        self.weighing_average.setText(QCoreApplication.translate("MainWindow", u"XX.XXX", None))
         self.timeout_title.setText(QCoreApplication.translate("MainWindow", u"\u0e19\u0e31\u0e1a\u0e40\u0e27\u0e25\u0e32\u0e16\u0e2d\u0e22\u0e2b\u0e25\u0e31\u0e07", None))
         self.timeout.setText(QCoreApplication.translate("MainWindow", u"180 s.", None))
         self.button_exit.setText("")

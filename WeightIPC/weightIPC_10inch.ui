@@ -95,10 +95,10 @@ border-radius: 8px;</string>
              </size>
             </property>
             <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+             <enum>QFrame::Shape::StyledPanel</enum>
             </property>
             <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
+             <enum>QFrame::Shadow::Raised</enum>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_6">
              <property name="spacing">
@@ -154,7 +154,7 @@ border-radius: 8px;</string>
           <item>
            <spacer name="horizontalSpacer_5">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -186,7 +186,7 @@ border-radius: 8px;</string>
              <string>ระบบเครื่องชั่งออนไลน์</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -209,14 +209,14 @@ border-radius: 8px;</string>
              <string/>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
           <item>
            <spacer name="horizontalSpacer_4">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -253,7 +253,7 @@ border-radius: 8px;</string>
              </font>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
             <layout class="QVBoxLayout" name="datetime_group">
              <property name="spacing">
@@ -290,7 +290,7 @@ border-radius: 8px;</string>
                 <string>HH:MM:SS</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignCenter</set>
+                <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
               </widget>
              </item>
@@ -313,7 +313,7 @@ border-radius: 8px;</string>
                 <string>DD/MM/YYYY</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignCenter</set>
+                <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
               </widget>
              </item>
@@ -326,7 +326,7 @@ border-radius: 8px;</string>
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">QWidget {
@@ -345,7 +345,7 @@ QGroupBox {
 }</string>
          </property>
          <property name="currentIndex">
-          <number>4</number>
+          <number>6</number>
          </property>
          <widget class="QWidget" name="process_page">
           <layout class="QHBoxLayout" name="horizontalLayout_61">
@@ -367,10 +367,10 @@ QGroupBox {
            <item>
             <widget class="QFrame" name="process_main_frame">
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_33">
               <property name="leftMargin">
@@ -388,10 +388,10 @@ QGroupBox {
               <item>
                <widget class="QFrame" name="process_frame">
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_32">
                  <item>
@@ -403,10 +403,10 @@ QGroupBox {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
+                    <enum>QFrame::Shape::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
+                    <enum>QFrame::Shadow::Raised</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_62">
                     <property name="spacing">
@@ -427,7 +427,7 @@ QGroupBox {
                     <item>
                      <spacer name="horizontalSpacer_2">
                       <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
+                       <enum>Qt::Orientation::Horizontal</enum>
                       </property>
                       <property name="sizeHint" stdset="0">
                        <size>
@@ -461,14 +461,14 @@ QGroupBox {
                        <bool>true</bool>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
                     <item>
                      <spacer name="horizontalSpacer_3">
                       <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
+                       <enum>Qt::Orientation::Horizontal</enum>
                       </property>
                       <property name="sizeHint" stdset="0">
                        <size>
@@ -505,10 +505,10 @@ QGroupBox {
                     <string notr="true">color: rgb(128, 128, 128);</string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Plain</enum>
+                    <enum>QFrame::Shadow::Plain</enum>
                    </property>
                    <property name="lineWidth">
                     <number>1</number>
@@ -517,7 +517,7 @@ QGroupBox {
                     <string>ONLINE WEIGHING SYSTEM</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -545,10 +545,10 @@ QGroupBox {
                     <string notr="true">color: rgb(128, 128, 128);</string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Plain</enum>
+                    <enum>QFrame::Shadow::Plain</enum>
                    </property>
                    <property name="lineWidth">
                     <number>1</number>
@@ -557,7 +557,7 @@ QGroupBox {
                     <string>Created by Nattapon pondonko</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -585,10 +585,10 @@ QGroupBox {
                     <string notr="true">color: rgb(128, 128, 128);</string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Plain</enum>
+                    <enum>QFrame::Shadow::Plain</enum>
                    </property>
                    <property name="lineWidth">
                     <number>1</number>
@@ -597,7 +597,7 @@ QGroupBox {
                     <string>Engineering Department</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -625,10 +625,10 @@ QGroupBox {
                     <string notr="true">color: rgb(128, 128, 128);</string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Plain</enum>
+                    <enum>QFrame::Shadow::Plain</enum>
                    </property>
                    <property name="lineWidth">
                     <number>1</number>
@@ -637,7 +637,7 @@ QGroupBox {
                     <string/>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -696,10 +696,10 @@ QGroupBox {
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_8">
                  <property name="spacing">
@@ -739,7 +739,7 @@ border-radius: 15px;</string>
                     <string>แสกนบัตรพนักงาน</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -773,7 +773,7 @@ border-radius: 15px;</string>
                     <bool>true</bool>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -820,7 +820,7 @@ border-radius: 15px;</string>
                     <string>XXXXXXXXXX</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -920,7 +920,7 @@ padding-bottom: 8px;</string>
                     <string>เลือกเครื่องตอกที่ต้องการชั่งน้ำหนัก</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -940,10 +940,10 @@ padding-bottom: 8px;</string>
 }</string>
                 </property>
                 <property name="verticalScrollBarPolicy">
-                 <enum>Qt::ScrollBarAlwaysOff</enum>
+                 <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                 </property>
                 <property name="horizontalScrollBarPolicy">
-                 <enum>Qt::ScrollBarAsNeeded</enum>
+                 <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
                 </property>
                 <property name="widgetResizable">
                  <bool>true</bool>
@@ -1058,10 +1058,10 @@ padding-bottom: 8px;</string>
            <item>
             <widget class="QFrame" name="frame">
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_37">
               <property name="spacing">
@@ -1093,10 +1093,10 @@ padding-bottom: 8px;</string>
 }</string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_13">
                  <property name="spacing">
@@ -1216,10 +1216,10 @@ QLabel {
 }</string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <widget class="QLabel" name="Productname_Label">
                  <property name="geometry">
@@ -1728,10 +1728,10 @@ QLabel {
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_3">
                  <property name="spacing">
@@ -1792,7 +1792,7 @@ border-radius: 15px;</string>
                        <string>จำนวนเม็ดที่ต้องชั่ง</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -1802,10 +1802,10 @@ border-radius: 15px;</string>
                  <item>
                   <widget class="QFrame" name="frame_9">
                    <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
+                    <enum>QFrame::Shape::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
+                    <enum>QFrame::Shadow::Raised</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_38">
                     <property name="spacing">
@@ -1831,7 +1831,7 @@ border: none;</string>
                        <string>XXXX</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -1856,10 +1856,10 @@ border: none;</string>
                     <string notr="true"/>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
+                    <enum>QFrame::Shape::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
+                    <enum>QFrame::Shadow::Raised</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_63">
                     <property name="spacing">
@@ -2093,7 +2093,7 @@ QPushButton:pressed {
 }</string>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Plain</enum>
+                       <enum>QFrame::Shadow::Plain</enum>
                       </property>
                       <property name="lineWidth">
                        <number>3</number>
@@ -2301,10 +2301,10 @@ QPushButton:pressed {
 }</string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::Shape::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                       <enum>QFrame::Shadow::Raised</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_36">
                        <property name="spacing">
@@ -2319,7 +2319,7 @@ QPushButton:pressed {
                           <pixmap resource="resource.qrc">:/assets/icon/thickness.png</pixmap>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -2397,10 +2397,10 @@ QPushButton:pressed {
               </size>
              </property>
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_33">
               <property name="leftMargin">
@@ -2431,7 +2431,7 @@ border-radius: 15px;</string>
                  <string>ลักษณะเม็ดยา</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -2455,10 +2455,10 @@ QPushButton {
 }</string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QGridLayout" name="gridLayout_4">
               <property name="bottomMargin">
@@ -2614,7 +2614,7 @@ color: rgb(80, 80, 80);</string>
                  <string>ด้านบน</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -2642,7 +2642,7 @@ color: rgb(80, 80, 80);</string>
                  <string>ด้านล่าง</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -2674,7 +2674,7 @@ color: rgb(80, 80, 80);</string>
             <number>0</number>
            </property>
            <item>
-            <widget class="QGroupBox" name="weight_summary_main_group">
+            <widget class="QGroupBox" name="weighing_main_group_1">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -2701,7 +2701,7 @@ color: rgb(80, 80, 80);</string>
                <number>20</number>
               </property>
               <item>
-               <widget class="QFrame" name="weight_summary_title_frame">
+               <widget class="QFrame" name="weighing_title_frame">
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
@@ -2709,10 +2709,10 @@ color: rgb(80, 80, 80);</string>
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_34">
                  <property name="spacing">
@@ -2731,7 +2731,7 @@ color: rgb(80, 80, 80);</string>
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QLabel" name="weight_summary_title">
+                  <widget class="QLabel" name="weighing_title">
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
@@ -2752,7 +2752,7 @@ border-radius: 15px;</string>
                     <string>ข้อมูลการชั่งน้ำหนัก</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -2760,7 +2760,7 @@ border-radius: 15px;</string>
                </widget>
               </item>
               <item>
-               <widget class="QGroupBox" name="weight_summary_group">
+               <widget class="QGroupBox" name="weighing_group">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -2779,21 +2779,21 @@ border-radius: 15px;</string>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">#summary_weight_min_1, #summary_weight_min_2, #summary_average
+                 <string notr="true">#weighing_min, #weighing_max, #weighing_average
  {
 	background-color: rgb(255, 170, 0);
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
 }
 
-#summary_weight_min_label_1, #summary_weight_min_label_2, #summary_average_label {
+#weighing_min_label, #weighing_max_label, #weighing_average_label {
 	background-color: rgb(80, 80, 80);
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;
 }</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                 <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_35">
                  <property name="spacing">
@@ -2812,9 +2812,9 @@ border-radius: 15px;</string>
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QGroupBox" name="summary_weight_min_group_1">
+                  <widget class="QGroupBox" name="weighing_min_group">
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -2836,7 +2836,7 @@ border-radius: 15px;</string>
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="summary_weight_min_label_1">
+                     <widget class="QLabel" name="weighing_min_label">
                       <property name="font">
                        <font>
                         <family>Kanit</family>
@@ -2845,7 +2845,7 @@ border-radius: 15px;</string>
                        </font>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
@@ -2857,12 +2857,12 @@ border-radius: 15px;</string>
                        <string>น้ำหนักต่ำสุด</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="summary_weight_min_1">
+                     <widget class="QLabel" name="weighing_min">
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
@@ -2889,7 +2889,7 @@ border-radius: 15px;</string>
                        <string>XX.XXX</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -2897,9 +2897,9 @@ border-radius: 15px;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QGroupBox" name="summary_weight_min_group_2">
+                  <widget class="QGroupBox" name="weighing_max_group">
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -2921,7 +2921,7 @@ border-radius: 15px;</string>
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="summary_weight_min_label_2">
+                     <widget class="QLabel" name="weighing_max_label">
                       <property name="font">
                        <font>
                         <family>Kanit</family>
@@ -2930,7 +2930,7 @@ border-radius: 15px;</string>
                        </font>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
@@ -2942,12 +2942,12 @@ border-radius: 15px;</string>
                        <string>น้ำหนักสูงสุด</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="summary_weight_min_2">
+                     <widget class="QLabel" name="weighing_max">
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
@@ -2974,7 +2974,7 @@ border-radius: 15px;</string>
                        <string>XX.XXX</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -2982,9 +2982,9 @@ border-radius: 15px;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QGroupBox" name="average_summary_group">
+                  <widget class="QGroupBox" name="average_group">
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -3006,7 +3006,7 @@ border-radius: 15px;</string>
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="summary_average_label">
+                     <widget class="QLabel" name="weighing_average_label">
                       <property name="font">
                        <font>
                         <family>Kanit</family>
@@ -3015,7 +3015,7 @@ border-radius: 15px;</string>
                        </font>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
@@ -3027,12 +3027,12 @@ border-radius: 15px;</string>
                        <string>น้ำหนักเฉลี่ย</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="summary_average">
+                     <widget class="QLabel" name="weighing_average">
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
@@ -3059,7 +3059,7 @@ border-radius: 15px;</string>
                        <string>XX.XXX</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -3086,7 +3086,7 @@ border-radius: 15px;</string>
                     </font>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                    <property name="checkable">
                     <bool>false</bool>
@@ -3125,7 +3125,7 @@ border-radius: 15px;</string>
                        <string>นับเวลาถอยหลัง</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -3145,7 +3145,7 @@ border-radius: 15px;</string>
                        <string>180 s.</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -3219,7 +3219,7 @@ border-radius: 8px;</string>
                  <item>
                   <spacer name="horizontalSpacer">
                    <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
+                    <enum>Qt::Orientation::Horizontal</enum>
                    </property>
                    <property name="sizeHint" stdset="0">
                     <size>
@@ -3253,7 +3253,7 @@ border-radius: 8px;</string>
                     <bool>true</bool>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -3261,13 +3261,13 @@ border-radius: 8px;</string>
                   <widget class="QLabel" name="current_weight">
                    <property name="minimumSize">
                     <size>
-                     <width>320</width>
+                     <width>350</width>
                      <height>0</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>320</width>
+                     <width>350</width>
                      <height>55</height>
                     </size>
                    </property>
@@ -3285,14 +3285,14 @@ border-radius: 8px;</string>
                     <string>XX.XXX</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <spacer name="horizontalSpacer_6">
                    <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
+                    <enum>Qt::Orientation::Horizontal</enum>
                    </property>
                    <property name="sizeHint" stdset="0">
                     <size>
@@ -3309,7 +3309,7 @@ border-radius: 8px;</string>
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="weight_summary_main_group_2">
+            <widget class="QGroupBox" name="weighing_main_group_2">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -3317,7 +3317,7 @@ border-radius: 8px;</string>
               </size>
              </property>
              <property name="alignment">
-              <set>Qt::AlignCenter</set>
+              <set>Qt::AlignmentFlag::AlignCenter</set>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_8">
               <property name="spacing">
@@ -3337,7 +3337,7 @@ border-radius: 8px;</string>
                 <property name="widgetResizable">
                  <bool>true</bool>
                 </property>
-                <widget class="QWidget" name="summary_weighing_widget">
+                <widget class="QWidget" name="weighing_widget_group">
                  <property name="geometry">
                   <rect>
                    <x>0</x>
@@ -3386,10 +3386,10 @@ border-radius: 8px;</string>
               </size>
              </property>
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_10">
               <property name="spacing">
@@ -3435,7 +3435,7 @@ border-radius: 15px;</string>
                  <string>คู่มือการใช้งาน</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -3445,10 +3445,10 @@ border-radius: 15px;</string>
            <item>
             <widget class="QFrame" name="frame_3">
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_28">
               <property name="spacing">
@@ -3463,10 +3463,10 @@ border-radius: 15px;</string>
               <item>
                <widget class="QFrame" name="frame_12">
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_67">
                  <property name="topMargin">
@@ -3504,10 +3504,10 @@ border-radius: 15px;</string>
 }</string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_66">
                  <property name="spacing">
@@ -3664,10 +3664,10 @@ border-radius: 15px;</string>
 </string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_39">
               <property name="spacing">
@@ -3728,7 +3728,7 @@ border-radius: 15px;</string>
                     <string>การเชื่อมต่อไวไฟ</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                    <widget class="QLabel" name="wifi_signal_2">
                     <property name="geometry">
@@ -3879,7 +3879,7 @@ QPushButton {
                  <string>รายการเครื่องตอก (เลือกเครื่องตอกที่ปฏิบติงาน)</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                 <property name="flat">
                  <bool>false</bool>
@@ -3922,7 +3922,7 @@ QPushButton {
 }</string>
                    </property>
                    <property name="verticalScrollBarPolicy">
-                    <enum>Qt::ScrollBarAlwaysOff</enum>
+                    <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                    </property>
                    <property name="widgetResizable">
                     <bool>true</bool>
@@ -3982,7 +3982,7 @@ QPushButton {
                  <string>เลือกดูหน้าเมนูการชั่งน้ำหนัก</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                 <property name="flat">
                  <bool>false</bool>
@@ -4015,7 +4015,7 @@ QPushButton {
                     <string>เครื่องตอก</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_17">
                     <property name="bottomMargin">
@@ -4033,7 +4033,7 @@ QPushButton {
                        <cursorShape>PointingHandCursor</cursorShape>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
                        <string notr="true"/>
@@ -4074,7 +4074,7 @@ QPushButton {
                     <string>ข้อมูลการตั้งค่า</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_16">
                     <property name="bottomMargin">
@@ -4092,7 +4092,7 @@ QPushButton {
                        <cursorShape>PointingHandCursor</cursorShape>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
                        <string notr="true"/>
@@ -4133,7 +4133,7 @@ QPushButton {
                     <string>หน้าลักษณะเม็ดยา</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_29">
                     <property name="bottomMargin">
@@ -4151,7 +4151,7 @@ QPushButton {
                        <cursorShape>PointingHandCursor</cursorShape>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
                        <string notr="true"/>
@@ -4192,7 +4192,7 @@ QPushButton {
                     <string>หน้าชั่งน้ำหนัก</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_30">
                     <property name="bottomMargin">
@@ -4210,7 +4210,7 @@ QPushButton {
                        <cursorShape>PointingHandCursor</cursorShape>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
                        <string notr="true"/>
@@ -4417,7 +4417,7 @@ QPushButton:checked {
        <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Orientation::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -4692,7 +4692,7 @@ QPushButton:checked {
        <item>
         <spacer name="verticalSpacer_2">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Orientation::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -4780,6 +4780,8 @@ QPushButton:checked {
  <resources>
   <include location="resource.qrc"/>
   <include location="resource.qrc"/>
+  <include location="resource.qrc"/>
+  <include location="../../../../.designer/backup/resource.qrc"/>
  </resources>
  <connections>
   <connection>

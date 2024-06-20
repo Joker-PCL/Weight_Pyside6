@@ -1,11 +1,11 @@
 import os
-import json
 import logging
 
-from ui_weight import Ui_MainWindow
+from ui_weight_10inch import Ui_MainWindow
 from PySide6.QtWidgets import (
     QApplication,
     QMainWindow,
+    QPushButton,
     QLabel,
     QGroupBox,
     QHBoxLayout,
@@ -17,12 +17,12 @@ from datetime import datetime, timedelta
 from src.Alert import Alert
 from src.api.File import File
 from src.api.Server import Server
-# from src.api.RFID import Rfid
+from src.WiFi import WiFi
+from src.Datetime import ShowDateTime
 
 from src.Weighing import Weighing
 from src.Thickness import Thickness
 from src.TabletList import TabletList
-from src.Img import ShowImage
 from src.VideoPlayer import VideoPlayer
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -31,9 +31,9 @@ GIF_FILE = os.path.join(BASE_DIR, "assets", "gif", "connecting.gif")
 MANUAL_VIDEO_FILE = "MANUAL.mp4"
 WEIGHING_DATA_FILE = os.path.join(BASE_DIR, "database", "weighingData.json")
 USER_DATA_FILE = os.path.join(BASE_DIR, "database", "usersData.json")
-SETTING_DATA_FILE = os.path.join(BASE_DIR, "database", "settings10s.json")
+WEIGHT_SETTING_FLIE = os.path.join(BASE_DIR, "database", "settings.json")
 LOGGING_FILE = os.path.join(BASE_DIR, "files", "polipharm.log")
-PRODUCT_IMG_FOLDER = os.path.join(PARENT_DIR, "product")
+PRODUCT_IMG_FOLDER = os.path.join(PARENT_DIR, "Product")
 
 _LOGGER = logging.getLogger()
 _LOGGER.setLevel(logging.DEBUG)
@@ -46,14 +46,17 @@ _FILE_HANDLER.setFormatter(_FORMATTER)
 _LOGGER.addHandler(_FILE_HANDLER)
 
 _OFFLINE_CHECK_TIME = 15  # min ตั้งค่าเวลากำหนดให้เป็นข้อมูล Offline
-_WEIGHING_DATA_FILE_CHECK_TIME = 5000  # millisec ระยะเวลาตรวจสอบไฟล์ข้อมูลการชั่ง
+_WEIGHING_DATA_FILE_CHECK_TIME = 30000  # millisec ระยะเวลาตรวจสอบไฟล์ข้อมูลการชั่ง
 _SCREEN_SERVER_TIMEOUT1 = 30  # sec พักหน้าจอ
 _SCREEN_SERVER_TIMEOUT2 = 10  # sec พักหน้าจอ
 _SAMMARY_TIMEOUT = 180  # sec กำหนดเวลาแสดงหน้า summary
 
+# โหมด Label
+LABEL_GET = 1
+LABEL_RESET = 2
 
 class Weight10s(QMainWindow, Ui_MainWindow):
-    def __init__(self, token, credentials, settings, balancePort):
+    def __init__(self, os_name, token, credentials, settings, balancePort):
         """
         token = google.auth.token
         credentials = google.oauth2.credentials.Credentials
@@ -68,6 +71,11 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         self.balancePort = balancePort
 
         self.setupUi(self)
+        showDateTime = ShowDateTime(self.date_bar, self.time_bar)
+        showDateTime.start()
+        self.WiFi = WiFi(self, os_name)
+        self.WiFi.show_signal_icon()
+
         self.current_page = self.home_page
         self.home_1.clicked.connect(lambda: self.switchToPage(self.current_page))
         self.home_2.clicked.connect(lambda: self.switchToPage(self.current_page))
@@ -102,9 +110,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         self.initialLabel = {}
         self.initialStyle = {}
         # ค้นหา label ทั้งหมด
-        self.findLabels(self)
-
-        self.button_video_play.clicked.connect(self.manual_video_player)
+        self.findWidget(self)
 
         ##########################  characteristics ##########################
         self.characteristics_nomal.clicked.connect(lambda: self.characteristics("ปกติ"))
@@ -140,29 +146,19 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         self.USER_DATA_FILE = File(USER_DATA_FILE)
 
         # ไฟล์ข้อมูลการตั้งค่าการชั่งน้ำหนัก
-        self.SETTING_DATA_FILE = File(SETTING_DATA_FILE)
-
-        # แสกน rfid
-        # self.RFID = Rfid()
+        self.WEIGHT_SETTING_FLIE = File(WEIGHT_SETTING_FLIE)
 
         # ชั่งน้ำหนัก
-        self.Weighing = Weighing(
-            port=self.balancePort,
-            settingsFile=self.SETTING_DATA_FILE,
-            widget={
-                "weight1": self.weight_1,
-                "weight2": self.weight_2,
-                "average": self.average,
-            },
-        )
+        self.Weighing = Weighing(port=self.balancePort)
 
         # ความหนาของเม็ดยา
         self.GetThickness = Thickness(self)
         self.thickness_val = {}
 
-        movie = QMovie(GIF_FILE)
-        self.process_img.setMovie(movie)
-        movie.start()
+        process_gif = QMovie(GIF_FILE)
+        self.process_img.setMovie(process_gif)
+        process_gif.start()
+        self.button_video_play.clicked.connect(self.manual_video_player)
 
     def manual_video_player(self):
         if not hasattr(self, "videoPlayer"):
@@ -172,32 +168,36 @@ class Weight10s(QMainWindow, Ui_MainWindow):
             self.button_video_pause.clicked.connect(self.videoPlayer.media.pause)
             self.button_video_stop.clicked.connect(self.videoPlayer.media.stop)
 
-    def findLabels(self, widget, mode: str = "get"):
+    def findWidget(self, widget, mode=LABEL_GET):
         """
         ค้นหา QLabel ทั้งหมดที่อยู่ใน widget และดำเนินการตามโหมดที่ระบุ
 
         Parameters:
             widget (WidgetType): วิดเจ็ตที่ต้องการค้นหา QLabel ในนั้น
-            mode (str, optional): โหมดการดำเนินการ ค่าเริ่มต้นคือ "get".
+            mode (str, optional): โหมดการดำเนินการ ค่าเริ่มต้นคือ LABEL_GET.
                 โหมดที่เป็นไปได้:
-                    - "get": ดึง QLabel ที่เกี่ยวข้องกับวิดเจ็ต
-                    - "reset": รีเซ็ต QLabel สำหรับวิดเจ็ต
+                    - LABEL_GET: ดึง QLabel ที่เกี่ยวข้องกับวิดเจ็ต
+                    - LABEL_RESET: รีเซ็ต QLabel สำหรับวิดเจ็ต
         """
         for child in widget.children():
-            if isinstance(child, QLabel):
-                if mode == "get":
-                    self.initialLabel[child.objectName()] = child.text()
-                    self.initialStyle[child.objectName()] = child.styleSheet()
-                elif mode == "reset":
-                    child.setText(self.initialLabel[child.objectName()])
-                    child.setStyleSheet(self.initialStyle[child.objectName()])
-            else:
-                self.findLabels(child, mode)
-
+            try:
+                if isinstance(child, QLabel) or isinstance(child, QPushButton):
+                    if mode == LABEL_GET:
+                        self.initialLabel[child.objectName()] = child.text()
+                        self.initialStyle[child.objectName()] = child.styleSheet()
+                    elif mode == LABEL_RESET:
+                        child.setText(self.initialLabel[child.objectName()])
+                        child.setStyleSheet(self.initialStyle[child.objectName()])
+                else:
+                    self.findWidget(child, mode)
+            except Exception as e:
+                print(e)
+                continue
+    
     def clearSettingsData(self):
-        print("Clear settings data!")
+        print("*** Clear settings data!")
         _LOGGER.warning(f"Clear settings data by {self.PACKING_DATA['Operator']}")
-        self.SETTING_DATA_FILE.delete()
+        self.WEIGHT_SETTING_FLIE.delete()
         for label_name, label_text in self.initialLabel.items():
             # ค้นหา QLabel ที่มี objectName ตรงกับ label_name
             label = self.frame_10.findChild(QLabel, label_name)
@@ -207,7 +207,6 @@ class Weight10s(QMainWindow, Ui_MainWindow):
     # เปลี่ยนหน้าต่างแสดงผล
     def switchToPage(self, page):
         self.stackedWidget.setCurrentWidget(page)
-
 
     ##########################  อ่านไฟล์ข้อมูลการตั้งค่า   ##########################
     readSettingsFileResult = Signal()
@@ -316,9 +315,9 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         if dataUsers:
             Lists = list(map(format_data, dataUsers))
             self.USER_DATA_FILE.write(Lists)
-            print("Updated user data file complete")
+            print("*** Updated user data file complete")
         else:
-            print("Updated user data file not complete")
+            print("*** Updated user data file not complete")
 
     # ค้นหา SpreadsheetID จาก tabletID
     def findSpreadsheetID(self, tabletID):
@@ -349,6 +348,13 @@ class Weight10s(QMainWindow, Ui_MainWindow):
 
             self.getSettingsData.getData(sheetDataId, self.settingDataRange)
 
+    def find_image(self, base_path, extensions):
+        for ext in extensions:
+            file_path = f"{base_path}.{ext}"
+            if os.path.exists(file_path):
+                return file_path
+        return None
+
     @Slot(object)
     def _updateSettingsData(self, result):
         self.updateSettingsDataResult.emit()
@@ -373,12 +379,12 @@ class Weight10s(QMainWindow, Ui_MainWindow):
                 "approved": result[13][0],  # ตรวจสอบการตั้งค่าโดย
             }
 
-            self.SETTING_DATA_FILE.write(settings)
+            self.WEIGHT_SETTING_FLIE.write(settings)
 
         else:
             self.updateSettingsData_alert.alert("เกิดข้อผิดพลาดในการอัพเดท!")
 
-        dataSettings = self.SETTING_DATA_FILE.read()
+        dataSettings = self.WEIGHT_SETTING_FLIE.read()
         if dataSettings:
             productName = dataSettings["productName"]  # ชื่อยา
             lot = dataSettings["lot"]  # เลขที่ผลิต
@@ -415,8 +421,11 @@ class Weight10s(QMainWindow, Ui_MainWindow):
             )
 
             try:
-                front_img = os.path.join(PRODUCT_IMG_FOLDER, productName, "UPPER.jpg")
-                behind_img = os.path.join(PRODUCT_IMG_FOLDER, productName, "LOWER.jpg")
+                front_img_base = os.path.join(PRODUCT_IMG_FOLDER, productName, "UPPER")
+                front_img = self.find_image(front_img_base, ["jpg", "png"])
+                 
+                behind_img_base = os.path.join(PRODUCT_IMG_FOLDER, productName, "LOWER")
+                behind_img = self.find_image(behind_img_base, ["jpg", "png"])
                 
                 # Check if files exist
                 if os.path.exists(front_img) and os.path.exists(behind_img):
@@ -426,14 +435,17 @@ class Weight10s(QMainWindow, Ui_MainWindow):
                     raise FileNotFoundError("One or both image files not found")
 
             except FileNotFoundError:
-                picture_default = os.path.join(BASE_DIR, "assets", "icon", "picture_default.png")
+                print("*** Images file not found")
+                picture_default = os.path.join(
+                    BASE_DIR, "assets", "icon", "picture_default.png"
+                )
                 self.tablet_front_img.setPixmap(QPixmap(picture_default))
                 self.tablet_behind_img.setPixmap(QPixmap(picture_default))
             except Exception as e:
                 # Handle other exceptions
-                print("An error occurred:", e)
+                print("*** An error occurred:", e)
 
-        print("*** Update settings data complete!")
+        print("*** Update settings data successfully")
 
     ##########################  screen saver page   ##########################
     screenSaverResult = Signal(int)
@@ -468,7 +480,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
                     return {"usernameTH": data["usernameTH"], "role": data["role"]}
             return None
 
-        print(f"RFID: {rfid_text}")
+        print(f"*** RFID: {rfid_text}")
         self.current_page = self.home_page
         self.switchToPage(self.current_page)
         self.screenServerTimer = _SCREEN_SERVER_TIMEOUT2
@@ -523,14 +535,26 @@ class Weight10s(QMainWindow, Ui_MainWindow):
     def getWeighingData(self, weighingData):
         """ดึงข้อมูลการชั่งน้ำหนัก"""
 
-        print(f"WeighingData: {weighingData}\n")
+        print(f"*** WeighingData: {weighingData}")
         self.reset_weighing.setHidden(True)
         now = datetime.now()  # current date and time
         timestamp = now.strftime("%d/%m/%Y, %H:%M:%S")
 
-        self.PACKING_DATA["Timestamp"] = timestamp
-        self.PACKING_DATA["Weight"] = weighingData
-        QTimer.singleShot(3000, lambda: self.getWeighingDataResult.emit(weighingData))
+        settings = self.WEIGHT_SETTING_FLIE.read()
+        _average = sum(weighingData) / len(weighingData)
+        self.weightOutOffRanges(settings, self.average, _average)
+
+        for i, w in enumerate(weighingData):
+            widget = getattr(self, f"weight_{i+1}")
+            self.weightOutOffRanges(settings, widget, w)
+
+        if len(weighingData) == 2:
+            self.PACKING_DATA["Timestamp"] = timestamp
+            self.PACKING_DATA["Weight"] = {
+                "weight1": weighingData[0], 
+                "weight2": weighingData[1], 
+            }
+            QTimer.singleShot(3000, lambda: self.getWeighingDataResult.emit(weighingData))
 
     @Slot(bool)
     def hiddenBtn(self, hidden):
@@ -550,7 +574,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
     def weighingStart(self):
         """เริ่มฟังชั่นดึงข้อมูลการชั่งน้ำหนัก"""
 
-        print("Get weighing data...")
+        print("*** Get weighing data...")
         self.current_page = self.weighing_page
         self.switchToPage(self.current_page)
         if not hasattr(self, "Weighing_called"):
@@ -562,12 +586,11 @@ class Weight10s(QMainWindow, Ui_MainWindow):
             self.Weighing.hidden.connect(self.hiddenBtn)
         else:
             self.Weighing.weighing.clear()
-            self.Weighing.isRunning()
 
         self.Weighing.start()
 
     def resetWeighing(self):
-        self.findLabels(self.weight_group, mode="reset")
+        self.findWidget(self.weight_group, mode=LABEL_RESET)
         self.hiddenBtn(False)
         self.Weighing.weighing.clear()
 
@@ -576,13 +599,22 @@ class Weight10s(QMainWindow, Ui_MainWindow):
 
     @Slot(dict)
     def getThicknessData(self, thicknessData):
-        print(f"*** ThicknessData: {thicknessData}\n")
+        print(f"*** ThicknessData: {thicknessData}")
         self.PACKING_DATA["Thickness"] = thicknessData
 
         QTimer.singleShot(1000, lambda: self.getThicknessDataResult.emit(thicknessData))
 
     def thicknessStart(self):
         print("*** Get thickness data...")
+        settings = self.WEIGHT_SETTING_FLIE.read()
+        if settings:
+            if not "XXXXX" in [settings["thicknessMin"], settings["thicknessMax"]]:
+                self.GetThickness.thicknessMin = float(settings["thicknessMin"])
+                self.GetThickness.thicknessMax = float(settings["thicknessMax"])
+            else:
+                self.GetThickness.thicknessMin = None
+                self.GetThickness.thicknessMax = None
+
         self.current_page = self.thickness_page
         self.switchToPage(self.current_page)
         if not hasattr(self, "GetThickness_called"):
@@ -597,12 +629,12 @@ class Weight10s(QMainWindow, Ui_MainWindow):
 
     # เลือกลักษณะเม็ดยา
     def characteristics(self, selected):
-        print(f"** Characteristics: {selected}\n")
+        print(f"*** Characteristics: {selected}")
         self.PACKING_DATA["Characteristics"] = selected
         QTimer.singleShot(1000, lambda: self.characteristicsResult.emit())
 
     def characteristicsStart(self):
-        print("** Get characteristics data...")
+        print("*** Get characteristics data...")
         self.current_page = self.characteristics_page
         self.switchToPage(self.current_page)
 
@@ -621,28 +653,61 @@ class Weight10s(QMainWindow, Ui_MainWindow):
             self.countdown_timer.stop()  # หยุดนับถอยหลังเมื่อ timeout ถึง 0
             self.run()
 
+    def weightOutOffRanges(
+        self, settings: dict, widget: QLabel, weight: float, color: str = "#FFFFFF", unit: str = ""
+    ):
+        """
+        ตรวจสอบว่าช่วงน้ำหนักอยู่ในช่วงที่กฎหมายยอมรับหรือไม่ \n
+        :param widget: QLabel -> widget \n
+        :param weight: float -> ค่าน้ำหนัก \n
+        :param color: str -> สีตัวอักษร \n
+        :param unit: str -> หน่วย
+        """
+        IR_STYLE = f"border: none; color: {color};"
+        OFR_IH_STYLE = f"border: none; color: #FB0B97;"
+        OFR_REG_STYLE = f"border: none; color: #FA0B0E;"
+        widget.setText(f"{weight:.3f}{unit}")
+
+        if settings:
+            IH_MIN = settings["meanWeightMin"]
+            IH_MAX = settings["meanWeightMax"]
+            REG_MIN = settings["meanWeightRegMin"]
+            REG_MAX = settings["meanWeightRegMax"]
+
+            if not "XXXXX" in [IH_MIN, IH_MAX, REG_MIN, REG_MAX]:
+                if weight < REG_MIN and weight > REG_MAX:
+                    widget.setStyleSheet(OFR_REG_STYLE)
+                elif weight < IH_MIN and weight > IH_MAX:
+                    widget.setStyleSheet(OFR_IH_STYLE)
+                else:
+                    widget.setStyleSheet(IR_STYLE)
+            else:
+                widget.setStyleSheet(IR_STYLE)
+
     def summaryStart(self):
         self.signout_1.setHidden(True)
         self.signout_2.setHidden(True)
 
         self.PACKING_DATA["Type"] = "ONLINE"
         self.WEIGHING_DATA_FILE.append(self.PACKING_DATA)
+        self.sendDataToServer_timer.start(500)  # เริ่มส่งข้อมูล
+
         data = self.PACKING_DATA
         timestamp = data["Timestamp"]
         type = "ONLINE"
-        weight1 = data["Weight"]["weight1"]
-        weight2 = data["Weight"]["weight2"]
-        average = (weight1 + weight2) / 2
+        weight1 = float(data["Weight"]["weight1"])
+        weight2 = float(data["Weight"]["weight2"])
+        average = sum([weight1, weight2]) / 2
         thicknessData = data["Thickness"]
 
-        self.summary_weight_1.setText(f"{weight1:.3f} กรัม")
-        self.summary_weight_2.setText(f"{weight2:.3f} กรัม")
-        self.summary_average.setText(f"{average:.3f} กรัม")
+        settings = self.WEIGHT_SETTING_FLIE.read()
+        self.weightOutOffRanges(settings, self.summary_weight_1, weight1, unit=" กรัม")
+        self.weightOutOffRanges(settings, self.summary_weight_2, weight2, unit=" กรัม")
+        self.weightOutOffRanges(settings, self.summary_average, average, unit=" กรัม")
 
-        settings = self.SETTING_DATA_FILE.read()
         if settings:
             meanWeight = settings["meanWeight"]
-            if meanWeight != "xxxxx":
+            if meanWeight != "XXXXX":
                 percentage = round((average / float(meanWeight)) * 100, 2)
                 self.summary_percent.setText(f"{percentage:.2f}%")
 
@@ -670,69 +735,64 @@ class Weight10s(QMainWindow, Ui_MainWindow):
     sendDataToServerResult = Signal(bool)
 
     def sendDataToServer(self):
-        self.Title_alert.loading("กำลังส่งข้อมูล...", False)
-
         try:
-            self.offline_count = 0
+            self.file_count = 0
+
+            # อ่านไฟล์ข้อมูลการชั่งน้หนัก
             weighing_data = self.WEIGHING_DATA_FILE.read()
             if weighing_data:
+                self.file_count = len(weighing_data)
+                
                 print("*** Send data to server...")
-                for data in weighing_data:
-                    current_time = datetime.now()
-                    timestamp_str = data["Timestamp"]
-                    timestamp = datetime.strptime(timestamp_str, "%d/%m/%Y, %H:%M:%S")
-                    if current_time - timestamp > timedelta(
-                        minutes=_OFFLINE_CHECK_TIME
-                    ):
-                        data["Type"] = "OFFLINE"
-                        self.offline_count += 1
-
-                self.WEIGHING_DATA_FILE.write(weighing_data)
                 self.Title_alert.alert_always(f"กำลังส่งข้อมูล...", False)
                 self.sendDataToServer_timer.stop()
-
+                
+                # อ่านข้อมูลจากไฟล์ตั้งค่า
                 settings = self.settingsFile.read()
                 if settings:
                     self.tabletID = settings["TabletID"]
                     sheetDataId = self.findSpreadsheetID(self.tabletID)
                     rangeData = settings["Main"]["weighingDataRange"]
+                    remarksRange = settings["Main"]["remarksRange"]
+                    line_tokens = settings["Main"]["line_token"]
                     if not hasattr(self, "postDataToServer"):
-                        self.postDataToServer = Server(self.token, self.credentials)
-                        self.postDataToServer.get.connect(self._sendDataToServer)
+                        self.postDataToServer = Server(self.token, self.credentials, self.WEIGHT_SETTING_FLIE, line_tokens)
+                        self.postDataToServer.post.connect(self._sendDataToServer)
 
                     self.postDataToServer.postData(
-                        sheetDataId, rangeData, self.WEIGHING_DATA_FILE.read()
+                        sheetDataId, remarksRange, rangeData, weighing_data
                     )
             else:
                 self.sendDataToServer_timer.setInterval(_WEIGHING_DATA_FILE_CHECK_TIME)
                 self.Title_alert.stop()
         except FileNotFoundError:
-            print("File data not found!")
+            print("*** File data not found!")
             self.Title_alert.stop()
             pass
 
     @Slot(bool)
     def _sendDataToServer(self, result=False):
         if result:
-            self.Title_alert.success("ดำเนินการเรียบร้อยแล้ว", 3000)
+            QTimer.singleShot(1000, lambda: self.Title_alert.success(
+                "ดำเนินการเรียบร้อยแล้ว", 3000))
             self.WEIGHING_DATA_FILE.delete()
-            self.sendDataToServer_timer.start(10000)
+            self.sendDataToServer_timer.start(100)
         else:
-            self.Title_alert.alert("เกิดข้อผิดพลาดในการส่งข้อมูล", 3000)
-            if self.offline_count:
+            self.Title_alert.alert_always("เกิดข้อผิดพลาดในการส่งข้อมูล", 3000)
+            if self.file_count > 0:
                 QTimer.singleShot(
-                    3000,
+                    5000,
                     lambda: self.Title_alert.alert_always(
-                        f"มีไฟล์ออฟไลน์อยู่ {self.offline_count} ไฟล์"
+                        f"มีไฟล์ค้างอยู่ในเครื่อง {self.file_count} ไฟล์"
                     ),
                 )
-            self.sendDataToServer_timer.start(10000)
+            self.sendDataToServer_timer.start(_WEIGHING_DATA_FILE_CHECK_TIME)
 
     ##########################  weight10s' ##########################
     def reset(self):
         if hasattr(self, "countdown_timer"):
             self.countdown_timer.stop()
-        self.findLabels(self, mode="reset")
+        self.findWidget(self, mode=LABEL_RESET)
         self.run()
 
     def restart(self):
@@ -744,7 +804,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         QApplication.quit()
 
     def run(self):
-        print("Weight10s' is running...")
+        print("*** Weight10s' is running...")
         # Valiable parameters
         self.PACKING_DATA = {}
         self.SEND_DATA_TO_SERVER_STATUS = True

@@ -1,10 +1,12 @@
 {
     "Main": {
         "spreadsheetID": "1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY",
+        "line_token": "j6SaVhnQo0Vd25Taip5NDCR2CJzWJImSsyL7tR6E9YX",
         "userDataRange": "User!A3:F",
-        "weighingDataRange": "Weight!A3:S",
+        "weighingDataRange": "Weight!A2:BC",
         "TabletListRange": "TabletID!A2:E",
-        "settingDataRange": "Setting!B2:B19"
+        "settingDataRange": "Setting!B2:B19",
+        "remarksRange": "Remarks!A2:F"
     },
     "TabletList": [
         {

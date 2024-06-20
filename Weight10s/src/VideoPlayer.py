@@ -10,10 +10,10 @@ class VideoPlayer(QMainWindow):
         
         self.media = QMediaPlayer()
         self.videoWidget = QVideoWidget()
-        self.audioOutput = QAudioOutput()
-        self.audioOutput.setVolume(1)
+        # self.audioOutput = QAudioOutput()
+        # self.audioOutput.setVolume(1)
         
-        self.media.setAudioOutput(self.audioOutput)
+        # self.media.setAudioOutput(self.audioOutput)
         self.media.setVideoOutput(self.videoWidget)
         
         layout = QVBoxLayout()

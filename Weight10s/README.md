@@ -26,17 +26,21 @@
     ** pyside6
         - pip install pyside6
 
-    ** Keyboard
-        - python -m pip install pynput
-
     ** Install front kanit
         .assets/fronts/kanit.zip
+        cd fonts
+        - mkdir /usr/share/fonts/kanit
+        - mv *.ttf /usr/share/fonts/kanit
+        - cd /usr/share/fonts/kanit
+        - mkfontscale
+        - mkfontdir
+        - fc-cache
+        - xset fp rehash
 
-    ** google
+    ** Libraries
         - pip install google-api-python-client
         - pip install google-auth-oauthlib
         - pip install pywifi
         - pip install comtypes
         - pip install requests
         - pip install pyserial
-        - pip install pynput

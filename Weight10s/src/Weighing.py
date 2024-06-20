@@ -14,39 +14,20 @@ class Weighing(QThread):
     } \n
     """
 
-    get = Signal(dict)
+    get = Signal(object)
     hidden = Signal(bool)
 
     def __init__(
         self,
         port=None,
         baudrate=9600,
-        settingsFile=None,
-        widget: dict = {"weight1", "weight2", "average"},
     ):
         super().__init__()
         self.port = port
         self.baudrate = baudrate
-        self.settingsFile = settingsFile
-        self.widget_weight = [widget["weight1"], widget["weight2"]]
-        self.widget_average = widget["average"]
 
-    def weightOutOfRange(self, widget, weight):
-        initial_text = widget.text()
-        initial_style = widget.styleSheet()
-        inRange_style = f"{initial_style} color: rgb(0, 170, 127);"
-        outOffRange_style = f"{initial_style} color: rgb(255, 17, 17);"
-        widget.setText(f"{weight:.3f}")
-
-        if weight <= 1:
-            widget.setStyleSheet(inRange_style)
-        else:
-            widget.setStyleSheet(outOffRange_style)
-
-    @Slot(dict, bool)
     def run(self):
         # self.serial = serial.Serial(port=self.port, baudrate=self.baudrate)
-        weighingData = {}
         self.weighing = []
 
         # อ่านค่าจาก port rs232
@@ -66,21 +47,9 @@ class Weighing(QThread):
                 currentWeight = currentWeight.replace("+", "").strip()
                 weight = round(float(currentWeight), 3)
                 self.weighing.append(weight)
-                print(f"Weight{len(self.weighing)}: {weight:.3f}")
 
-                weighingData[f"weight{len(self.weighing)}"] = weight
-
-                currentWidget = self.widget_weight[len(self.weighing) - 1]
-                self.weightOutOfRange(currentWidget, weight)
-
-                average = round(float(sum(self.weighing) / len(self.weighing)), 3)
-                weighingData["average"] = average
-                self.weightOutOfRange(self.widget_average, average)
-
+                self.get.emit(self.weighing)
                 self.hidden.emit(True)
             
             except Exception as e:
                 continue
-
-        # self.serial.close()
-        self.get.emit(weighingData)

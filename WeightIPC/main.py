@@ -1,21 +1,16 @@
 import sys
 import os
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
-from PySide6.QtCore import QSize, Qt, QTimer, QUrl
-from PySide6.QtGui import QPixmap, QIcon, QFont
-from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
-from src.Datetime import ShowDateTime
-from src.Img import ShowImage
-from src.Sound import PlaySound
-from src.WiFi import WiFi
+from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QIcon
 from weight import WeightIPC
 
 ##################################### ตั้งค่า ######################################
 #################################################################################
-OS_NAME = "Windows" # ตั้งค่าระบบปฏิบัติการ
-BALANCE_PORT_WINDOWS = "COM6" # พอร์ต RS232 ** Windows("COM6")
-BALANCE_PORT_LINUX = "/dev/ttyUSB0" # พอร์ต RS232 ** Linux("/dev/ttyUSB0")
+OS_NAME = "Windows"  # ตั้งค่าระบบปฏิบัติการ
+BALANCE_PORT_WINDOWS = "COM6"  # พอร์ต RS232 ** Windows("COM6")
+BALANCE_PORT_LINUX = "/dev/ttyUSB0"  # พอร์ต RS232 ** Linux("/dev/ttyUSB0")
 #################################################################################
 #################################################################################
 
@@ -35,6 +30,7 @@ TOKEN = os.path.join(BASE_DIR, "files", "token.pickle")
 CREDENTIALS = os.path.join(BASE_DIR, "files", "credentials.json")
 SETTINGS = os.path.join(BASE_DIR, "files", "settings.json")
 
+
 def main():
     app = QApplication(sys.argv)
 
@@ -47,7 +43,7 @@ def main():
     second_screen = screens[1]
 
     # สร้างหน้าต่างหลัก
-    window = WeightIPC(TOKEN, CREDENTIALS, SETTINGS, BALANCE_PORT)
+    window = WeightIPC(OS_NAME, TOKEN, CREDENTIALS, SETTINGS, BALANCE_PORT)
     window.resize(1280, 800)
     # window.resize(1024, 600)
     window.move(0, 0)
@@ -60,15 +56,7 @@ def main():
     window.showFullScreen()
     # window.show()
 
-    printTime = ShowDateTime(
-        widget={"date_bar": window.date_bar, "time_bar": window.time_bar}
-    )
-    printTime.show()
-
-    wifi = WiFi(window, os_name=OS_NAME)
-    wifi.show_signal_icon()
-
-    sounds_folder = os.path.join(BASE_DIR, "sounds")
+    # sounds_folder = os.path.join(BASE_DIR, "sounds")
     # file = 'sound1.mp3'
     # test_sounds = PlaySound(sounds_folder)
     # test_sounds.play_all()

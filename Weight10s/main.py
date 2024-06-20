@@ -1,12 +1,10 @@
 import sys
 import os
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
-from PySide6.QtCore import QSize, Qt, QTimer, QUrl
-from PySide6.QtGui import QPixmap, QIcon, QFont
-from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
+from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QIcon
 from src.Datetime import ShowDateTime
-from src.Sound import PlaySound
 from src.WiFi import WiFi
 from weight import Weight10s
 
@@ -46,7 +44,7 @@ def main():
     second_screen = screens[1]
 
     # สร้างหน้าต่างหลัก
-    window = Weight10s(TOKEN, CREDENTIALS, SETTINGS, BALANCE_PORT)
+    window = Weight10s(OS_NAME, TOKEN, CREDENTIALS, SETTINGS, BALANCE_PORT)
     window.resize(1280, 800)
     # window.resize(1024, 600)
     window.move(0, 0)
@@ -58,14 +56,6 @@ def main():
     window.setGeometry(second_screen.availableGeometry())  # ให้หน้าต่างเต็มจอ
     window.showFullScreen()
     # window.show()
-
-    printTime = ShowDateTime(
-        widget={"date_bar": window.date_bar, "time_bar": window.time_bar}
-    )
-    printTime.show()
-
-    wifi = WiFi(window, os_name=OS_NAME)
-    wifi.show_signal_icon()
 
     window.run()
     

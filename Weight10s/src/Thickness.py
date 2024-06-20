@@ -1,16 +1,20 @@
 from PySide6.QtCore import QThread, Signal, Slot
 from src.Alert import Alert
+from ui_weight_10inch import Ui_MainWindow
 
 class Thickness(QThread):
     get = Signal(dict)
 
-    def __init__(self, window):
+    def __init__(self, window: Ui_MainWindow):
         super().__init__()
         self.window = window
         self.current_value = ""
         self.max_range = 5 # max range
         self.current_number = None # current thickness widget number
         self.thicknessData = {} # thickness values
+        self.thicknessMin = 0   # ค่าความหนาต่ำสุด
+        self.thicknessMax = 0   # ค่าความหนาต่ำสุด
+
         
         ##########################   Keyboard   ##########################
         self.window.key_1.clicked.connect(lambda: self.read_key("1"))
@@ -133,7 +137,8 @@ class Thickness(QThread):
         inRange_style = f"{initial_style} color: rgb(0, 170, 127);"
         outOffRange_style = f"{initial_style} color: rgb(255, 17, 17);"
 
-        if thickness <= 1:
-            widget.setStyleSheet(inRange_style)
-        else:
-            widget.setStyleSheet(outOffRange_style)
+        if self.thicknessMin and self.thicknessMax:
+            if thickness < self.thicknessMin or thickness > self.thicknessMax:
+                widget.setStyleSheet(outOffRange_style)
+            else:
+                widget.setStyleSheet(inRange_style)

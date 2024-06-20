@@ -1,10 +1,11 @@
 from PySide6.QtCore import QThread, Signal, Slot
 from src.Alert import Alert
+from ui_weight_10inch import Ui_MainWindow
 
 class TabletNumber(QThread):
     get = Signal(int)
 
-    def __init__(self, window):
+    def __init__(self, window: Ui_MainWindow):
         super().__init__()
         self.window = window
         self.current_value = ""

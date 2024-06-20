@@ -1,19 +1,19 @@
 from PySide6.QtCore import QTimer
+from PySide6.QtWidgets import QLabel
 from PySide6.QtGui import QPixmap
 import os
 
 class ShowImage():
-    def __init__(self, window, paths):
-        self.window = window
-        self.tablet_front_img = window.tablet_front_img
-        self.tablet_behind_img = window.tablet_behind_img
+    def __init__(self, frontImg_widget: QLabel, behindImg_widget: QLabel, paths):
+        self.tablet_front_img = frontImg_widget
+        self.tablet_behind_img = behindImg_widget
         self.paths = paths
         self.image_files = [f for f in os.listdir(paths) if os.path.isfile(os.path.join(paths, f))]
         self.image_index = 0
         
     def show(self, front_img, behind_img):
-        self.window.tablet_front_img.setPixmap(QPixmap(front_img))
-        self.window.tablet_behind_img.setPixmap(QPixmap(behind_img))
+        self.tablet_front_img.setPixmap(QPixmap(front_img))
+        self.tablet_behind_img.setPixmap(QPixmap(behind_img))
         
     def show_all(self):
         self.timer = QTimer()

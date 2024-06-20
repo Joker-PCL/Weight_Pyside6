@@ -1,7 +1,8 @@
 from PySide6.QtCore import QTimer
+from PySide6.QtWidgets import QLabel
 
 class Alert():
-    def __init__(self, widget):
+    def __init__(self, widget: QLabel):
         self.widget = widget
         self.initial_text = self.widget.text()
         self.initial_style = self.widget.styleSheet()
