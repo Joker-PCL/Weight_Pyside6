@@ -2,9 +2,8 @@
 
 while true
 do
-    echo -e "\n"
     echo -e "<<< WEIGHT 10s' >>>\n"
-    for i in {10..1}
+    for i in {5..1}
     do
         echo -ne "Starting in $i seconds \r"
         sleep 1

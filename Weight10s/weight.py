@@ -14,7 +14,7 @@ from PySide6.QtCore import  QTimer, Signal, Slot
 from PySide6.QtGui import QMovie, QPixmap
 from datetime import datetime, timedelta
 
-from src.Alert import Alert
+from src.Alert import Alert, BUZZER
 from src.api.File import File
 from src.api.Server import Server
 from src.WiFi import WiFi
@@ -45,6 +45,7 @@ _FORMATTER = logging.Formatter(
 _FILE_HANDLER.setFormatter(_FORMATTER)
 _LOGGER.addHandler(_FILE_HANDLER)
 
+_BUZZER_PIN = 4
 _OFFLINE_CHECK_TIME = 15  # min ตั้งค่าเวลากำหนดให้เป็นข้อมูล Offline
 _WEIGHING_DATA_FILE_CHECK_TIME = 30000  # millisec ระยะเวลาตรวจสอบไฟล์ข้อมูลการชั่ง
 _SCREEN_SERVER_TIMEOUT1 = 30  # sec พักหน้าจอ
@@ -71,8 +72,8 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         self.balancePort = balancePort
 
         self.setupUi(self)
-        showDateTime = ShowDateTime(self.date_bar, self.time_bar)
-        showDateTime.start()
+        self.showDateTime = ShowDateTime(self.date_bar, self.time_bar)
+        self.showDateTime.start()
         self.WiFi = WiFi(self, os_name)
         self.WiFi.show_signal_icon()
 
@@ -91,6 +92,9 @@ class Weight10s(QMainWindow, Ui_MainWindow):
 
         self.restart_program_1.clicked.connect(self.restart)
         self.restart_program_2.clicked.connect(self.restart)
+
+        # สร้างเสียงแจ้งเตือน
+        self.BUZZER = BUZZER(os_name, _BUZZER_PIN)
 
         # สร้างการแจ้งเตือนส่วนหัว
         self.Title_alert = Alert(self.title)
@@ -168,7 +172,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
             self.button_video_pause.clicked.connect(self.videoPlayer.media.pause)
             self.button_video_stop.clicked.connect(self.videoPlayer.media.stop)
 
-    def findWidget(self, widget, mode=LABEL_GET):
+    def findWidget(self, widget: QMainWindow, mode=LABEL_GET):
         """
         ค้นหา QLabel ทั้งหมดที่อยู่ใน widget และดำเนินการตามโหมดที่ระบุ
 
@@ -191,7 +195,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
                 else:
                     self.findWidget(child, mode)
             except Exception as e:
-                print(e)
+                # print(e)
                 continue
     
     def clearSettingsData(self):
@@ -200,7 +204,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         self.WEIGHT_SETTING_FLIE.delete()
         for label_name, label_text in self.initialLabel.items():
             # ค้นหา QLabel ที่มี objectName ตรงกับ label_name
-            label = self.frame_10.findChild(QLabel, label_name)
+            label:QLabel = self.frame_10.findChild(QLabel, label_name)
             if label and label.objectName() != "Operator":
                 label.setText(label_text)
 
@@ -256,18 +260,17 @@ class Weight10s(QMainWindow, Ui_MainWindow):
                     currunt_tabletList.append(child.title().replace("เครื่องตอก ", ""))
 
             settings = self.settingsFile.read()
-            qhboxLayout = QHBoxLayout(self.tabletListContents)
-            qhboxLayout.setObjectName("tabletList_qhboxLayout")
-            qhboxLayout.setSpacing(50)
-            self.tabletList.setWidget(self.tabletListContents)
+            if not hasattr(self, "tabletListLayout"):
+                self.tabletListLayout = QHBoxLayout(self.tabletListContents)
+                self.tabletListLayout.setObjectName("tabletList_qhboxLayout")
+                self.tabletListLayout.setSpacing(50)
+                self.tabletList.setWidget(self.tabletListContents)
 
-            for tabletID in sorted(
-                [tablet["tabletID"] for tablet in settings["TabletList"]]
-            ):
+            for tabletID in sorted([tablet["tabletID"] for tablet in settings["TabletList"]]):
                 if not tabletID in currunt_tabletList:
                     _tablet = TabletList(tabletID)
                     _tablet.tabletID.connect(self.setCurrentTablet)
-                    qhboxLayout.addWidget(_tablet.qbox)
+                    self.tabletListLayout.addWidget(_tablet.qbox)
 
     @Slot(QGroupBox)
     def setCurrentTablet(self, qbox: QGroupBox):
@@ -536,13 +539,16 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         """ดึงข้อมูลการชั่งน้ำหนัก"""
 
         print(f"*** WeighingData: {weighingData}")
+        self.BUZZER.alert(0.2)
         self.reset_weighing.setHidden(True)
         now = datetime.now()  # current date and time
         timestamp = now.strftime("%d/%m/%Y, %H:%M:%S")
 
         settings = self.WEIGHT_SETTING_FLIE.read()
         _average = sum(weighingData) / len(weighingData)
-        self.weightOutOffRanges(settings, self.average, _average)
+        _check = self.weightOutOffRanges(settings, self.average, _average)
+        if _check:
+            self.BUZZER.alert(0.1, 10)
 
         for i, w in enumerate(weighingData):
             widget = getattr(self, f"weight_{i+1}")
@@ -649,9 +655,8 @@ class Weight10s(QMainWindow, Ui_MainWindow):
             self.countdownResult.emit(self.summary_timeout)
             self.summary_timeout -= 1
         else:
-            self.successResult.emit()
             self.countdown_timer.stop()  # หยุดนับถอยหลังเมื่อ timeout ถึง 0
-            self.run()
+            self.successResult.emit()
 
     def weightOutOffRanges(
         self, settings: dict, widget: QLabel, weight: float, color: str = "#FFFFFF", unit: str = ""
@@ -675,14 +680,21 @@ class Weight10s(QMainWindow, Ui_MainWindow):
             REG_MAX = settings["meanWeightRegMax"]
 
             if not "XXXXX" in [IH_MIN, IH_MAX, REG_MIN, REG_MAX]:
-                if weight < REG_MIN and weight > REG_MAX:
+                if weight < float(REG_MIN) or weight > float(REG_MAX):
                     widget.setStyleSheet(OFR_REG_STYLE)
-                elif weight < IH_MIN and weight > IH_MAX:
+                    return True
+                elif weight < float(IH_MIN) or weight > float(IH_MAX):
                     widget.setStyleSheet(OFR_IH_STYLE)
+                    return True
                 else:
                     widget.setStyleSheet(IR_STYLE)
             else:
                 widget.setStyleSheet(IR_STYLE)
+
+    def thicknessOutOffRanges(self, widget: QLabel, thickness: float, min: float, max: float, unit: str = ""):
+        widget.setText(f"{thickness}{unit}")
+        if float(thickness) < float(min) or float(thickness) > float(max):
+            widget.setStyleSheet(f"border: none; color: #FA0B0E;")
 
     def summaryStart(self):
         self.signout_1.setHidden(True)
@@ -713,15 +725,27 @@ class Weight10s(QMainWindow, Ui_MainWindow):
 
         thickness_data_obj = []
         for i in range(1, 11):
-            thickness = thicknessData[f"number_{i}"]
-            if thickness != "-":
-                thickness_widget = getattr(self, f"thickness_summary_{i}")
-                thickness_widget.setText(thickness)
-                thickness_data_obj.append(round(float(thickness), 2))
+            thickness_value = thicknessData[f"number_{i}"]
+            if thickness_value != "-":
+                thickness_widget:QLabel = getattr(self, f"thickness_summary_{i}")
+                thickness_widget.setText(thickness_value)
+                thickness_data_obj.append(round(float(thickness_value), 2))
+
+                if settings:
+                    TN_MIN = settings['thicknessMin']
+                    TN_MAX = settings['thicknessMax']
+                    if not "XXXXX" in [TN_MIN, TN_MAX]:
+                        self.thicknessOutOffRanges(thickness_widget, thickness_value, TN_MIN, TN_MAX)
 
         if thickness_data_obj:
-            self.summary_min_thickness.setText(f"{min(thickness_data_obj):.2f} mm.")
-            self.summary_max_thickness.setText(f"{max(thickness_data_obj):.2f} mm.")
+            thickness_min = min(thickness_data_obj)
+            thickness_max = max(thickness_data_obj)
+            if settings:
+                    TN_MIN = settings['thicknessMin']
+                    TN_MAX = settings['thicknessMax']
+                    if not "XXXXX" in [TN_MIN, TN_MAX]:
+                        self.thicknessOutOffRanges(self.summary_min_thickness, thickness_min, TN_MIN, TN_MAX, " mm.")
+                        self.thicknessOutOffRanges(self.summary_max_thickness, thickness_max, TN_MIN, TN_MAX, " mm.")
 
         self.current_page = self.summary_page
         self.switchToPage(self.current_page)
@@ -805,6 +829,8 @@ class Weight10s(QMainWindow, Ui_MainWindow):
 
     def run(self):
         print("*** Weight10s' is running...")
+        self.BUZZER.alert(0.3)
+
         # Valiable parameters
         self.PACKING_DATA = {}
         self.SEND_DATA_TO_SERVER_STATUS = True

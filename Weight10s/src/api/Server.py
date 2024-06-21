@@ -17,8 +17,6 @@ _OFFLINE_CHECK_TIME = 15  # min ตั้งค่าเวลากำหนด
 _LOGGER = logging.getLogger(__name__)
 
 ########################## คลาสดึงข้อมูล ##########################
-
-
 class GetData(QThread):
     get = Signal(object)
 
@@ -77,9 +75,9 @@ class PostData(QThread):
             REG_MAX = self.settings['meanWeightRegMax']
 
             if not "XXXXX" in [IH_MIN, IH_MAX, REG_MIN, REG_MAX]:
-                if _weight < REG_MIN or _weight > REG_MAX:
+                if _weight < float(REG_MIN) or _weight > float(REG_MAX):
                     return True
-                elif _weight < IH_MIN or _weight > IH_MAX:
+                elif _weight < float(IH_MIN) or _weight > float(IH_MAX):
                     return True
                 else:
                     return False
@@ -94,7 +92,8 @@ class PostData(QThread):
             offline_count = 0
             offline_timestamp = None
             remarks_msg = ""
-            outOffRanges_msg = ""
+            weightOutOffRanges_msg = ""
+            thicknessOutOffRanges_msg = ""
             char_abnormal_msg = ""
 
             REMARKS_ALERT = False
@@ -105,7 +104,7 @@ class PostData(QThread):
                 type = _data['Type']
                 weight1 = _data['Weight']['weight1']
                 weight2 = _data['Weight']['weight2']
-                average = None
+                average = sum([weight1, weight2]) / 2
                 percentage = None
                 characteristics = _data['Characteristics']
                 operator = _data['Operator']
@@ -122,25 +121,41 @@ class PostData(QThread):
                     if offline_count == 1:
                         offline_timestamp = timestamp
 
-                if characteristics == "ผิดปกติ":
-                    char_abnormal_msg += '❌พบเม็ดยาลักษณะ "ผิดปกติ"\n'
-                    char_abnormal_msg += f"เวลา {timestamp}\n"
-                    char_abnormal_msg += f"ผู้ปฏิบัติงาน {operator}\n"
-
                 # ทำข้อมูลให้อยู่ในรูปแบบ array เพื่อส่งไปยัง server
                 packing_cache = [
                     f"'{timestamp}",
                     type,
                     f"'{weight1:.3f}",
                     f"'{weight2:.3f}",
-                    average,
+                    None,
                     percentage,
                     characteristics,
                     operator,
                     inspactor,
                 ]
-
-                # เพิ่มข้อมูลคสามหนา
+                
+                # ตรวจสอบค่าน้ำหนักที่ออกนอกช่วง
+                if self.settings:
+                    IH_MIN = self.settings["meanWeightMin"]
+                    IH_MAX = self.settings["meanWeightMax"]
+                    REG_MIN = self.settings["meanWeightRegMin"]
+                    REG_MAX = self.settings["meanWeightRegMax"]
+                    
+                    if not "XXXXX" in [IH_MIN, IH_MAX, REG_MIN, REG_MAX]:
+                        # ตรวจสอบค่าน้ำหนัก
+                        for i, weight in enumerate([weight1, weight2]):
+                            if weight < float(REG_MIN) or weight > float(REG_MAX):
+                                weightOutOffRanges_msg += f"เม็ดที่ {i+1}) {weight:.3f} กรัม\n"
+                            elif weight < float(IH_MIN) or weight > float(IH_MAX):
+                                weightOutOffRanges_msg += f"เม็ดที่ {i+1}) {weight:.3f} กรัม\n"
+                        
+                        # ตรวจสอบค่าน้ำหนักเฉลี่ย
+                        if average < float(REG_MIN) or average > float(REG_MAX):
+                            weightOutOffRanges_msg += f"ค่าเฉลี่ย {average:.3f} กรัม\n"
+                        elif average < float(IH_MIN) or average > float(IH_MAX):
+                            weightOutOffRanges_msg += f"ค่าเฉลี่ย {average:.3f} กรัม\n"
+                            
+                # เพิ่มข้อมูลความหนา
                 for i in range(1, 11):
                     thickness_value = thicknessData[f"number_{i}"]
                     if thickness_value != "-":
@@ -148,15 +163,19 @@ class PostData(QThread):
                             TN_MIN = self.settings['thicknessMin']
                             TN_MAX = self.settings['thicknessMax']
                             if not "XXXXX" in [TN_MIN, TN_MAX]:
-                                if float(thickness_value) < TN_MAX or float(thickness_value) > TN_MAX:
-                                    outOffRanges_msg += f"เม็ดที่ {i}) {thickness_value:.3f}\n"
+                                if float(thickness_value) < float(TN_MIN) or float(thickness_value) > float(TN_MAX):
+                                    thicknessOutOffRanges_msg += f"เม็ดที่ {i}) {thickness_value} mm.\n"
 
                         thickness_value = f"'{thickness_value}"
                                 
                     packing_cache.append(thickness_value)
 
-                packing_data.append(packing_cache)
+                # ตรวจสอบเม็ดยาลักษณะ "ผิดปกติ"
+                if characteristics == "ผิดปกติ":
+                    char_abnormal_msg += '\n❌พบเม็ดยาลักษณะ "ผิดปกติ"\n'
 
+                packing_data.append(packing_cache)
+            
             try:
                 response = self.service.spreadsheets().values().append(
                     spreadsheetId=self.spreadsheetId,
@@ -191,14 +210,28 @@ class PostData(QThread):
                         LINE_ALERT = True
 
                     # แจ้งเตือนเมื่อมีน้ำหนักเม็ดยาออกนอกช่วง
-                    if outOffRanges_msg:
-                        message += "\n❎ น้ำหนักไม่ได้อยู่ในช่วงที่กำหนด\n"
+                    if weightOutOffRanges_msg:
+                        weight_header_msg = "\n❎ น้ำหนักไม่ได้อยู่ในช่วงที่กำหนด\n"
+                        message += weight_header_msg
                         message += "✅ ช่วงที่กำหนด\n"
                         message += f"IH {self.settings['meanWeightMin']}-{self.settings['meanWeightMax']}\n"
                         message += f"REG {self.settings['meanWeightRegMin']}-{self.settings['meanWeightRegMax']}\n"
                         message += "❎ น้ำหนักที่ชั่ง\n"
-                        message += outOffRanges_msg
-                        remarks_msg += outOffRanges_msg
+                        message += weightOutOffRanges_msg
+                        remarks_msg += weight_header_msg
+                        remarks_msg += weightOutOffRanges_msg
+                        REMARKS_ALERT = True
+                        LINE_ALERT = True
+
+                    # แจ้งเตือนเมื่อมีความหนาเม็ดยาออกนอกช่วง
+                    if thicknessOutOffRanges_msg:
+                        thickness_header_msg = "\n❎ ความหนาไม่ได้อยู่ในช่วงที่กำหนด\n"
+                        message += thickness_header_msg
+                        message += f"✅ ช่วงที่กำหนด {self.settings['thicknessMin']}-{self.settings['thicknessMax']}\n"
+                        message += "❎ ความหนาที่วัดได้\n"
+                        message += thicknessOutOffRanges_msg
+                        remarks_msg += thickness_header_msg
+                        remarks_msg += thicknessOutOffRanges_msg
                         REMARKS_ALERT = True
                         LINE_ALERT = True
 
@@ -209,10 +242,19 @@ class PostData(QThread):
                         REMARKS_ALERT = True
                         LINE_ALERT = True
 
+                    # เพิ่มแจ้งเตือนผู้ปฏิบัติงาน
+                    timestamp_msg = f"เวลา {timestamp}\n"
+                    operator_msg = f"ผู้ปฏิบัติงาน {operator}\n"
+                    message += timestamp_msg
+                    message += operator_msg
+                    remarks_msg += timestamp_msg
+                    remarks_msg += operator_msg
+
                     # แจ้งเตือนไลน์
                     if LINE_ALERT:
                         LineNotify(self.line_token, message)
 
+                    # ลงบันทึก remarks
                     if REMARKS_ALERT:
                         remarks_timestamp = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
                         # ส่งบันทึกค่าน้ำหนักที่ไม่ผ่านเกณฑ์
@@ -234,11 +276,11 @@ class PostData(QThread):
                     self.post.emit(False)
 
             except Exception as e:
-                _LOGGER.error(f"Send data to server: {packing_data} \n {e}")
+                _LOGGER.error(f"*** Send data to server: {packing_data} \n {e}")
                 self.post.emit(False)
 
         except Exception as e:
-            _LOGGER.error(f"sendData_sheets: {self.data} \n {e}")
+            _LOGGER.error(f"*** sendData_sheets: {self.data} \n {e}")
             self.post.emit(False)
 
 
@@ -301,10 +343,8 @@ class Server(QThread):
     @Slot(object)
     def _getData(self, result):
         if hasattr(self, "_getData_"):
-            if self._getData_.isRunning():
-                self._getData_.quit()
-                self._getData_.wait()
-
+            self._getData_.quit()
+            self._getData_.wait()
             del self._getData_
             self.get.emit(result)
 
@@ -338,9 +378,7 @@ class Server(QThread):
     @Slot(bool)
     def _postData(self, result):
         if hasattr(self, "_postData_"):
-            if self._postData_.isRunning():
-                self._postData_.quit()
-                self._postData_.wait()
-
+            self._postData_.quit()
+            self._postData_.wait()
             del self._postData_
             self.post.emit(result)

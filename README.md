@@ -7,20 +7,22 @@
     ** remote ssh
         - ssh joker@192.168.10.7
     ** ส่งไฟล์
-        - scp VideoPlayer.py joker@192.168.10.7:/home/joker/Desktop
+        - scp VideoPlayer.py polipharm@192.168.10.7:/home/polipharm/Desktop
         
-<!-- ########### compile project ########### -->
+<!-- ########### compile pyside6 project ########### -->
     - pyside6-uic weight.ui > ui_weight.py
     - pyside6-rcc resource.qrc -o resource_rc.py
     ** convert ui_weight.py flie to UTF-8 before
 
     - cd my_project
     ** windows
-        - python -m venv env
+        - python -m venv .env
         - env\Scripts\activate
     ** linux
         - python3 -m venv env
         - source env/bin/activate
+        - pip3 install gpiozero
+        - python3 -m venv --system-site-packages env 
 
 <!-- ########### Libraries ########### -->
     ** pyside6

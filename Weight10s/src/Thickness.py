@@ -1,6 +1,7 @@
 from PySide6.QtCore import QThread, Signal, Slot
 from src.Alert import Alert
 from ui_weight_10inch import Ui_MainWindow
+from PySide6.QtWidgets import QLabel, QPushButton
 
 class Thickness(QThread):
     get = Signal(dict)
@@ -81,15 +82,15 @@ class Thickness(QThread):
         else:
             for i in range(1, 11):
                 self.thicknessData[f"number_{i}"] = "-"
-                thickness_number = getattr(self.window, f"thickness_val_{i}")
+                thickness_number:QLabel = getattr(self.window, f"thickness_val_{i}")
                 thickness_number.setText(self.initial_text)
                 thickness_number.setStyleSheet(self.initial_style)
 
             self.get.emit(self.thicknessData)
 
     # ป้อนข้อมูลความหนา
-    def thickness_input(self, thickness_number):
-        self.current_number = thickness_number
+    def thickness_input(self, thickness_number:QPushButton):
+        self.current_number:QPushButton = thickness_number
         number = thickness_number.objectName()
         thickness_number_value = thickness_number.text()
         
@@ -140,5 +141,6 @@ class Thickness(QThread):
         if self.thicknessMin and self.thicknessMax:
             if thickness < self.thicknessMin or thickness > self.thicknessMax:
                 widget.setStyleSheet(outOffRange_style)
+                self.window.BUZZER.alert(0.1, 10)
             else:
                 widget.setStyleSheet(inRange_style)

@@ -2078,3 +2078,153 @@
 20-06-2024 03:51:09 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
 20-06-2024 03:51:12 DEBUG: Calling CoUninitialize()
 20-06-2024 03:51:12 DEBUG: CoUninitialize() done.
+21-06-2024 03:05:44 DEBUG: Calling CoUninitialize()
+21-06-2024 03:05:44 DEBUG: CoUninitialize() done.
+21-06-2024 03:05:53 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+21-06-2024 03:05:53 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+21-06-2024 03:05:53 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+21-06-2024 03:05:53 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:05:54 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+21-06-2024 03:06:05 INFO: login: RFID 1514075799 DETAIL {'usernameTH': 'ณัฐพล', 'role': 'Admin'}
+21-06-2024 03:06:06 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:06:06 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+21-06-2024 03:06:11 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:06:11 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:06:50 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:06:50 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:06:52 DEBUG: Send data to server: [["'21/06/2024, 03:06:05", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:06:44", "'03:06:44", "'03:06:45", "'03:06:46", "'03:06:46", "'03:06:47", "'03:06:47", "'03:06:48", "'03:06:49", "'03:06:50"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'4.000", "'5.000", "'6.000", "'7.000", "'8.000", "'9.000", "'12.000"]]
+21-06-2024 03:06:52 DEBUG: Starting new HTTPS connection (1): notify-api.line.me:443
+21-06-2024 03:06:52 DEBUG: https://notify-api.line.me:443 "POST /api/notify HTTP/1.1" 200 None
+21-06-2024 03:06:52 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Remarks%21A2%3AF:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:08:15 DEBUG: Calling CoUninitialize()
+21-06-2024 03:08:15 DEBUG: CoUninitialize() done.
+21-06-2024 03:08:27 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:08:27 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+21-06-2024 03:08:39 INFO: login: RFID 1514075799 DETAIL {'usernameTH': 'ณัฐพล', 'role': 'Admin'}
+21-06-2024 03:08:40 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:08:40 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+21-06-2024 03:08:45 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:08:45 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:09:39 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:09:40 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:09:41 DEBUG: Send data to server: [["'21/06/2024, 03:08:39", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:09:04", "'03:09:05", "'03:09:07", "'03:09:27", "'03:09:30", "'03:09:31", "'03:09:37", "'03:09:37", "'03:09:38", "'03:09:39"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'4.000", "'5.000", "'6.000", "'5.000", "'4.000", "'3.000", "'2.000"]]
+21-06-2024 03:09:41 DEBUG: Starting new HTTPS connection (1): notify-api.line.me:443
+21-06-2024 03:09:41 DEBUG: https://notify-api.line.me:443 "POST /api/notify HTTP/1.1" 200 None
+21-06-2024 03:09:41 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Remarks%21A2%3AF:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:11:12 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:11:12 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+21-06-2024 03:11:19 INFO: login: RFID 1514075799 DETAIL {'usernameTH': 'ณัฐพล', 'role': 'Admin'}
+21-06-2024 03:11:20 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:11:20 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+21-06-2024 03:11:25 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:11:26 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:11:29 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:11:30 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:11:53 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:11:53 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:11:54 ERROR: Send data to server: [["'21/06/2024, 03:11:19", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:11:47", "'03:11:47", "'03:11:48", "'03:11:48", "'03:11:49", "'03:11:49", "'03:11:50", "'03:11:51", "'03:11:51", "'03:11:53"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'4.000", "'5.000", "'6.000", "'1.000", "'2.000", "'3.000", "'4.000"]] 
+ Unable to find the server at sheets.googleapis.com
+21-06-2024 03:12:05 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:12:05 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:12:05 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:12:06 ERROR: Send data to server: [["'21/06/2024, 03:11:19", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:11:47", "'03:11:47", "'03:11:48", "'03:11:48", "'03:11:49", "'03:11:49", "'03:11:50", "'03:11:51", "'03:11:51", "'03:11:53"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'4.000", "'5.000", "'6.000", "'1.000", "'2.000", "'3.000", "'4.000"]] 
+ Unable to find the server at sheets.googleapis.com
+21-06-2024 03:12:06 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+21-06-2024 03:12:12 INFO: login: RFID 1514075799 DETAIL {'usernameTH': 'ณัฐพล', 'role': 'Admin'}
+21-06-2024 03:12:13 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:12:13 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+21-06-2024 03:12:17 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:12:18 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:12:34 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:12:34 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:12:36 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:12:36 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:12:36 ERROR: Send data to server: [["'21/06/2024, 03:11:19", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:11:47", "'03:11:47", "'03:11:48", "'03:11:48", "'03:11:49", "'03:11:49", "'03:11:50", "'03:11:51", "'03:11:51", "'03:11:53"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'4.000", "'5.000", "'6.000", "'1.000", "'2.000", "'3.000", "'4.000"]] 
+ Unable to find the server at sheets.googleapis.com
+21-06-2024 03:13:06 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:13:06 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:13:07 ERROR: Send data to server: [["'21/06/2024, 03:11:19", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:11:47", "'03:11:47", "'03:11:48", "'03:11:48", "'03:11:49", "'03:11:49", "'03:11:50", "'03:11:51", "'03:11:51", "'03:11:53"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'4.000", "'5.000", "'6.000", "'1.000", "'2.000", "'3.000", "'4.000"]] 
+ Unable to find the server at sheets.googleapis.com
+21-06-2024 03:13:37 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:13:37 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:13:37 ERROR: Send data to server: [["'21/06/2024, 03:11:19", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:11:47", "'03:11:47", "'03:11:48", "'03:11:48", "'03:11:49", "'03:11:49", "'03:11:50", "'03:11:51", "'03:11:51", "'03:11:53"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'4.000", "'5.000", "'6.000", "'1.000", "'2.000", "'3.000", "'4.000"]] 
+ Unable to find the server at sheets.googleapis.com
+21-06-2024 03:13:48 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:13:48 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:13:48 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:13:48 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+21-06-2024 03:13:48 ERROR: Send data to server: [["'21/06/2024, 03:11:19", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:11:47", "'03:11:47", "'03:11:48", "'03:11:48", "'03:11:49", "'03:11:49", "'03:11:50", "'03:11:51", "'03:11:51", "'03:11:53"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'4.000", "'5.000", "'6.000", "'1.000", "'2.000", "'3.000", "'4.000"]] 
+ Unable to find the server at sheets.googleapis.com
+21-06-2024 03:13:58 INFO: login: RFID 1514075799 DETAIL {'usernameTH': 'ณัฐพล', 'role': 'Admin'}
+21-06-2024 03:13:59 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:13:59 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+21-06-2024 03:14:02 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:14:02 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:14:18 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:14:19 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:14:19 ERROR: Send data to server: [["'21/06/2024, 03:11:19", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:11:47", "'03:11:47", "'03:11:48", "'03:11:48", "'03:11:49", "'03:11:49", "'03:11:50", "'03:11:51", "'03:11:51", "'03:11:53"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'4.000", "'5.000", "'6.000", "'1.000", "'2.000", "'3.000", "'4.000"]] 
+ Unable to find the server at sheets.googleapis.com
+21-06-2024 03:14:30 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:14:30 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:14:30 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:14:30 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+21-06-2024 03:14:30 ERROR: Send data to server: [["'21/06/2024, 03:11:19", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:11:47", "'03:11:47", "'03:11:48", "'03:11:48", "'03:11:49", "'03:11:49", "'03:11:50", "'03:11:51", "'03:11:51", "'03:11:53"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'4.000", "'5.000", "'6.000", "'1.000", "'2.000", "'3.000", "'4.000"]] 
+ Unable to find the server at sheets.googleapis.com
+21-06-2024 03:14:41 INFO: login: RFID 1514075799 DETAIL {'usernameTH': 'ณัฐพล', 'role': 'Admin'}
+21-06-2024 03:14:42 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:14:42 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+21-06-2024 03:14:49 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:14:49 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:15:00 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:15:01 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:15:01 ERROR: Send data to server: [["'21/06/2024, 03:11:19", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:11:47", "'03:11:47", "'03:11:48", "'03:11:48", "'03:11:49", "'03:11:49", "'03:11:50", "'03:11:51", "'03:11:51", "'03:11:53"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'4.000", "'5.000", "'6.000", "'1.000", "'2.000", "'3.000", "'4.000"]] 
+ Unable to find the server at sheets.googleapis.com
+21-06-2024 03:15:25 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:15:25 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:15:31 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:15:32 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:15:32 ERROR: Send data to server: [["'21/06/2024, 03:11:19", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:11:47", "'03:11:47", "'03:11:48", "'03:11:48", "'03:11:49", "'03:11:49", "'03:11:50", "'03:11:51", "'03:11:51", "'03:11:53"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'4.000", "'5.000", "'6.000", "'1.000", "'2.000", "'3.000", "'4.000"]] 
+ Unable to find the server at sheets.googleapis.com
+21-06-2024 03:15:38 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:15:38 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:15:58 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:15:58 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:15:59 ERROR: Send data to server: [["'21/06/2024, 03:14:41", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:15:54", "'03:15:55", "'03:15:55", "'03:15:55", "'03:15:56", "'03:15:56", "'03:15:56", "'03:15:56", "'03:15:57", "'03:15:58"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'1.000", "'1.000", "'1.000", "'1.000", "'23.000", "'3.000", "'4.000"]] 
+ Unable to find the server at sheets.googleapis.com
+21-06-2024 03:16:29 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:16:29 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Weight%21A2%3ABC:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:16:30 DEBUG: Send data to server: [["'21/06/2024, 03:14:41", 'ณัฐพล', 'ONLINE', 'ผิดปกติ', 'Timestamp', "'03:15:54", "'03:15:55", "'03:15:55", "'03:15:55", "'03:15:56", "'03:15:56", "'03:15:56", "'03:15:56", "'03:15:57", "'03:15:58"], [None, None, None, None, 'Weight', "'1.000", "'2.000", "'3.000", "'1.000", "'1.000", "'1.000", "'1.000", "'23.000", "'3.000", "'4.000"]]
+21-06-2024 03:16:30 DEBUG: Starting new HTTPS connection (1): notify-api.line.me:443
+21-06-2024 03:16:31 DEBUG: https://notify-api.line.me:443 "POST /api/notify HTTP/1.1" 200 None
+21-06-2024 03:16:31 DEBUG: URL being requested: POST https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Remarks%21A2%3AF:append?valueInputOption=USER_ENTERED&alt=json
+21-06-2024 03:17:07 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:17:07 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+21-06-2024 03:17:12 DEBUG: Calling CoUninitialize()
+21-06-2024 03:17:12 DEBUG: CoUninitialize() done.
+21-06-2024 03:32:19 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:32:19 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+21-06-2024 03:32:26 INFO: login: RFID 1514075799 DETAIL {'usernameTH': 'ณัฐพล', 'role': 'Admin'}
+21-06-2024 03:32:27 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:32:27 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+21-06-2024 03:32:33 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:32:33 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:32:47 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:32:47 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:32:57 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 03:32:57 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 03:33:15 DEBUG: Calling CoUninitialize()
+21-06-2024 03:33:15 DEBUG: CoUninitialize() done.
+21-06-2024 22:55:09 DEBUG: Making request: POST https://oauth2.googleapis.com/token
+21-06-2024 22:55:09 DEBUG: Starting new HTTPS connection (1): oauth2.googleapis.com:443
+21-06-2024 22:55:09 DEBUG: https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+21-06-2024 22:55:09 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 22:55:09 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/User%21A3%3AF?alt=json
+21-06-2024 22:55:16 INFO: login: RFID 1514075799 DETAIL {'usernameTH': 'ณัฐพล', 'role': 'Admin'}
+21-06-2024 22:55:17 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 22:55:18 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1CP7r6TBxu_5HTqhE4mJ4-CPn_0XaxhET1pPp0WxTtRY/values/TabletID%21A2%3AE?alt=json
+21-06-2024 23:01:52 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 23:01:52 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 23:01:58 INFO: file_cache is only supported with oauth2client<4.0.0
+21-06-2024 23:01:58 DEBUG: URL being requested: GET https://sheets.googleapis.com/v4/spreadsheets/1Z_yI1KQp2YCoDHp8T3Zs5Pw1JMVt3thdrxUnArUv-bo/values/Setting%21B2%3AB19?alt=json
+21-06-2024 23:11:32 DEBUG: Calling CoUninitialize()
+21-06-2024 23:11:32 DEBUG: CoUninitialize() done.

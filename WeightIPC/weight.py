@@ -851,9 +851,8 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
             self.countdownResult.emit(self.summary_timeout)
             self.summary_timeout -= 1
         else:
-            self.successResult.emit()
             self.countdown_timer.stop()  # หยุดนับถอยหลังเมื่อ timeout ถึง 0
-            self.run()
+            self.successResult.emit()
 
     def countdownStart(self):
         self.button_exit.setHidden(False)
