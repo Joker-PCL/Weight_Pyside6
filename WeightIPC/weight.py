@@ -15,9 +15,10 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import QTimer, Signal, Slot, Qt, QSize
 from PySide6.QtGui import QMovie, QFont, QPixmap
-from datetime import datetime, timedelta
+from datetime import datetime
+from time import sleep
 
-from src.Alert import Alert
+from src.Alert import Alert, BUZZER
 from src.api.File import File
 from src.api.Server import Server
 from src.WiFi import WiFi
@@ -49,8 +50,8 @@ _FORMATTER = logging.Formatter(
 _FILE_HANDLER.setFormatter(_FORMATTER)
 _LOGGER.addHandler(_FILE_HANDLER)
 
-# millisec ระยะเวลาตรวจสอบไฟล์ข้อมูลการชั่ง
-_WEIGHING_DATA_FILE_CHECK_TIME = 30000
+_BUZZER_PIN = 4
+_WEIGHING_DATA_FILE_CHECK_TIME = 30000 # millisec ระยะเวลาตรวจสอบไฟล์ข้อมูลการชั่ง
 _SCREEN_SERVER_TIMEOUT1 = 30  # sec พักหน้าจอ
 _SCREEN_SERVER_TIMEOUT2 = 10  # sec พักหน้าจอ
 _WEIGHING_TIMEOUT = 180  # sec กำหนดเวลาแสดงหน้าชั่งน้ำหนัก
@@ -70,6 +71,7 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
         """
         super().__init__()
 
+        self.os_name = os_name
         self.token = token
         self.credentials = credentials
         self.settings = settings
@@ -79,24 +81,17 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
         showDateTime = ShowDateTime(self.date_bar, self.time_bar)
         showDateTime.start()
         self.WiFi = WiFi(self, os_name)
-        self.WiFi.show_signal_icon()
 
         self.current_page = self.process_page
         self.switchToPage(self.current_page)
-        self.home_1.clicked.connect(
-            lambda: self.switchToPage(self.current_page))
-        self.home_2.clicked.connect(
-            lambda: self.switchToPage(self.current_page))
+        self.home_1.clicked.connect(lambda: self.switchToPage(self.current_page))
+        self.home_2.clicked.connect(lambda: self.switchToPage(self.current_page))
 
-        self.manual_1.clicked.connect(
-            lambda: self.switchToPage(self.manual_page))
-        self.manual_2.clicked.connect(
-            lambda: self.switchToPage(self.manual_page))
+        self.manual_1.clicked.connect(lambda: self.switchToPage(self.manual_page))
+        self.manual_2.clicked.connect(lambda: self.switchToPage(self.manual_page))
 
-        self.develops_1.clicked.connect(
-            lambda: self.switchToPage(self.develops_page))
-        self.develops_2.clicked.connect(
-            lambda: self.switchToPage(self.develops_page))
+        self.develops_1.clicked.connect(lambda: self.switchToPage(self.develops_page))
+        self.develops_2.clicked.connect(lambda: self.switchToPage(self.develops_page))
 
         self.signout_1.clicked.connect(self.reset)
         self.signout_2.clicked.connect(self.reset)
@@ -107,10 +102,16 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
         self.button_machine_confirm.clicked.connect(self.selectedTablet)
 
         self.weighing_start_page = self.characteristics_page
-        self.start_weighing.clicked.connect(
-            lambda: self.switchToPage(self.weighing_start_page))
+        self.start_weighing.clicked.connect(lambda: self.switchToPage(self.weighing_start_page))
 
+        self.shutdown.clicked.connect(lambda: self.switchToPage(self.shutdown_page))
+        self.confirm_shutdown.clicked.connect(lambda: self.shutdownHandler(True))
+        self.cancel_shutdown.clicked.connect(lambda: self.shutdownHandler(False))
+        
         self.button_exit.clicked.connect(self.reset)
+
+        # สร้างเสียงแจ้งเตือน
+        self.BUZZER = BUZZER(os_name, _BUZZER_PIN)
 
         # ไฟล์ข้อมูลการตั้งค่า
         self.settingsFile = File(self.settings)
@@ -145,40 +146,35 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
         self.initialStyle = {}
         self.findLabels(self)  # ค้นหา label ทั้งหมด
 
-        process_gif = QMovie(GIF_FILE)
-        self.process_img.setMovie(process_gif)
-        process_gif.start()
-        self.button_video_play.clicked.connect(self.manual_video_player)
-
         # ความหนาของเม็ดยา
         self.GetTabletNumber = TabletNumber(self)
 
         ##########################  characteristics ##########################
-        self.characteristics_nomal.clicked.connect(
-            lambda: self.characteristics("ปกติ"))
-        self.characteristics_abnomal.clicked.connect(
-            lambda: self.characteristics("ผิดปกติ"))
+        self.characteristics_nomal.clicked.connect(lambda: self.characteristics("ปกติ"))
+        self.characteristics_abnomal.clicked.connect(lambda: self.characteristics("ผิดปกติ"))
 
         ##########################  develops page   ##########################
-        self.machine_page_view.clicked.connect(
-            lambda: self.switchToPage(self.machine_page))
+        self.machine_page_view.clicked.connect(lambda: self.switchToPage(self.machine_page))
         self.weighing_settings_page_view.clicked.connect(
             lambda: self.switchToPage(self.weighing_settings_page)
         )
         self.characteristics_page_view.clicked.connect(
             lambda: self.switchToPage(self.characteristics_page)
         )
-        self.weighing_page_view.clicked.connect(
-            lambda: self.switchToPage(self.weighing_page))
+        self.weighing_page_view.clicked.connect(lambda: self.switchToPage(self.weighing_page))
+
+        process_gif = QMovie(GIF_FILE)
+        self.process_img.setMovie(process_gif)
+        process_gif.start()
+
+        self.button_video_play.clicked.connect(self.manual_video_player)
 
     def manual_video_player(self):
         if not hasattr(self, "videoPlayer"):
             self.button_video_play.clicked.disconnect(self.manual_video_player)
-            self.videoPlayer = VideoPlayer(
-                self.manual_video, MANUAL_VIDEO_FILE)
+            self.videoPlayer = VideoPlayer(self.manual_video, MANUAL_VIDEO_FILE)
             self.button_video_play.clicked.connect(self.videoPlayer.media.play)
-            self.button_video_pause.clicked.connect(
-                self.videoPlayer.media.pause)
+            self.button_video_pause.clicked.connect(self.videoPlayer.media.pause)
             self.button_video_stop.clicked.connect(self.videoPlayer.media.stop)
 
     def findLabels(self, widget, mode=LABEL_GET):
@@ -197,8 +193,7 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
                 if isinstance(child, QLabel):
                     if mode == LABEL_GET:
                         self.initialLabel[child.objectName()] = child.text()
-                        self.initialStyle[child.objectName()
-                                          ] = child.styleSheet()
+                        self.initialStyle[child.objectName()] = child.styleSheet()
                     elif mode == LABEL_RESET:
                         child.setText(self.initialLabel[child.objectName()])
                         child.setStyleSheet(
@@ -206,13 +201,12 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
                 else:
                     self.findLabels(child, mode)
             except Exception as e:
-                pass
+                continue
 
     def clearSettingsData(self):
         print("*** Clear settings data!")
         _LOGGER.warning(
-            f"Clear settings data by {
-                self.PACKING_DATA['Operator']}"
+            f"Clear settings data by {self.PACKING_DATA['Operator']}"
         )
         self.WEIGHT_SETTING_FILE.delete_key(self.tabletID)
         for label_name, label_text in self.initialLabel.items():
@@ -319,6 +313,7 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
         userData = rfidCheck(rfid_text)
 
         if userData:
+            self.BUZZER.alert(0.2)
             self.screenServercountdown_timer.stop()
             self.RFID_alert.loading("กำลังโหลดข้อมูล...")
             self.signout_1.setHidden(False)
@@ -341,6 +336,7 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
                 self.restart_program_1.setHidden(False)
                 self.restart_program_2.setHidden(False)
         else:
+            self.BUZZER.alert(0.1, 5)
             self.screenServercountdown_timer.start(1000)
             self.RFID_alert.alert("ไม่พบ RFID ในระบบ")
             QTimer.singleShot(1500, lambda: self.rfid.setText("XXXXXXXXXX"))
@@ -527,9 +523,8 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
                 "meanWeightRegMin": result[12][0],
                 # ช่วงน้ำหนักเบี่ยงเบนที่ยอมรับ(Max.)
                 "meanWeightRegMax": result[13][0],
-                "meanWeightRegMax": result[14][0],  # ตั้งค่าน้ำหนักโดย
-                "prepared": result[15][0],  # ตรวจสอบการตั้งค่าโดย
-                "approved": result[16][0],  # ตรวจสอบการตั้งค่าโดย
+                "prepared": result[14][0],  # ตั้งค่าน้ำหนักโดย
+                "approved": result[15][0],  # ตรวจสอบการตั้งค่าโดย
             }
 
             self.WEIGHT_SETTING_FILE.update(self.tabletID, settings)
@@ -540,7 +535,7 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
         dataSettings = self.WEIGHT_SETTING_FILE.read()
         if dataSettings:
             _dataSettings = dataSettings[self.tabletID]
-            productName = _dataSettings["productName"]  # ชื่อยา
+            productName:str = _dataSettings["productName"]  # ชื่อยา
             lot = _dataSettings["lot"]  # เลขที่ผลิต
             balanceID = _dataSettings["balanceID"]  # เครื่องชั่ง
             tabletID = _dataSettings["tabletID"]  # เครื่องตอก
@@ -591,11 +586,11 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
 
             try:
                 front_img_base = os.path.join(
-                    PRODUCT_IMG_FOLDER, productName.upper(), "UPPER")
+                    PRODUCT_IMG_FOLDER, productName.upper().strip(), "UPPER")
                 front_img = self.find_image(front_img_base, ["jpg", "png"])
 
                 behind_img_base = os.path.join(
-                    PRODUCT_IMG_FOLDER, productName.upper(), "LOWER")
+                    PRODUCT_IMG_FOLDER, productName.upper().strip(), "LOWER")
                 behind_img = self.find_image(behind_img_base, ["jpg", "png"])
 
                 # Check if files exist
@@ -679,14 +674,18 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
             REG_MAX = settings["meanWeightRegMax"]
 
             if not "XXXXX" in [IH_MIN, IH_MAX, REG_MIN, REG_MAX]:
-                if weight < REG_MIN and weight > REG_MAX:
+                if weight < float(REG_MIN) or weight > float(REG_MAX):
                     widget.setStyleSheet(OFR_REG_STYLE)
-                elif weight < IH_MIN and weight > IH_MAX:
+                    return True
+                elif weight < float(IH_MIN) or weight > float(IH_MAX):
                     widget.setStyleSheet(OFR_IH_STYLE)
+                    return True
                 else:
                     widget.setStyleSheet(IR_STYLE)
+                    return False
             else:
                 widget.setStyleSheet(IR_STYLE)
+                return False
 
     def createWeighingWidget(self, settings:dict, number: int, weight: float):
         font = QFont()
@@ -771,7 +770,11 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
 
         # ค่าน้ำหนัก, ตรวจสอบค่าเฉลี่ยว่าออกนอกช่วงหรือไม่
         count = len(self.PACKING_DATA["Weight"])
-        self.weightOutOffRanges(settings, self.current_weight, weight, unit=" กรัม")
+        if self.weightOutOffRanges(settings, self.current_weight, weight, unit=" กรัม"):
+            self.BUZZER.alert(0.1, 10)
+        else:
+            self.BUZZER.alert(0.2)
+
         self.weightOutOffRanges(settings, self.weighing_min, min(self.WEIGHING_CACHE))
         self.weightOutOffRanges(settings, self.weighing_max, max(self.WEIGHING_CACHE))
 
@@ -780,9 +783,13 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
         self.weighing_average.setText(f"{_average_weight:.3f}")
 
         # ตรวจสอบค่าเฉลี่ยว่าออกนอกช่วงหรือไม่
-        if not "XXXXX" in [settings["meanWeightAvgMin"], settings["meanWeightAvgMax"]]:
-            if _average_weight < settings["meanWeightAvgMin"] or _average_weight > settings["meanWeight"]:
+        AVG_MIN = settings["meanWeightAvgMin"]
+        AVG_MAX = settings["meanWeightAvgMax"]
+        AVG_ALERT = False
+        if not "XXXXX" in [AVG_MIN, AVG_MAX]:
+            if _average_weight < float(AVG_MIN) or _average_weight > float(AVG_MAX):
                 self.weighing_average.setStyleSheet("color: #FA0B0E;")
+                AVG_ALERT = True
             else:
                 self.weighing_average.setStyleSheet("color: #FFFFFF;")
 
@@ -790,7 +797,7 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
 
         # สร้าง widget แสดงน้ำหนักยา
         max_columns = 5
-        max_length = self.NUMBER_TABLET
+        max_length = int(self.NUMBER_TABLET)
         row = (count - 1) // max_columns
         col = (count - 1) % max_columns
 
@@ -810,6 +817,9 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
 
         if count == max_length:
             print(f"*** WeighingData: Success")
+            if AVG_ALERT:
+                self.BUZZER.alert(1, 5)
+
             self.PACKING_DATA["Type"] = "ONLINE"
             self.MAIN_PACKING_DATA[self.TIMPSTAMP] = self.PACKING_DATA
             self.WEIGHING_DATA_FILE.update(
@@ -965,8 +975,18 @@ class WeightIPC(QMainWindow, Ui_MainWindow):
         """ปิดโปรแกรม"""
         QApplication.quit()
 
+    def shutdownHandler(self, shutdown=True):
+        print("*** Shutting down")
+        if shutdown and self.os_name == "Linux":
+            sleep(1)
+            os.system("sudo poweroff")
+        elif not shutdown:
+            self.switchToPage(self.current_page)
+
     def run(self):
         print("*** Weight IPC is running...")
+        self.BUZZER.alert(0.3)
+
         # Valiable parameters
         self.MAIN_PACKING_DATA = {}
         self.PACKING_DATA = {}

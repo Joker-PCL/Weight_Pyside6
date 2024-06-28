@@ -135,8 +135,8 @@ class Thickness(QThread):
         widget = self.current_number
         initial_text = widget.text()
         initial_style = widget.styleSheet()
-        inRange_style = f"{initial_style} color: rgb(0, 170, 127);"
-        outOffRange_style = f"{initial_style} color: rgb(255, 17, 17);"
+        inRange_style = f"border: none; color: rgb(100, 100, 100);"
+        outOffRange_style = f"border: none;  color: rgb(255, 17, 17);"
 
         if self.thicknessMin and self.thicknessMax:
             if thickness < self.thicknessMin or thickness > self.thicknessMax:

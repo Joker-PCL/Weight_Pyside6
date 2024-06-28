@@ -2,7 +2,7 @@
 
 while true
 do
-    echo -e "<<< WEIGHT 10s' >>>\n"
+    echo -e "<<< WEIGHT 10s' >>>"
     for i in {5..1}
     do
         echo -ne "Starting in $i seconds \r"
@@ -11,7 +11,7 @@ do
 
     echo -e "\n"
     
-    cd /home/weight/Desktop/polipharm || exit
-    source .env/bin/activate
-    python3 main.py
+    cd /home/polipharm/Desktop/polipharm || exit
+    source env/bin/activate
+    python3 ./weight10s/main.py
 done

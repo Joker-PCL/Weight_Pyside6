@@ -16,12 +16,12 @@ class Weighing(QThread):
         self,
         port=None,
         baudrate=9600,
-        number_tablets=0
+        number_tablets:int=0
     ):
         super().__init__()
         self.port = port
         self.baudrate = baudrate
-        self.number_tablets = number_tablets
+        self.number_tablets = int(number_tablets)
 
     def run(self):
         # self.serial = serial.Serial(port=self.port, baudrate=self.baudrate)

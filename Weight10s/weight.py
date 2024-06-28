@@ -12,7 +12,8 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import  QTimer, Signal, Slot
 from PySide6.QtGui import QMovie, QPixmap
-from datetime import datetime, timedelta
+from datetime import datetime
+from time import sleep
 
 from src.Alert import Alert, BUZZER
 from src.api.File import File
@@ -66,6 +67,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         """
         super().__init__()
 
+        self.os_name = os_name
         self.token = token
         self.credentials = credentials
         self.settings = settings
@@ -75,7 +77,6 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         self.showDateTime = ShowDateTime(self.date_bar, self.time_bar)
         self.showDateTime.start()
         self.WiFi = WiFi(self, os_name)
-        self.WiFi.show_signal_icon()
 
         self.current_page = self.home_page
         self.home_1.clicked.connect(lambda: self.switchToPage(self.current_page))
@@ -92,6 +93,10 @@ class Weight10s(QMainWindow, Ui_MainWindow):
 
         self.restart_program_1.clicked.connect(self.restart)
         self.restart_program_2.clicked.connect(self.restart)
+
+        self.shutdown.clicked.connect(lambda: self.switchToPage(self.shutdown_page))
+        self.confirm_shutdown.clicked.connect(lambda: self.shutdownHandler(True))
+        self.cancel_shutdown.clicked.connect(lambda: self.shutdownHandler(False))
 
         # สร้างเสียงแจ้งเตือน
         self.BUZZER = BUZZER(os_name, _BUZZER_PIN)
@@ -162,6 +167,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         process_gif = QMovie(GIF_FILE)
         self.process_img.setMovie(process_gif)
         process_gif.start()
+        
         self.button_video_play.clicked.connect(self.manual_video_player)
 
     def manual_video_player(self):
@@ -389,7 +395,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
 
         dataSettings = self.WEIGHT_SETTING_FLIE.read()
         if dataSettings:
-            productName = dataSettings["productName"]  # ชื่อยา
+            productName:str = dataSettings["productName"]  # ชื่อยา
             lot = dataSettings["lot"]  # เลขที่ผลิต
             balanceID = dataSettings["balanceID"]  # เครื่องชั่ง
             tabletID = dataSettings["tabletID"]  # เครื่องตอก
@@ -424,10 +430,10 @@ class Weight10s(QMainWindow, Ui_MainWindow):
             )
 
             try:
-                front_img_base = os.path.join(PRODUCT_IMG_FOLDER, productName, "UPPER")
+                front_img_base = os.path.join(PRODUCT_IMG_FOLDER, productName.upper().strip(), "UPPER")
                 front_img = self.find_image(front_img_base, ["jpg", "png"])
                  
-                behind_img_base = os.path.join(PRODUCT_IMG_FOLDER, productName, "LOWER")
+                behind_img_base = os.path.join(PRODUCT_IMG_FOLDER, productName.upper().strip(), "LOWER")
                 behind_img = self.find_image(behind_img_base, ["jpg", "png"])
                 
                 # Check if files exist
@@ -491,6 +497,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         userData = rfidCheck(rfid_text)
 
         if userData:
+            self.BUZZER.alert(0.2)
             self.screenServercountdown_timer.stop()
             self.RFID_alert.loading("กำลังโหลดข้อมูล...")
             self.signout_1.setHidden(False)
@@ -510,10 +517,10 @@ class Weight10s(QMainWindow, Ui_MainWindow):
                 self.restart_program_1.setHidden(False)
                 self.restart_program_2.setHidden(False)
         else:
+            self.BUZZER.alert(0.1, 5)
             self.screenServercountdown_timer.start(1000)
             self.RFID_alert.alert("ไม่พบ RFID ในระบบ")
             QTimer.singleShot(1500, lambda: self.rfid.setText("XXXXXXXXXX"))
-            # QTimer.singleShot(1500, self.RFID.start)
 
     def loginStart(self):
         self.RFID_SCAN = True
@@ -539,22 +546,26 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         """ดึงข้อมูลการชั่งน้ำหนัก"""
 
         print(f"*** WeighingData: {weighingData}")
-        self.BUZZER.alert(0.2)
         self.reset_weighing.setHidden(True)
         now = datetime.now()  # current date and time
         timestamp = now.strftime("%d/%m/%Y, %H:%M:%S")
 
         settings = self.WEIGHT_SETTING_FLIE.read()
         _average = sum(weighingData) / len(weighingData)
-        _check = self.weightOutOffRanges(settings, self.average, _average)
-        if _check:
-            self.BUZZER.alert(0.1, 10)
+        _average_check = self.weightOutOffRanges(settings, self.average, _average)
 
-        for i, w in enumerate(weighingData):
-            widget = getattr(self, f"weight_{i+1}")
-            self.weightOutOffRanges(settings, widget, w)
+        ALERT = False
+        widget = getattr(self, f"weight_{len(weighingData)}")
+        if self.weightOutOffRanges(settings, widget, weighingData[-1]):
+            self.BUZZER.alert(0.1, 10)
+            ALERT = True
+        else:
+            self.BUZZER.alert(0.2)
 
         if len(weighingData) == 2:
+            if _average_check and not ALERT:
+                self.BUZZER.alert(1, 5)
+
             self.PACKING_DATA["Timestamp"] = timestamp
             self.PACKING_DATA["Weight"] = {
                 "weight1": weighingData[0], 
@@ -688,13 +699,18 @@ class Weight10s(QMainWindow, Ui_MainWindow):
                     return True
                 else:
                     widget.setStyleSheet(IR_STYLE)
+                    return False
             else:
                 widget.setStyleSheet(IR_STYLE)
+                return False
 
     def thicknessOutOffRanges(self, widget: QLabel, thickness: float, min: float, max: float, unit: str = ""):
-        widget.setText(f"{thickness}{unit}")
+        widget.setText(f"{thickness:.2f}{unit}")
         if float(thickness) < float(min) or float(thickness) > float(max):
             widget.setStyleSheet(f"border: none; color: #FA0B0E;")
+            return True
+        else:
+            return False
 
     def summaryStart(self):
         self.signout_1.setHidden(True)
@@ -712,10 +728,14 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         average = sum([weight1, weight2]) / 2
         thicknessData = data["Thickness"]
 
+        ALERT =False
         settings = self.WEIGHT_SETTING_FLIE.read()
-        self.weightOutOffRanges(settings, self.summary_weight_1, weight1, unit=" กรัม")
-        self.weightOutOffRanges(settings, self.summary_weight_2, weight2, unit=" กรัม")
-        self.weightOutOffRanges(settings, self.summary_average, average, unit=" กรัม")
+        _weight_1_check = self.weightOutOffRanges(settings, self.summary_weight_1, weight1, unit=" กรัม")
+        _weight_2_check = self.weightOutOffRanges(settings, self.summary_weight_2, weight2, unit=" กรัม")
+        _average_check = self.weightOutOffRanges(settings, self.summary_average, average, unit=" กรัม")
+
+        if _weight_1_check or _weight_2_check or _average_check:
+            ALERT = True
 
         if settings:
             meanWeight = settings["meanWeight"]
@@ -728,14 +748,18 @@ class Weight10s(QMainWindow, Ui_MainWindow):
             thickness_value = thicknessData[f"number_{i}"]
             if thickness_value != "-":
                 thickness_widget:QLabel = getattr(self, f"thickness_summary_{i}")
-                thickness_widget.setText(thickness_value)
                 thickness_data_obj.append(round(float(thickness_value), 2))
 
                 if settings:
                     TN_MIN = settings['thicknessMin']
                     TN_MAX = settings['thicknessMax']
                     if not "XXXXX" in [TN_MIN, TN_MAX]:
-                        self.thicknessOutOffRanges(thickness_widget, thickness_value, TN_MIN, TN_MAX)
+                        _thickness_check = self.thicknessOutOffRanges(thickness_widget, thickness_value, TN_MIN, TN_MAX)
+                        if _thickness_check:
+                            ALERT = True
+
+        if ALERT:
+            self.BUZZER.alert(1, 5)
 
         if thickness_data_obj:
             thickness_min = min(thickness_data_obj)
@@ -827,6 +851,14 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         """ปิดโปรแกรม"""
         QApplication.quit()
 
+    def shutdownHandler(self, shutdown=True):
+        print("*** Shutting down")
+        if shutdown and self.os_name == "Linux":
+            sleep(1)
+            os.system("sudo poweroff")
+        elif not shutdown:
+            self.switchToPage(self.current_page)
+
     def run(self):
         print("*** Weight10s' is running...")
         self.BUZZER.alert(0.3)
@@ -845,7 +877,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
         self.screenServercountdown_timer.start(1000)
 
         # ส่งข้อมูลไปบันทึกยัง sever
-        if not hasattr(self, "offlineDataCheck_timer"):
+        if not hasattr(self, "sendDataToServer_timer"):
             self.sendDataToServer_timer = QTimer(self)
             self.sendDataToServer_timer.timeout.connect(self.sendDataToServer)
         self.sendDataToServer_timer.start()

@@ -214,8 +214,8 @@ class PostData(QThread):
                         weight_header_msg = "\n❎ น้ำหนักไม่ได้อยู่ในช่วงที่กำหนด\n"
                         message += weight_header_msg
                         message += "✅ ช่วงที่กำหนด\n"
-                        message += f"IH {self.settings['meanWeightMin']}-{self.settings['meanWeightMax']}\n"
-                        message += f"REG {self.settings['meanWeightRegMin']}-{self.settings['meanWeightRegMax']}\n"
+                        message += f"IH {self.settings['meanWeightMin']}-{self.settings['meanWeightMax']} กรัม\n"
+                        message += f"REG {self.settings['meanWeightRegMin']}-{self.settings['meanWeightRegMax']} กรัม\n"
                         message += "❎ น้ำหนักที่ชั่ง\n"
                         message += weightOutOffRanges_msg
                         remarks_msg += weight_header_msg
@@ -243,7 +243,7 @@ class PostData(QThread):
                         LINE_ALERT = True
 
                     # เพิ่มแจ้งเตือนผู้ปฏิบัติงาน
-                    timestamp_msg = f"เวลา {timestamp}\n"
+                    timestamp_msg = f"⌚ {timestamp}\n"
                     operator_msg = f"ผู้ปฏิบัติงาน {operator}\n"
                     message += timestamp_msg
                     message += operator_msg
@@ -258,10 +258,11 @@ class PostData(QThread):
                     if REMARKS_ALERT:
                         remarks_timestamp = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
                         # ส่งบันทึกค่าน้ำหนักที่ไม่ผ่านเกณฑ์
-                        remarks_msg = remarks_msg.replace("❎", "")
-                        remarks_msg = remarks_msg.replace("✅", "")
-                        remarks_msg = remarks_msg.replace("❌", "")
-                        remarks_msg = remarks_msg.replace("🔰", "")
+                        remarks_msg = remarks_msg.replace("❎ ", "")
+                        remarks_msg = remarks_msg.replace("✅ ", "")
+                        remarks_msg = remarks_msg.replace("❌ ", "")
+                        remarks_msg = remarks_msg.replace("🔰 ", "")
+                        remarks_msg = remarks_msg.replace("⌚", "เวลา")
                         response = self.service.spreadsheets().values().append(
                             spreadsheetId=self.spreadsheetId,
                             range=self.remarksRange,

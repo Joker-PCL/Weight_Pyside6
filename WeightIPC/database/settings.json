@@ -1,22 +1,4 @@
 {
-    "T01": {
-        "productName": "ANTIGAS TABLET",
-        "lot": "123456",
-        "balanceID": "PI-194",
-        "tabletID": "T01",
-        "numberPunches": "30",
-        "numberTablets": "30",
-        "meanWeight": "0.900",
-        "percentWeightVariation": "4.00%",
-        "meanWeightAvgMin": "0.882",
-        "meanWeightAvgMax": "0.918",
-        "meanWeightInhouseMin": "0.864",
-        "meanWeightInhouseMax": "0.936",
-        "meanWeightRegMin": "0.855",
-        "meanWeightRegMax": "ณัฐพล",
-        "prepared": "ณัฐพล",
-        "approved": "XXXXX"
-    },
     "T03": {
         "productName": "ANTIGAS TABLET",
         "lot": "XXXXX",
@@ -69,6 +51,24 @@
         "meanWeightRegMin": "XXXXX",
         "meanWeightRegMax": "XXXXX",
         "prepared": "XXXXX",
+        "approved": "XXXXX"
+    },
+    "T01": {
+        "productName": "TRAVAN 0.5 TABLET ",
+        "lot": "40614",
+        "balanceID": "PI-228",
+        "tabletID": "T01",
+        "numberPunches": "40",
+        "numberTablets": "50",
+        "meanWeight": "0.050",
+        "percentWeightVariation": "8.00%",
+        "meanWeightAvgMin": "1.000",
+        "meanWeightAvgMax": "1.000",
+        "meanWeightInhouseMin": "1.000",
+        "meanWeightInhouseMax": "1.000",
+        "meanWeightRegMin": "1.000",
+        "meanWeightRegMax": "1.000",
+        "prepared": "สิริยาภรณ์",
         "approved": "XXXXX"
     }
 }

@@ -2,9 +2,8 @@
 
 while true
 do
-    echo -e "\n"
-    echo -e "<<< WEIGHT IPC >>>\n"
-    for i in {10..1}
+    echo -e "<<< WEIGHT IPC >>>"
+    for i in {5..1}
     do
         echo -ne "Starting in $i seconds \r"
         sleep 1
@@ -12,7 +11,7 @@ do
 
     echo -e "\n"
     
-    cd /home/weight/Desktop/polipharm || exit
-    source .env/bin/activate
-    python3 main.py
+    cd /home/polipharm/Desktop/polipharm || exit
+    source env/bin/activate
+    python3 ./weightIPC/main.py
 done

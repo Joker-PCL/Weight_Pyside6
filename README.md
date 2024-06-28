@@ -1,41 +1,45 @@
-<!-- ########### Example ########### -->
+<!--  Example  -->
     - https://youtu.be/TP1eUsSMoBs?si=pW1v3e3p2M26bULp
 
-<!-- ssh -->
+<!-- วิธีการ รีโมทผ่าน ssh -->
     ** ลบ ssh-keygen
         - ssh-keygen -R 192.168.10.7
     ** remote ssh
-        - ssh joker@192.168.10.7
+        - ssh polipharm@192.168.10.7
     ** ส่งไฟล์
-        - scp VideoPlayer.py polipharm@192.168.10.7:/home/polipharm/Desktop
+        - scp main.py polipharm@192.168.10.7:/home/polipharm/Desktop
         
-<!-- ########### compile pyside6 project ########### -->
-    - pyside6-uic weight.ui > ui_weight.py
+<!--  building and deploying Qt for Python applications.  -->
+    - pyside6-uic weight10s_10inch.ui > ui_weight_10inch.py
+    - pyside6-uic weightIPC_10inch.ui > ui_weight_10inch.py
     - pyside6-rcc resource.qrc -o resource_rc.py
-    ** convert ui_weight.py flie to UTF-8 before
+    ** convert ui_weight_10inch.py flie to UTF-8 before
 
-    - cd my_project
+<!-- ติดตั้ง environment -->
+    - cd polipharm
+
     ** windows
-        - python -m venv .env
+        - python -m venv env
         - env\Scripts\activate
+        - python3 -m venv --system-site-packages env 
     ** linux
         - python3 -m venv env
         - source env/bin/activate
         - pip3 install gpiozero
         - python3 -m venv --system-site-packages env 
 
-<!-- ########### Libraries ########### -->
+<!-- ติดตั้ง Libraries -->
     ** pyside6
         - pip install pyside6
 
     ** Install front kanit
         .assets/fronts/kanit.zip
         cd fonts
-        - mkdir /usr/share/fonts/kanit
-        - mv *.ttf /usr/share/fonts/kanit
+        - sudo mkdir /usr/share/fonts/kanit
+        - sudo mv *.ttf /usr/share/fonts/kanit
         - cd /usr/share/fonts/kanit
-        - mkfontscale
-        - mkfontdir
+        - sudo mkfontscale
+        - sudo mkfontdir
         - fc-cache
         - xset fp rehash
 

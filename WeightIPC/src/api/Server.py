@@ -79,9 +79,9 @@ class PostData(QThread):
             REG_MAX = self.settings["meanWeightRegMax"]
 
             if not "XXXXX" in [IH_MIN, IH_MAX, REG_MIN, REG_MAX]:
-                if _weight < REG_MIN or _weight > REG_MAX:
+                if _weight < float(REG_MIN) or _weight > float(REG_MAX):
                     return True
-                elif _weight < IH_MIN or _weight > IH_MAX:
+                elif _weight < float(IH_MIN) or _weight > float(IH_MAX):
                     return True
                 else:
                     return False
@@ -96,7 +96,7 @@ class PostData(QThread):
             offline_count = 0
             offline_timestamp = None
             remarks_msg = ""
-            outOffRanges_msg = ""
+            weightOutOffRanges_msg = ""
             char_abnormal_msg = ""
 
             REMARKS_ALERT = False
@@ -120,9 +120,7 @@ class PostData(QThread):
                         offline_timestamp = timestamp
 
                 if characteristics == "ผิดปกติ":
-                    char_abnormal_msg += '❌พบเม็ดยาลักษณะ "ผิดปกติ"\n'
-                    char_abnormal_msg += f"เวลา {timestamp}\n"
-                    char_abnormal_msg += f"ผู้ปฏิบัติงาน {operator}\n"
+                    char_abnormal_msg += '\n❌พบเม็ดยาลักษณะ "ผิดปกติ"\n'
 
                 packing_row1 = [
                     f"'{timestamp}",
@@ -140,13 +138,21 @@ class PostData(QThread):
                     "Weight",
                 ]
 
-                for i, w in enumerate(weighing):
-                    packing_row1.append(f"'{w['timestamp']}")
-                    _weight = w["weight"]
+                weight_cache = []
+                for i, weight in enumerate(weighing):
+                    _weight = weight['weight']
+                    weight_cache.append(float(_weight))
+                    packing_row1.append(f"'{weight['timestamp']}")
                     packing_row2.append(f"'{_weight:.3f}")
                     if self.settings:
                         if self.weightOutOffRanges(_weight):
-                            outOffRanges_msg += f"เม็ดที่ {i}) {_weight:.3f}\n"
+                            weightOutOffRanges_msg += f"เม็ดที่ {i+1}) {_weight:.3f} กรัม\n"
+
+                AVG_MIN = self.settings["meanWeightAvgMin"]
+                AVG_MAX = self.settings["meanWeightAvgMax"]
+                average = sum(weight_cache) / len(weight_cache)
+                if average < float(AVG_MIN) or average > float(AVG_MAX):
+                    weightOutOffRanges_msg += f"ค่าเฉลี่ย {average:.3f} กรัม\n"
 
             packing_data.append(packing_row1)
             packing_data.append(packing_row2)
@@ -182,14 +188,17 @@ class PostData(QThread):
                         LINE_ALERT = True
 
                     # แจ้งเตือนเมื่อมีน้ำหนักเม็ดยาออกนอกช่วง
-                    if outOffRanges_msg:
-                        message += "\n❎ น้ำหนักไม่ได้อยู่ในช่วงที่กำหนด\n"
+                    if weightOutOffRanges_msg:
+                        weight_header_msg = "\n❎ น้ำหนักไม่ได้อยู่ในช่วงที่กำหนด\n"
+                        message += weight_header_msg
                         message += "✅ ช่วงที่กำหนด\n"
-                        message += f"IH {self.settings['meanWeightInhouseMin']}-{self.settings['meanWeightInhouseMax']}\n"
-                        message += f"REG {self.settings['meanWeightRegMin']}-{self.settings['meanWeightRegMax']}\n"
+                        message += f"AVG {self.settings['meanWeightAvgMin']}-{self.settings['meanWeightAvgMax']} กรัม\n"
+                        message += f"IH {self.settings['meanWeightInhouseMin']}-{self.settings['meanWeightInhouseMax']} กรัม\n"
+                        message += f"REG {self.settings['meanWeightRegMin']}-{self.settings['meanWeightRegMax']} กรัม\n"
                         message += "❎ น้ำหนักที่ชั่ง\n"
-                        message += outOffRanges_msg
-                        remarks_msg += outOffRanges_msg
+                        message += weightOutOffRanges_msg
+                        remarks_msg += weight_header_msg
+                        remarks_msg += weightOutOffRanges_msg
                         REMARKS_ALERT = True
                         LINE_ALERT = True
 
@@ -199,6 +208,14 @@ class PostData(QThread):
                         remarks_msg += char_abnormal_msg
                         REMARKS_ALERT = True
                         LINE_ALERT = True
+                    
+                    # เพิ่มแจ้งเตือนผู้ปฏิบัติงาน
+                    timestamp_msg = f"⌚ {timestamp}\n"
+                    operator_msg = f"ผู้ปฏิบัติงาน {operator}\n"
+                    message += timestamp_msg
+                    message += operator_msg
+                    remarks_msg += timestamp_msg
+                    remarks_msg += operator_msg
 
                     # แจ้งเตือนไลน์
                     if LINE_ALERT:
@@ -207,10 +224,11 @@ class PostData(QThread):
                     if REMARKS_ALERT:
                         remarks_timestamp = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
                         # ส่งบันทึกค่าน้ำหนักที่ไม่ผ่านเกณฑ์
-                        remarks_msg = remarks_msg.replace("❎", "")
-                        remarks_msg = remarks_msg.replace("✅", "")
-                        remarks_msg = remarks_msg.replace("❌", "")
-                        remarks_msg = remarks_msg.replace("🔰", "")
+                        remarks_msg = remarks_msg.replace("❎ ", "")
+                        remarks_msg = remarks_msg.replace("✅ ", "")
+                        remarks_msg = remarks_msg.replace("❌ ", "")
+                        remarks_msg = remarks_msg.replace("🔰 ", "")
+                        remarks_msg = remarks_msg.replace("⌚", "เวลา")
                         response = self.service.spreadsheets().values().append(
                             spreadsheetId=self.spreadsheetId,
                             range=self.remarksRange,
@@ -300,10 +318,8 @@ class Server(QThread):
     @Slot(object)
     def _getData(self, result):
         if hasattr(self, "_getData_"):
-            if self._getData_.isRunning():
-                self._getData_.quit()
-                self._getData_.wait()
-                
+            self._getData_.quit()
+            self._getData_.wait()
             del self._getData_
             self.get.emit(result)
 
@@ -337,9 +353,7 @@ class Server(QThread):
     @Slot(str, bool)
     def _postData(self, tabletID, result):
         if hasattr(self, "_postData_"):
-            if self._postData_.isRunning():
-                self._postData_.quit()
-                self._postData_.wait()
-            
+            self._postData_.quit()
+            self._postData_.wait()
             del self._postData_
             self.post.emit(tabletID, result)

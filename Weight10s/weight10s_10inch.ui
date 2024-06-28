@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
+    <width>1284</width>
     <height>800</height>
    </rect>
   </property>
@@ -27,283 +27,6 @@
     <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout_3">
-    <item row="0" column="1">
-     <widget class="QWidget" name="show_sidebar" native="true">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QWidget {
-	background-color: rgb(0, 150, 255);
-	border-radius: 10px;
-}
-
-QPushButton {
-	background-color: rgb(0, 150, 255);
-	font-size: 20px;
-	color: white;
-	text-align: left;
-	height: 50px;
-	border: none;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
-	padding: 15px;
-}
-
-QPushButton:checked {
-	background-color: #f5fafe;
-	color: rgb(0, 150, 255);
-	font-weight: bold;
-}</string>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_41">
-       <property name="spacing">
-        <number>30</number>
-       </property>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="profile_img1">
-           <property name="minimumSize">
-            <size>
-             <width>80</width>
-             <height>80</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>80</width>
-             <height>80</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="resource.qrc">:/assets/images/polipharm.png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_3">
-           <property name="font">
-            <font>
-             <family>Kanit</family>
-             <pointsize>25</pointsize>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>WEIGHT V1</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <property name="spacing">
-          <number>20</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QPushButton" name="home_1">
-           <property name="font">
-            <font>
-             <family>Kanit</family>
-             <pointsize>-1</pointsize>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="text">
-            <string>  หน้าหลัก</string>
-           </property>
-           <property name="icon">
-            <iconset resource="resource.qrc">
-             <normaloff>:/assets/icon/home.png</normaloff>:/assets/icon/home.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>60</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="manual_1">
-           <property name="font">
-            <font>
-             <family>Kanit</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="text">
-            <string>  วิธีใช้งาน</string>
-           </property>
-           <property name="icon">
-            <iconset resource="resource.qrc">
-             <normaloff>:/assets/icon/manual_1.png</normaloff>:/assets/icon/manual_1.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>60</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="develops_1">
-           <property name="font">
-            <font>
-             <family>Kanit</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="text">
-            <string>Develops </string>
-           </property>
-           <property name="icon">
-            <iconset resource="resource.qrc">
-             <normaloff>:/assets/icon/developer.png</normaloff>:/assets/icon/developer.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>60</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>297</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_4">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QPushButton" name="signout_1">
-           <property name="font">
-            <font>
-             <family>Kanit</family>
-             <pointsize>-1</pointsize>
-             <strikeout>false</strikeout>
-             <kerning>true</kerning>
-            </font>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="text">
-            <string>  ออกจากระบบ</string>
-           </property>
-           <property name="icon">
-            <iconset resource="resource.qrc">
-             <normaloff>:/assets/icon/logout.png</normaloff>:/assets/icon/logout.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>60</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="shortcut">
-            <string notr="true">Ctrl+S</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="restart_program_1">
-           <property name="font">
-            <font>
-             <family>Kanit</family>
-             <pointsize>-1</pointsize>
-             <strikeout>false</strikeout>
-             <kerning>true</kerning>
-            </font>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="text">
-            <string>  รีสตาร์ท</string>
-           </property>
-           <property name="icon">
-            <iconset resource="resource.qrc">
-             <normaloff>:/assets/icon/restart.png</normaloff>:/assets/icon/restart.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>60</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="shortcut">
-            <string notr="true">Ctrl+S</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QWidget" name="hide_sidebar" native="true">
       <property name="styleSheet">
@@ -333,6 +56,9 @@ QPushButton:checked {
       <layout class="QVBoxLayout" name="verticalLayout_42">
        <property name="spacing">
         <number>30</number>
+       </property>
+       <property name="leftMargin">
+        <number>15</number>
        </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -463,7 +189,7 @@ QPushButton:checked {
        <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Orientation::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -482,6 +208,9 @@ QPushButton:checked {
           <widget class="QPushButton" name="signout_2">
            <property name="cursor">
             <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">padding-left: 20px;</string>
            </property>
            <property name="text">
             <string/>
@@ -590,10 +319,10 @@ border-radius: 8px;</string>
              </size>
             </property>
             <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+             <enum>QFrame::Shape::StyledPanel</enum>
             </property>
             <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
+             <enum>QFrame::Shadow::Raised</enum>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_6">
              <property name="spacing">
@@ -649,7 +378,7 @@ border-radius: 8px;</string>
           <item>
            <spacer name="horizontalSpacer_5">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -675,7 +404,7 @@ border-radius: 8px;</string>
              <string>ระบบเครื่องชั่งออนไลน์</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -698,14 +427,14 @@ border-radius: 8px;</string>
              <string>(TXX)</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
           <item>
            <spacer name="horizontalSpacer_4">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -742,7 +471,7 @@ border-radius: 8px;</string>
              </font>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
             <layout class="QVBoxLayout" name="datetime_group">
              <property name="spacing">
@@ -779,7 +508,7 @@ border-radius: 8px;</string>
                 <string>HH:MM:SS</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignCenter</set>
+                <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
               </widget>
              </item>
@@ -802,7 +531,7 @@ border-radius: 8px;</string>
                 <string>DD/MM/YYYY</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignCenter</set>
+                <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
               </widget>
              </item>
@@ -815,7 +544,7 @@ border-radius: 8px;</string>
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">QWidget {
@@ -883,10 +612,10 @@ QGroupBox {
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_8">
                  <property name="spacing">
@@ -926,7 +655,7 @@ border-radius: 15px;</string>
                     <string>แสกนบัตรพนักงาน</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -960,7 +689,7 @@ border-radius: 15px;</string>
                     <bool>true</bool>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -1007,7 +736,7 @@ border-radius: 15px;</string>
                     <string>XXXXXXXXXX</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -1039,10 +768,10 @@ border-radius: 15px;</string>
            <item>
             <widget class="QFrame" name="frame">
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_37">
               <property name="spacing">
@@ -1063,14 +792,15 @@ border-radius: 15px;</string>
                  <string notr="true">QPushButton {
 	min-height: 50px;
 	border-radius: 10px;
-	font-size: 30px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }</string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_57">
                  <property name="spacing">
@@ -1099,7 +829,7 @@ border-radius: 15px;</string>
                    <property name="font">
                     <font>
                      <family>Kanit</family>
-                     <pointsize>-1</pointsize>
+                     <pointsize>25</pointsize>
                      <bold>true</bold>
                     </font>
                    </property>
@@ -1123,7 +853,7 @@ border-radius: 15px;</string>
                    <property name="font">
                     <font>
                      <family>Kanit</family>
-                     <pointsize>-1</pointsize>
+                     <pointsize>25</pointsize>
                      <bold>true</bold>
                     </font>
                    </property>
@@ -1146,7 +876,7 @@ border-radius: 15px;</string>
                    <property name="font">
                     <font>
                      <family>Kanit</family>
-                     <pointsize>-1</pointsize>
+                     <pointsize>25</pointsize>
                      <bold>true</bold>
                     </font>
                    </property>
@@ -1179,10 +909,10 @@ QLabel {
 }</string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <widget class="QLabel" name="Productname_Label">
                  <property name="geometry">
@@ -1358,7 +1088,7 @@ QLabel {
                   <string>XX.XXX กรัม</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                 </widget>
                 <widget class="QLabel" name="Weight10s_Label">
@@ -1607,7 +1337,7 @@ QLabel {
 }</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+              <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_12">
               <property name="spacing">
@@ -1631,7 +1361,7 @@ QLabel {
                  </size>
                 </property>
                 <property name="layoutDirection">
-                 <enum>Qt::LeftToRight</enum>
+                 <enum>Qt::LayoutDirection::LeftToRight</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true"/>
@@ -1662,7 +1392,7 @@ QLabel {
                     </font>
                    </property>
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="autoFillBackground">
                     <bool>false</bool>
@@ -1674,7 +1404,7 @@ QLabel {
                     <string>ชั่งครั้งที่ 1</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -1706,7 +1436,7 @@ QLabel {
                     <string>XX.XXX</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -1722,7 +1452,7 @@ QLabel {
                  </size>
                 </property>
                 <property name="layoutDirection">
-                 <enum>Qt::LeftToRight</enum>
+                 <enum>Qt::LayoutDirection::LeftToRight</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true"/>
@@ -1753,7 +1483,7 @@ QLabel {
                     </font>
                    </property>
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="autoFillBackground">
                     <bool>false</bool>
@@ -1765,7 +1495,7 @@ QLabel {
                     <string>ชั่งครั้งที่ 2</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -1797,7 +1527,7 @@ QLabel {
                     <string>XX.XXX</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -1813,7 +1543,7 @@ QLabel {
                  </size>
                 </property>
                 <property name="layoutDirection">
-                 <enum>Qt::LeftToRight</enum>
+                 <enum>Qt::LayoutDirection::LeftToRight</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true"/>
@@ -1844,7 +1574,7 @@ QLabel {
                     </font>
                    </property>
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="autoFillBackground">
                     <bool>false</bool>
@@ -1856,7 +1586,7 @@ QLabel {
                     <string>น้ำหนักเฉลี่ย</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -1888,7 +1618,7 @@ QLabel {
                     <string>XX.XXX</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -1980,7 +1710,7 @@ border-radius: 15px;</string>
                     <string>ลงบันทึกข้อมูลความหนาเม็ดยา</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -1990,16 +1720,16 @@ border-radius: 15px;</string>
               <item>
                <widget class="QFrame" name="frame_7">
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_83">
                  <item>
                   <spacer name="horizontalSpacer_6">
                    <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
+                    <enum>Qt::Orientation::Horizontal</enum>
                    </property>
                    <property name="sizeHint" stdset="0">
                     <size>
@@ -2099,7 +1829,7 @@ border-bottom-left-radius: 15px;</string>
                           <string>เม็ดที่ 1</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -2119,10 +1849,10 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;</string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::Shape::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
+                          <enum>QFrame::Shadow::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_14">
                           <item>
@@ -2214,7 +1944,7 @@ border-bottom-left-radius: 15px;</string>
                           <string>เม็ดที่ 6</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -2234,10 +1964,10 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;</string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::Shape::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
+                          <enum>QFrame::Shadow::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_24">
                           <item>
@@ -2329,7 +2059,7 @@ border-bottom-left-radius: 15px;</string>
                           <string>เม็ดที่ 2</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -2349,10 +2079,10 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;</string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::Shape::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
+                          <enum>QFrame::Shadow::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_16">
                           <item>
@@ -2444,7 +2174,7 @@ border-bottom-left-radius: 15px;</string>
                           <string>เม็ดที่ 7</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -2464,10 +2194,10 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;</string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::Shape::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
+                          <enum>QFrame::Shadow::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_26">
                           <item>
@@ -2559,7 +2289,7 @@ border-bottom-left-radius: 15px;</string>
                           <string>เม็ดที่ 3</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -2579,10 +2309,10 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;</string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::Shape::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
+                          <enum>QFrame::Shadow::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_18">
                           <item>
@@ -2674,7 +2404,7 @@ border-bottom-left-radius: 15px;</string>
                           <string>เม็ดที่ 8</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -2694,10 +2424,10 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;</string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::Shape::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
+                          <enum>QFrame::Shadow::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_28">
                           <item>
@@ -2789,7 +2519,7 @@ border-bottom-left-radius: 15px;</string>
                           <string>เม็ดที่ 4</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -2809,10 +2539,10 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;</string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::Shape::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
+                          <enum>QFrame::Shadow::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_20">
                           <item>
@@ -2904,7 +2634,7 @@ border-bottom-left-radius: 15px;</string>
                           <string>เม็ดที่ 9</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -2924,10 +2654,10 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;</string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::Shape::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
+                          <enum>QFrame::Shadow::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_30">
                           <item>
@@ -3019,7 +2749,7 @@ border-bottom-left-radius: 15px;</string>
                           <string>เม็ดที่ 5</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -3039,10 +2769,10 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;</string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::Shape::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
+                          <enum>QFrame::Shadow::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_22">
                           <item>
@@ -3134,7 +2864,7 @@ border-bottom-left-radius: 15px;</string>
                           <string>เม็ดที่ 10</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -3154,10 +2884,10 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;</string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::Shape::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
+                          <enum>QFrame::Shadow::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_32">
                           <item>
@@ -3189,7 +2919,7 @@ color: rgb(100, 100, 100);</string>
                  <item>
                   <spacer name="horizontalSpacer_7">
                    <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
+                    <enum>Qt::Orientation::Horizontal</enum>
                    </property>
                    <property name="sizeHint" stdset="0">
                     <size>
@@ -3231,7 +2961,7 @@ color: rgb(100, 100, 100);</string>
                  <item>
                   <spacer name="horizontalSpacer">
                    <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
+                    <enum>Qt::Orientation::Horizontal</enum>
                    </property>
                    <property name="sizeHint" stdset="0">
                     <size>
@@ -3372,10 +3102,10 @@ color: rgb(100, 100, 100);</string>
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_3">
                  <property name="spacing">
@@ -3436,7 +3166,7 @@ border-radius: 15px;</string>
                        <string>ลงบันทึกข้อมูลความหนาเม็ดยา</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -3446,10 +3176,10 @@ border-radius: 15px;</string>
                  <item>
                   <widget class="QFrame" name="frame_9">
                    <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
+                    <enum>QFrame::Shape::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
+                    <enum>QFrame::Shadow::Raised</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_38">
                     <property name="spacing">
@@ -3487,7 +3217,7 @@ border-radius: 15px;</string>
                        <string>เม็ดที่ 1</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -3508,7 +3238,7 @@ border: none;</string>
                        <string>XX.XX</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -3533,10 +3263,10 @@ border: none;</string>
                     <string notr="true"/>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
+                    <enum>QFrame::Shape::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
+                    <enum>QFrame::Shadow::Raised</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_63">
                     <property name="spacing">
@@ -3755,9 +3485,13 @@ border: none;</string>
                         </disabled>
                        </palette>
                       </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>9</pointsize>
+                       </font>
+                      </property>
                       <property name="styleSheet">
                        <string notr="true">QPushButton {
- 	font-size: 35px;
 	width: 90px;
 	height: 70px;
 	background-color: rgb(50, 50, 50);
@@ -3770,7 +3504,7 @@ QPushButton:pressed {
 }</string>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Plain</enum>
+                       <enum>QFrame::Shadow::Plain</enum>
                       </property>
                       <property name="lineWidth">
                        <number>3</number>
@@ -3781,7 +3515,7 @@ QPushButton:pressed {
                          <property name="font">
                           <font>
                            <family>Kanit</family>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                            <fontweight>Medium</fontweight>
                           </font>
                          </property>
@@ -3795,7 +3529,7 @@ QPushButton:pressed {
                          <property name="font">
                           <font>
                            <family>Kanit</family>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                            <fontweight>Medium</fontweight>
                           </font>
                          </property>
@@ -3809,7 +3543,7 @@ QPushButton:pressed {
                          <property name="font">
                           <font>
                            <family>Kanit</family>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                            <fontweight>Medium</fontweight>
                           </font>
                          </property>
@@ -3823,7 +3557,7 @@ QPushButton:pressed {
                          <property name="font">
                           <font>
                            <family>Kanit</family>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                            <fontweight>Medium</fontweight>
                           </font>
                          </property>
@@ -3837,7 +3571,7 @@ QPushButton:pressed {
                          <property name="font">
                           <font>
                            <family>Kanit</family>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                            <fontweight>Medium</fontweight>
                           </font>
                          </property>
@@ -3851,7 +3585,7 @@ QPushButton:pressed {
                          <property name="font">
                           <font>
                            <family>Kanit</family>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                            <fontweight>Medium</fontweight>
                           </font>
                          </property>
@@ -3865,7 +3599,7 @@ QPushButton:pressed {
                          <property name="font">
                           <font>
                            <family>Kanit</family>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                            <fontweight>Medium</fontweight>
                           </font>
                          </property>
@@ -3879,7 +3613,7 @@ QPushButton:pressed {
                          <property name="font">
                           <font>
                            <family>Kanit</family>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                            <fontweight>Medium</fontweight>
                           </font>
                          </property>
@@ -3893,7 +3627,7 @@ QPushButton:pressed {
                          <property name="font">
                           <font>
                            <family>Kanit</family>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                            <fontweight>Medium</fontweight>
                           </font>
                          </property>
@@ -3918,7 +3652,7 @@ QPushButton:pressed {
                          </property>
                          <property name="font">
                           <font>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                           </font>
                          </property>
                          <property name="text">
@@ -3953,7 +3687,7 @@ QPushButton:pressed {
                          <property name="font">
                           <font>
                            <family>Kanit</family>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                            <fontweight>Medium</fontweight>
                           </font>
                          </property>
@@ -3978,7 +3712,7 @@ QPushButton:pressed {
                          </property>
                          <property name="font">
                           <font>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                           </font>
                          </property>
                          <property name="text">
@@ -4003,7 +3737,6 @@ QPushButton:pressed {
                      <widget class="QFrame" name="frame_8">
                       <property name="styleSheet">
                        <string notr="true">QPushButton {
-	font-size: 40px;
 	background-color: rgb(50, 50, 50);
 	border-radius: 5px;
 }
@@ -4012,10 +3745,10 @@ QPushButton:pressed {
 }</string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::Shape::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                       <enum>QFrame::Shadow::Raised</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_36">
                        <property name="spacing">
@@ -4030,7 +3763,7 @@ QPushButton:pressed {
                           <pixmap resource="resource.qrc">:/assets/icon/thickness.png</pixmap>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -4045,7 +3778,7 @@ QPushButton:pressed {
                          <property name="font">
                           <font>
                            <family>Kanit</family>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                            <italic>false</italic>
                            <fontweight>Medium</fontweight>
                           </font>
@@ -4079,7 +3812,7 @@ QPushButton:pressed {
                          <property name="font">
                           <font>
                            <family>Kanit</family>
-                           <pointsize>-1</pointsize>
+                           <pointsize>30</pointsize>
                            <italic>false</italic>
                            <fontweight>Medium</fontweight>
                           </font>
@@ -4139,10 +3872,10 @@ QPushButton:pressed {
               </size>
              </property>
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_33">
               <property name="leftMargin">
@@ -4173,7 +3906,7 @@ border-radius: 15px;</string>
                  <string>ลักษณะเม็ดยา</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -4197,10 +3930,10 @@ QPushButton {
 }</string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QGridLayout" name="gridLayout_4">
               <property name="bottomMargin">
@@ -4356,7 +4089,7 @@ color: rgb(80, 80, 80);</string>
                  <string>ด้านบน</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -4384,7 +4117,7 @@ color: rgb(80, 80, 80);</string>
                  <string>ด้านล่าง</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -4442,10 +4175,10 @@ color: rgb(80, 80, 80);</string>
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_34">
                  <property name="spacing">
@@ -4485,7 +4218,7 @@ border-radius: 15px;</string>
                     <string>สรุปข้อมูลการชั่งน้ำหนัก</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -4549,7 +4282,7 @@ border-radius: 15px;</string>
                     </size>
                    </property>
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -4586,7 +4319,7 @@ border-radius: 15px;</string>
                        </font>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
@@ -4598,7 +4331,7 @@ border-radius: 15px;</string>
                        <string>ชั่งครั้งที่ 1</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -4630,7 +4363,7 @@ border-radius: 15px;</string>
                        <string>XX.XXX</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -4646,7 +4379,7 @@ border-radius: 15px;</string>
                     </size>
                    </property>
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -4683,7 +4416,7 @@ border-radius: 15px;</string>
                        </font>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
@@ -4695,7 +4428,7 @@ border-radius: 15px;</string>
                        <string>ชั่งครั้งที่ 2</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -4727,7 +4460,7 @@ border-radius: 15px;</string>
                        <string>XX.XXX</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -4743,7 +4476,7 @@ border-radius: 15px;</string>
                     </size>
                    </property>
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -4780,7 +4513,7 @@ border-radius: 15px;</string>
                        </font>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
@@ -4792,7 +4525,7 @@ border-radius: 15px;</string>
                        <string>น้ำหนักเฉลี่ย</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -4824,7 +4557,7 @@ border-radius: 15px;</string>
                        <string>XX.XXX</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -4840,7 +4573,7 @@ border-radius: 15px;</string>
                     </size>
                    </property>
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -4877,7 +4610,7 @@ border-radius: 15px;</string>
                        </font>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
@@ -4889,7 +4622,7 @@ border-radius: 15px;</string>
                        <string>เปอร์เซ็นต์เฉลี่ย</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -4921,7 +4654,7 @@ border-radius: 15px;</string>
                        <string>XX.XX%</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -4964,10 +4697,10 @@ border-radius: 15px;</string>
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_58">
                  <item>
@@ -4992,7 +4725,7 @@ border-radius: 15px;</string>
                     <string>สรุปข้อมูลความหนาเม็ดยา</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -5074,7 +4807,7 @@ border-bottom-left-radius: 8px;</string>
                        <string>เม็ดที่ 10</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -5088,10 +4821,10 @@ border-top-right-radius: 8px;
 border-bottom-right-radius: 8px;</string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::Shape::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                       <enum>QFrame::Shadow::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_39">
                        <item>
@@ -5110,7 +4843,7 @@ color: rgb(72, 72, 72);</string>
                           <string>XX.XX</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -5180,7 +4913,7 @@ border-bottom-left-radius: 8px;</string>
                        <string>เม็ดที่ 1</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -5199,10 +4932,10 @@ border-top-right-radius: 8px;
 border-bottom-right-radius: 8px;</string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::Shape::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                       <enum>QFrame::Shadow::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_51">
                        <item>
@@ -5221,7 +4954,7 @@ color: rgb(72, 72, 72);</string>
                           <string>XX.XX</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -5291,7 +5024,7 @@ border-bottom-left-radius: 8px;</string>
                        <string>เม็ดที่ 2</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -5305,10 +5038,10 @@ border-top-right-radius: 8px;
 border-bottom-right-radius: 8px;</string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::Shape::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                       <enum>QFrame::Shadow::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_43">
                        <item>
@@ -5327,7 +5060,7 @@ color: rgb(72, 72, 72);</string>
                           <string>XX.XX</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -5397,7 +5130,7 @@ border-bottom-left-radius: 8px;</string>
                        <string>เม็ดที่ 3</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -5411,10 +5144,10 @@ border-top-right-radius: 8px;
 border-bottom-right-radius: 8px;</string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::Shape::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                       <enum>QFrame::Shadow::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_55">
                        <item>
@@ -5433,7 +5166,7 @@ color: rgb(72, 72, 72);</string>
                           <string>XX.XX</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -5503,7 +5236,7 @@ border-bottom-left-radius: 8px;</string>
                        <string>เม็ดที่ 4</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -5517,10 +5250,10 @@ border-top-right-radius: 8px;
 border-bottom-right-radius: 8px;</string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::Shape::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                       <enum>QFrame::Shadow::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_47">
                        <item>
@@ -5539,7 +5272,7 @@ color: rgb(72, 72, 72);</string>
                           <string>XX.XX</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -5609,7 +5342,7 @@ border-bottom-left-radius: 8px;</string>
                        <string>เม็ดที่ 5</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -5623,10 +5356,10 @@ border-top-right-radius: 8px;
 border-bottom-right-radius: 8px;</string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::Shape::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                       <enum>QFrame::Shadow::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_53">
                        <item>
@@ -5645,7 +5378,7 @@ color: rgb(72, 72, 72);</string>
                           <string>XX.XX</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -5715,7 +5448,7 @@ border-bottom-left-radius: 8px;</string>
                        <string>เม็ดที่ 6</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -5729,10 +5462,10 @@ border-top-right-radius: 8px;
 border-bottom-right-radius: 8px;</string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::Shape::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                       <enum>QFrame::Shadow::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_49">
                        <item>
@@ -5751,7 +5484,7 @@ color: rgb(72, 72, 72);</string>
                           <string>XX.XX</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -5821,7 +5554,7 @@ border-bottom-left-radius: 8px;</string>
                        <string>เม็ดที่ 7</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -5835,10 +5568,10 @@ border-top-right-radius: 8px;
 border-bottom-right-radius: 8px;</string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::Shape::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                       <enum>QFrame::Shadow::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_45">
                        <item>
@@ -5857,7 +5590,7 @@ color: rgb(72, 72, 72);</string>
                           <string>XX.XX</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -5927,7 +5660,7 @@ border-bottom-left-radius: 8px;</string>
                        <string>เม็ดที่ 8</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -5941,10 +5674,10 @@ border-top-right-radius: 8px;
 border-bottom-right-radius: 8px;</string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::Shape::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                       <enum>QFrame::Shadow::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_37">
                        <item>
@@ -5963,7 +5696,7 @@ color: rgb(72, 72, 72);</string>
                           <string>XX.XX</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -6033,7 +5766,7 @@ border-bottom-left-radius: 8px;</string>
                        <string>เม็ดที่ 9</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -6047,10 +5780,10 @@ border-top-right-radius: 8px;
 border-bottom-right-radius: 8px;</string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::Shape::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                       <enum>QFrame::Shadow::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_41">
                        <item>
@@ -6069,7 +5802,7 @@ color: rgb(72, 72, 72);</string>
                           <string>XX.XX</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -6134,7 +5867,7 @@ color: rgb(72, 72, 72);</string>
                     </size>
                    </property>
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -6165,7 +5898,7 @@ color: rgb(72, 72, 72);</string>
                        </font>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
@@ -6177,7 +5910,7 @@ color: rgb(72, 72, 72);</string>
                        <string>ความหนาต่ำสุด</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -6209,7 +5942,7 @@ color: rgb(72, 72, 72);</string>
                        <string>XX.XX</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -6225,7 +5958,7 @@ color: rgb(72, 72, 72);</string>
                     </size>
                    </property>
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -6256,7 +5989,7 @@ color: rgb(72, 72, 72);</string>
                        </font>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
@@ -6268,7 +6001,7 @@ color: rgb(72, 72, 72);</string>
                        <string>ความหนาสูงสุด</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -6300,7 +6033,7 @@ color: rgb(72, 72, 72);</string>
                        <string>XX.XX</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -6357,7 +6090,7 @@ color: rgb(72, 72, 72);</string>
                        <string>นับเวลาถอยหลัง</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -6377,7 +6110,7 @@ color: rgb(72, 72, 72);</string>
                        <string>180 s.</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -6453,10 +6186,10 @@ color: rgb(72, 72, 72);</string>
               </size>
              </property>
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_10">
               <property name="spacing">
@@ -6496,7 +6229,7 @@ border-radius: 15px;</string>
                  <string>คู่มือการใช้งาน</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -6506,10 +6239,10 @@ border-radius: 15px;</string>
            <item>
             <widget class="QFrame" name="frame_3">
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_28">
               <property name="spacing">
@@ -6524,10 +6257,10 @@ border-radius: 15px;</string>
               <item>
                <widget class="QFrame" name="frame_12">
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_67">
                  <property name="topMargin">
@@ -6565,10 +6298,10 @@ border-radius: 15px;</string>
 }</string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_66">
                  <property name="spacing">
@@ -6721,10 +6454,10 @@ border-radius: 15px;</string>
 }</string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_39">
               <property name="spacing">
@@ -6791,7 +6524,7 @@ border-radius: 15px;</string>
                     <string>การเชื่อมต่อไวไฟ</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                    <widget class="QLabel" name="wifi_signal_2">
                     <property name="geometry">
@@ -6864,7 +6597,7 @@ border-radius: 15px;</string>
                      <rect>
                       <x>120</x>
                       <y>40</y>
-                      <width>321</width>
+                      <width>461</width>
                       <height>25</height>
                      </rect>
                     </property>
@@ -6924,7 +6657,7 @@ border-radius: 15px;</string>
                     <string>เครื่องตอก</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                    <widget class="QLabel" name="current_tabletID_img">
                     <property name="geometry">
@@ -7025,7 +6758,7 @@ QPushButton {
                  <string>รายการเครื่องตอก (เลือกเครื่องตอกที่ปฏิบติงาน)</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                 <property name="flat">
                  <bool>false</bool>
@@ -7064,27 +6797,27 @@ QPushButton {
                     <string notr="true"/>
                    </property>
                    <property name="verticalScrollBarPolicy">
-                    <enum>Qt::ScrollBarAlwaysOff</enum>
+                    <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                    </property>
                    <property name="horizontalScrollBarPolicy">
-                    <enum>Qt::ScrollBarAsNeeded</enum>
+                    <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
                    </property>
                    <property name="sizeAdjustPolicy">
-                    <enum>QAbstractScrollArea::AdjustIgnored</enum>
+                    <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
                    </property>
                    <property name="widgetResizable">
                     <bool>true</bool>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                    </property>
                    <widget class="QWidget" name="tabletListContents">
                     <property name="geometry">
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>779</width>
-                      <height>245</height>
+                      <width>100</width>
+                      <height>30</height>
                      </rect>
                     </property>
                    </widget>
@@ -7132,7 +6865,7 @@ QPushButton {
                  <string>เลือกดูหน้าเมนูการชั่งน้ำหนัก</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                 <property name="flat">
                  <bool>false</bool>
@@ -7165,7 +6898,7 @@ QPushButton {
                     <string>หน้าชั่งน้ำหนัก</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_16">
                     <property name="bottomMargin">
@@ -7183,7 +6916,7 @@ QPushButton {
                        <cursorShape>PointingHandCursor</cursorShape>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
                        <string notr="true"/>
@@ -7224,7 +6957,7 @@ QPushButton {
                     <string>หน้าป้อนความหนา</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_17">
                     <property name="bottomMargin">
@@ -7242,7 +6975,7 @@ QPushButton {
                        <cursorShape>PointingHandCursor</cursorShape>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
                        <string notr="true"/>
@@ -7283,7 +7016,7 @@ QPushButton {
                     <string>หน้าลักษณะเม็ดยา</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_29">
                     <property name="bottomMargin">
@@ -7301,7 +7034,7 @@ QPushButton {
                        <cursorShape>PointingHandCursor</cursorShape>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
                        <string notr="true"/>
@@ -7342,7 +7075,7 @@ QPushButton {
                     <string>หน้าสรุปข้อมูล</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_30">
                     <property name="bottomMargin">
@@ -7360,7 +7093,7 @@ QPushButton {
                        <cursorShape>PointingHandCursor</cursorShape>
                       </property>
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
                        <string notr="true"/>
@@ -7417,10 +7150,10 @@ QPushButton {
            <item>
             <widget class="QFrame" name="process_main_frame">
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_33">
               <property name="leftMargin">
@@ -7438,10 +7171,10 @@ QPushButton {
               <item>
                <widget class="QFrame" name="process_frame">
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Shadow::Raised</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_32">
                  <item>
@@ -7453,10 +7186,10 @@ QPushButton {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
+                    <enum>QFrame::Shape::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
+                    <enum>QFrame::Shadow::Raised</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_62">
                     <property name="spacing">
@@ -7477,7 +7210,7 @@ QPushButton {
                     <item>
                      <spacer name="horizontalSpacer_2">
                       <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
+                       <enum>Qt::Orientation::Horizontal</enum>
                       </property>
                       <property name="sizeHint" stdset="0">
                        <size>
@@ -7491,13 +7224,13 @@ QPushButton {
                      <widget class="QLabel" name="process_img">
                       <property name="minimumSize">
                        <size>
-                        <width>400</width>
+                        <width>500</width>
                         <height>400</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>400</width>
+                        <width>500</width>
                         <height>400</height>
                        </size>
                       </property>
@@ -7511,14 +7244,14 @@ QPushButton {
                        <bool>true</bool>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
                     <item>
                      <spacer name="horizontalSpacer_3">
                       <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
+                       <enum>Qt::Orientation::Horizontal</enum>
                       </property>
                       <property name="sizeHint" stdset="0">
                        <size>
@@ -7555,10 +7288,10 @@ QPushButton {
                     <string notr="true">color: rgb(128, 128, 128);</string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Plain</enum>
+                    <enum>QFrame::Shadow::Plain</enum>
                    </property>
                    <property name="lineWidth">
                     <number>1</number>
@@ -7567,7 +7300,7 @@ QPushButton {
                     <string>ONLINE WEIGHING SYSTEM</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -7595,10 +7328,10 @@ QPushButton {
                     <string notr="true">color: rgb(128, 128, 128);</string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Plain</enum>
+                    <enum>QFrame::Shadow::Plain</enum>
                    </property>
                    <property name="lineWidth">
                     <number>1</number>
@@ -7607,7 +7340,7 @@ QPushButton {
                     <string>Created by Nattapon pondonko</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -7635,10 +7368,10 @@ QPushButton {
                     <string notr="true">color: rgb(128, 128, 128);</string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Plain</enum>
+                    <enum>QFrame::Shadow::Plain</enum>
                    </property>
                    <property name="lineWidth">
                     <number>1</number>
@@ -7647,7 +7380,7 @@ QPushButton {
                     <string>Engineering Department</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -7675,10 +7408,10 @@ QPushButton {
                     <string notr="true">color: rgb(128, 128, 128);</string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Plain</enum>
+                    <enum>QFrame::Shadow::Plain</enum>
                    </property>
                    <property name="lineWidth">
                     <number>1</number>
@@ -7687,7 +7420,7 @@ QPushButton {
                     <string/>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -7699,7 +7432,441 @@ QPushButton {
            </item>
           </layout>
          </widget>
+         <widget class="QWidget" name="shutdown_page">
+          <layout class="QVBoxLayout" name="verticalLayout_43">
+           <item>
+            <widget class="QLabel" name="shutdown_title">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>65</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Kanit</family>
+               <pointsize>30</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(52, 157, 77);
+border-radius: 15px;</string>
+             </property>
+             <property name="text">
+              <string>ยืนยันการปิดเครื่อง</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="shutdown_widget" native="true">
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(50, 50, 50);
+	border-radius: 10px;
+	padding: 8px;
+}</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_64">
+              <property name="spacing">
+               <number>50</number>
+              </property>
+              <property name="leftMargin">
+               <number>50</number>
+              </property>
+              <property name="rightMargin">
+               <number>50</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="confirm_shutdown">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>52</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Kanit</family>
+                  <pointsize>30</pointsize>
+                  <italic>false</italic>
+                  <fontweight>Medium</fontweight>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>  ยืนยัน</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="resource.qrc">
+                  <normaloff>:/assets/keyboard/enter.png</normaloff>:/assets/keyboard/enter.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>50</width>
+                  <height>50</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="cancel_shutdown">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>52</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Kanit</family>
+                  <pointsize>30</pointsize>
+                  <italic>false</italic>
+                  <fontweight>Medium</fontweight>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>  ยกเลิก</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="resource.qrc">
+                  <normaloff>:/assets/keyboard/cancel.png</normaloff>:/assets/keyboard/cancel.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>50</width>
+                  <height>50</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QWidget" name="show_sidebar" native="true">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget {
+	background-color: rgb(0, 150, 255);
+	border-radius: 10px;
+}
+
+QPushButton {
+	background-color: rgb(0, 150, 255);
+	font-size: 20px;
+	color: white;
+	text-align: left;
+	height: 50px;
+	border: none;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	padding: 15px;
+}
+
+QPushButton:checked {
+	background-color: #f5fafe;
+	color: rgb(0, 150, 255);
+	font-weight: bold;
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_41">
+       <property name="spacing">
+        <number>30</number>
+       </property>
+       <property name="leftMargin">
+        <number>15</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="leftMargin">
+          <number>9</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>7</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="profile_img1">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="resource.qrc">:/assets/images/polipharm.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="font">
+            <font>
+             <family>Kanit</family>
+             <pointsize>25</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>WEIGHT V1</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>20</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="home_1">
+           <property name="font">
+            <font>
+             <family>Kanit</family>
+             <pointsize>-1</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>  หน้าหลัก</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource.qrc">
+             <normaloff>:/assets/icon/home.png</normaloff>:/assets/icon/home.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>60</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="manual_1">
+           <property name="font">
+            <font>
+             <family>Kanit</family>
+             <pointsize>-1</pointsize>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>  วิธีใช้งาน</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource.qrc">
+             <normaloff>:/assets/icon/manual_1.png</normaloff>:/assets/icon/manual_1.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>60</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="develops_1">
+           <property name="font">
+            <font>
+             <family>Kanit</family>
+             <pointsize>-1</pointsize>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>Develops </string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource.qrc">
+             <normaloff>:/assets/icon/developer.png</normaloff>:/assets/icon/developer.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>60</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>297</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="shutdown">
+           <property name="font">
+            <font>
+             <family>Kanit</family>
+             <pointsize>-1</pointsize>
+             <strikeout>false</strikeout>
+             <kerning>true</kerning>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>  ปิดเครื่อง</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource.qrc">
+             <normaloff>:/assets/icon/shutdown1.png</normaloff>:/assets/icon/shutdown1.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>60</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="shortcut">
+            <string notr="true">Ctrl+S</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="signout_1">
+           <property name="font">
+            <font>
+             <family>Kanit</family>
+             <pointsize>-1</pointsize>
+             <strikeout>false</strikeout>
+             <kerning>true</kerning>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">padding-left: 20px;</string>
+           </property>
+           <property name="text">
+            <string> ออกจากระบบ</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource.qrc">
+             <normaloff>:/assets/icon/logout.png</normaloff>:/assets/icon/logout.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>60</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="shortcut">
+            <string notr="true">Ctrl+S</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="restart_program_1">
+           <property name="font">
+            <font>
+             <family>Kanit</family>
+             <pointsize>-1</pointsize>
+             <strikeout>false</strikeout>
+             <kerning>true</kerning>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>  รีสตาร์ท</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource.qrc">
+             <normaloff>:/assets/icon/restart.png</normaloff>:/assets/icon/restart.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>60</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="shortcut">
+            <string notr="true">Ctrl+S</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
