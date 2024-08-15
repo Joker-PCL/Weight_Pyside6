@@ -134,6 +134,10 @@ def downloadFile(service, folderID, folder_name):
 
     # ดึงรายการไฟล์ทั้งหมดที่อยู่ในโฟล์เดอร์
     while True:
+        # # Type spreadsheet
+        # query = f"'{folderID}' in parents and mimeType='application/vnd.google-apps.spreadsheet'"
+
+        # # Type presentation
         query = f"'{folderID}' in parents and mimeType='application/vnd.google-apps.presentation'"
         response = (
             service.files()

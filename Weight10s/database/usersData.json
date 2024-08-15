@@ -271,5 +271,12 @@
         "usernameTH": "สะกุณา",
         "usernameEN": "Sakuna",
         "role": "Operator"
+    },
+    {
+        "rfid": "0005171425",
+        "employeeId": "1234",
+        "usernameTH": "ประยุทธ์",
+        "usernameEN": "Prayut",
+        "role": "Admin"
     }
 ]

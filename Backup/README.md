@@ -1,4 +1,16 @@
 # Backup_GoogleSheet_PDF
+    - cd polipharm
+
+    ** windows
+        - python -m venv env
+        - env\Scripts\activate
+        - python3 -m venv --system-site-packages env 
+    ** linux
+        - python3 -m venv env
+        - source env/bin/activate
+        - pip3 install gpiozero
+        - python3 -m venv --system-site-packages env 
+        
     - pip install google-api-python-client
     - pip install google-auth-oauthlib
 

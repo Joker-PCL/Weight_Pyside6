@@ -75,7 +75,7 @@ class Weight10s(QMainWindow, Ui_MainWindow):
 
         self.setupUi(self)
         self.showDateTime = ShowDateTime(self.date_bar, self.time_bar)
-        self.showDateTime.start()
+        self.showDateTime.show()
         self.WiFi = WiFi(self, os_name)
 
         self.current_page = self.home_page
